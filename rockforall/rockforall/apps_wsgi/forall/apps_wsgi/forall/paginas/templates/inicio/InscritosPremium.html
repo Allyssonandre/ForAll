@@ -1,0 +1,205 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="loading" lang="pt-br" data-textdirection="ltr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description" content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+    <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <title>ForAll&nbsp;Olá&nbsp;{{user.get_username}}</title>
+    <link rel="shortcut icon" href="{% static '../static//img/forall.png' %}" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/vertical-menu.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/vendors.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-extended.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/colors.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/components.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dark-layout.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/semi-dark-layout.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/horizontal-menu.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/palette-gradient.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/users.css' %}">
+</head>
+<body class="horizontal-layout horizontal-menu dark-layout 2-columns  navbar-floating footer-static  " data-open="hover" data-menu="horizontal-menu" data-col="2-columns" data-layout="dark-layout">
+    <nav class="header-navbar navbar-expand-lg navbar navbar-with-menu navbar-fixed navbar-shadow navbar-brand-center">
+        <div class="navbar-wrapper">
+            <div class="navbar-container content">
+                <div class="navbar-collapse" id="navbar-mobile">
+                    <div class="mr-auto float-left bookmark-wrapper d-flex align-items-center">
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item mobile-menu d-xl-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ficon fa fa-align-justify"></i></a></li>
+                        </ul>
+                        <ul class="nav navbar-nav">
+                            <div class="bookmark-input search-input">
+                                <div class="bookmark-input-icon"><i class="feather icon-search primary"></i></div>
+                                <input class="form-control input" type="text" placeholder="Explore Vuexy..." tabindex="0" data-search="template-list">
+                                <ul class="search-list search-list-bookmark"></ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="nav navbar-nav float-right">
+                    <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-expand"><i class="ficon fa fa-expand"></i></a></li>
+                    <li class="dropdown dropdown-notification nav-item">
+                        <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
+                            <li class="scrollable-container media-list"><a class="d-flex justify-content-between" href="javascript:void(0)"></a>
+                             <a class="d-flex justify-content-between" href="javascript:void(0)">
+                                <div class="media d-flex align-items-start">
+                                    <div class="media-left"><i class="feather icon-file font-medium-5 warning"></i>
+                                    </div>
+
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
+                    <div class="user-nav d-sm-flex d-none"><span class="user-name text-bold-600">{{user.get_username}}</span></div><span>
+                        {% if not user.perfil.image%}
+                        <img class="round" src="{% static 'img/forall.png'%}" alt="avatar" height="40" width="40">
+                        {% else%}
+                        <img class="round" src="{{ user.perfil.image.url }}" alt="avatar" height="40" width="40">
+                        {% endif %}
+                        
+                    </span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="{% url 'videos' %}"><i class="fa fa-youtube"></i>Posta vídeo</a>
+                    <a class="dropdown-item" href="{% url 'mostravideos' %}"><i class="fa fa-play"></i>Meus vídeos</a>
+                    <div class="dropdown-divider"></div>
+                    {% if user.is_authenticated %}
+                    <a class="dropdown-item" href="/accounts/logout"><i class="fa fa-unlock"></i>Sair</a>
+                    {% endif %}
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+</nav>
+<div class="horizontal-menu-wrapper">
+    <div class="col-12">
+      {% if messages %}
+      <div class="alert alert-success" role="alert">
+        {% for message in messages %}
+        <p {% if message.tags %} class="alert alert-success{{message.tags}}" {% endif %} style="color:white;font-size: 20px;font-family: Times New Roman;text-align: center;">&nbsp;<i class="fa fa-bell-o"></i>&nbsp;{{user.get_username}}&nbsp;{{message}}
+        </p>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
+<div class="header-navbar navbar-expand-sm navbar navbar-horizontal floating-nav navbar-light navbar-without-dd-arrow navbar-shadow menu-border" role="navigation" data-menu="menu-wrapper">
+    <div class="navbar-header">
+        <ul class="nav navbar-nav flex-row">
+            <li class="nav-item mr-auto">
+                <div class="brand-logo"></div>
+                <img class="" src="{% static 'img/forall.png'%}" alt="avatar" height="45" width="45">                </a></li>
+                <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i class="fa fa-times d-block d-xl-none font-medium-4 primary toggle-icon"></i><i class="toggle-icon feather icon-disc font-medium-4 d-none d-xl-block collapse-toggle-icon primary" data-ticon="icon-disc"></i></a></li>
+            </ul>
+        </div>
+        <!-- Horizontal menu content-->
+        <div class="navbar-container main-menu-content" data-menu="menu-container">
+            <!-- include ../../../includes/mixins-->
+            <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
+                <li>
+                    {% if user.is_authenticated %}
+                    <a class="dropdown-item" href="/accounts/logout" style="color: white;"><i class="fa fa-unlock"></i>Sair</a>
+                    {% endif %}
+                </li>
+                <li>
+                    {% if user.is_authenticated %}
+                    <a class="dropdown-item" href="{% url 'perfil' %}" style="color: white;"><i class="fa fa-user"></i>Perfil</a>
+                    {% endif %}
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'user' %}" style="color: white;"><i class="fa fa-user"></i>Usuários</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</div>
+</div>
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper">
+        <div class="content-body">
+            <section id="floating-label-layouts">
+             <div class="row" id="table-hover-animation">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Pedidos de Incrição para o Markplace ForAll</h4>
+                            <p></p>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-body">
+                                <p style="font-family: Times New Roman;font-size: 20px;">Mudar o campos: <br>
+                                    1 - Link de pagamento. |
+                                    <b>* Enviar link de pagamento para o usuário inscrito.</b><br>
+                                    2 - Ativado (True). &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+                                    <b>* Ativa o usuário e coloca-lo no Grupo "PremiumLoja"</b>
+                                </p>
+                                <div class="table-responsive">
+
+                                    <table class="table table-hover-animation mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Usuário</th>
+                                                <th scope="col">Nome</th>
+                                                <th scope="col">Email</th>
+                                                <th>Cidade</th>
+                                                <th><b style="color: red;">Ativado</b></th>
+                                                <th>Leu o termo</th>
+                                                <th><b style="color: red;">Link Pag.?</b></th>
+                                                <th>Data da inscrição</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                           {%for u in inscritos%}
+                                           <tr>
+                                            <th scope="row">
+                                                <img class="round" src="{{ u.user.perfil.image.url }}" alt="avatar" height="40" width="40">&nbsp;{{u.user}}</th>
+                                                <td>{{u.nomeCompleto}}</td>
+                                                <td>{{u.email}}</td>
+                                                <td>{{u.cidade}}</td>
+                                                <td>{{u.ativado}}</td>
+                                                <td>{{u.termos}}</td>
+                                                <td>{{u.linkPagamento|truncatechars:16}}</td>
+                                                <td>{{u.dataDaPulicacao}}</td>
+                                            </tr>
+                                            {%endfor%}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>          
+            </div>
+            {% for i in group%}
+            {{i.groups.all}}
+            {%endfor%}
+        </section>
+    </div>
+</div>
+</div>
+<div class="sidenav-overlay"></div>
+<div class="drag-target"></div>
+<footer class="footer footer-static footer-light navbar-shadow">
+    <p class="clearfix blue-grey lighten-2 mb-0"><span class="float-md-left d-block d-md-inline-block mt-25">&copy; 2021 ForAll. All rights reserved</span>
+    </p>
+</footer>
+<script src="{% static 'js/vendors.min.js' %}"></script>
+<script src="{% static 'js/jquery.sticky.js' %}"></script>
+<script src="{% static 'js/app-menu.js' %}"></script>
+<script src="{% static 'js/app.js' %}"></script>
+<script src="{% static 'js/components.js' %}"></script>
+<script src="{% static 'js/user-profile.js'%}"></script>
+<script src="{% static 'js/dashboard-analytics.min.js'%}"></script>
+<script src="{% static 'js/dashboard-analytics.js'%}"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+{% extends "./Base/base.html" %}
+{% load static %}
+{% block content %}
+<!-- style para os H1 e H2 -->
+<style type="text/css">
+	.titulo{padding: 0;margin: 0;font-family: Times New Roman;}
+	.subtitulo{padding: 9px;margin: 0;font-family: Times New Roman;font-size: 30px;color: gray;}
+	.breadcrumb-item{font-family: Times New Roman;font-size: 15px;margin: 0px;padding: 10px;color: gray;list-style: none;}
+	.cores{color: black;font-weight: bold;}
+</style>
+<div id="index-banner" class="parallax-container">
+	<div class="section no-pad-bot">
+		<div class="container">
+			<div class="row center">
+				<br>
+				<a href="#" id="download-button" class="btn-large waves-effect" style="background-color: #03262C;">
+					Redação
+				</a>
+			</div>
+			<br><br>
+		</div>
+	</div>
+	<div class="parallax"><img src="{% static 'admin/img/logo.jpg' %}" alt="Logo Marca do ForAll"></div>
+</div>
+<div class="container"></div>
+</div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col s12"></div>
+		<div class="col s12 m4 l2"></div>
+		<div class="col s12 m4 l8">
+			<p class="breadcrumb-item">
+				<a href="/" class="cores"><i class="fa fa-reply"></i>&nbsp;Página Inicial</a>:
+				<i class="fas fa-angle-right"></i>
+				10 Álbuns essências de Stone Rock
+			</p>
+			<br><br>
+			<h1 class="titulo">Indicação da Redação</h1>
+			<h2 class="subtitulo">10 Álbuns essências de Stone Rock</h2>
+			<p style="font-family: Times New Roman;font-size: 17px;text-align: justify;color: gray">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O stone rock, foi rotulado pela mídia como um gênero oriundo da fusão com o rock, que harmoniza com elementos do heavy metal, doom metal, rock psicodélico e o acid rock. tendo seu nome referenciado ao consumo da cannabis. o termo rock do deserto é geralmente usado de forma similar com o termo “rock stoner” para descrever esse gênero; no entanto, nem todas as bandas de rock stoner cairiam sob o rotulo de “desert rock”. o stoner rock é caracterizado pelo ritmo lento, e fortes distorções em suas linhas de guitarra, harmonizando com uma linha de baixo similar a guitarra  vocais melódicos, e produção “retro”.  o gênero surgiu no início dos anos 90 e foi pioneiro principalmente por monster magnet e as bandas californianas fu manchu , kyuss  e sleep .
+			</p>
+		</div>
+		<div class="col s12 m4 l2"></div>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col s12 m6 l6">
+			<img src="{% static 'admin/img/band1.jpg' %}" alt="Banda Kyuss" style="width: 100%;height: 230px;">	
+			<i class="material-icons">insert_chart</i>Kyuss&nbsp;	
+			<i class="material-icons">album</i>Welcome to Sky Valley <br>
+			<iframe src="https://open.spotify.com/embed/album/1npen0QK3TNxZd2hLNzzOj" width="100%" height="200" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+			<hr>
+		</div>
+		<div class="col s12 m6 l6">
+			<img src="{% static 'admin/img/band2.jpg' %}"  alt="Banda Queen of the Stone Age" style="width: 100%;height: 230px;padding: 0px;">	
+			<i class="material-icons">insert_chart</i>Qotsa
+			<i class="material-icons">album</i>Songs for the deaf <br>
+			<iframe src="https://open.spotify.com/embed/album/4w3NeXtywU398NYW4903rY" width="100%" height="200" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+			<hr>
+		</div>	
+		<div class="col s12 m6 l6">
+			<img src="{% static 'admin/img/band3.jpg' %}" alt="Banda Orange Goblin"style="width: 100%;height: 230px;">	
+			<i class="material-icons">insert_chart</i>Orange Goblin&nbsp;	
+			<i class="material-icons">album</i>The Travelling Blues <br>
+			<iframe src="https://open.spotify.com/embed/album/7hhrMCHknQRSshggDg0zAv" width="100%" height="200px" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+			<hr>
+		</div>
+		<div class="col s12 m6 l6">
+			<img src="{% static 'admin/img/band4.png' %}" alt="Banda Saint Vitus" style="width: 100%;height: 230px;padding: 1px;">	
+			<i class="material-icons">insert_chart</i>Saint Vitus
+			<i class="material-icons">album</i>Born Too Late <br>
+			<iframe src="https://open.spotify.com/embed/album/6CyKigkGRtW3xTDZczqlRC" width="100%" height="200px" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+			<hr>
+		</div>
+		<div class="col s12 m6 l6">
+			<img src="{% static 'admin/img/band5.png' %}" alt="Banda Stone Jesus" style="width: 100%;height: 230px;">	
+			<i class="material-icons">insert_chart</i>Stoned Jesus&nbsp;	
+			<i class="material-icons">album</i> Seven Thunders Roar <br>
+			<iframe src="https://open.spotify.com/embed/album/5KEs1CBh2Keg4OMVsYfaZU" width="100%" height="200px" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+			<hr>
+		</div>
+		<div class="col s12 m6 l6">
+			<img src="{% static 'admin/img/band6.png' %}" alt="Banda Uncle Acid & the Deadbeats" style="width: 100%;height: 230px;padding: 1px;">	
+			<i class="material-icons">insert_chart</i>Uncle Acid & the Deadbeats
+			<i class="material-icons">album</i>Blood Lust <br>
+			<iframe src="https://open.spotify.com/embed/album/3nGKNhRZwE0u0GkGSps8C8" width="100%" height="200px" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+			<hr>
+		</div>
+		<div class="col s12 m6 l6">
+			<img src="{% static 'admin/img/band7.png' %}" alt="Banda Sleep" style="width: 100%;height: 230px;">	
+			<i class="material-icons">insert_chart</i>Sleep&nbsp;	
+			<i class="material-icons">album</i>The Sciences <br>
+			<iframe src="https://open.spotify.com/embed/album/6X0ErPKlQAxQDhWKNprz7u" width="100%" height="200px" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+			<hr>
+		</div>
+		<div class="col s12 m6 l6">
+			<img src="{% static 'admin/img/band8.png' %}" alt="Banda Fu Manchu" style="width: 100%;height: 230px;padding: 1px;">	
+			<i class="material-icons">insert_chart</i>Fu Manchu
+			<i class="material-icons">album</i>The Action is Go <br>
+			<iframe src="https://open.spotify.com/embed/album/7xYJinzZ19pVPVmEAakYv9" width="100%" height="200px" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+			<hr>
+		</div>
+		<div class="col s12 m6 l6">
+			<img src="{% static 'admin/img/band9.png' %}" alt="Banda Ché" style="width: 100%;height: 230px;">	
+			<i class="material-icons">insert_chart</i>Ché&nbsp;	
+			<i class="material-icons">album</i>Sounds of Liberation <br>
+			<iframe src="https://open.spotify.com/embed/album/64j8xD4dOF2Vm4zdJMdqLQ" width="100%" height="200px" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+			<hr>
+		</div>
+		<div class="col s12 m6 l6">
+			<img src="{% static 'admin/img/band10.png' %}" alt="Banda Brant Bjork" style="width: 100%;height: 230px;padding: 1px;">
+			<i class="material-icons">insert_chart</i>Brant Bjork
+			<i class="material-icons">album</i>Brant Bjork - Brant Bjork & The Operators <br>
+			<iframe src="https://open.spotify.com/embed/album/5PC5eLiQQ9WE7OjZxEDqaP" width="100%" height="200px" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+			<hr>
+		</div>
+		<p style="color: gray;"><i class="material-icons">image</i>Imagens / Reprodução YouTube</p>	
+	</div>	
+</div>
+{%endblock%}
+

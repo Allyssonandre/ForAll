@@ -1,0 +1,247 @@
+{% extends "./Base/BasePerfil.html" %}
+{% block content %}
+{% load embed_video_tags %}
+{% load static %}
+<!DOCTYPE html>
+<html class="loading" lang="pt-br" data-textdirection="ltr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description" content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+    <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <title>ForAll&nbsp;Olá&nbsp;{{user.get_username}}</title>
+    <link rel="shortcut icon" href="{% static '../static//img/forall.png' %}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../../../app-assets/images/ico/apple-icon-120.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
+</head>
+<body class="horizontal-layout horizontal-menu dark-layout 2-columns  navbar-floating footer-static  " data-open="hover" data-menu="horizontal-menu" data-col="2-columns" data-layout="dark-layout">
+    <nav class="header-navbar navbar-expand-lg navbar navbar-with-menu navbar-fixed navbar-shadow navbar-brand-center">
+        <div class="navbar-wrapper">
+            <div class="navbar-container content">
+                <div class="navbar-collapse" id="navbar-mobile">
+                    <div class="mr-auto float-left bookmark-wrapper d-flex align-items-center">
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item mobile-menu d-xl-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ficon fa fa-align-justify"></i></a></li>
+                        </ul>
+                        <ul class="nav navbar-nav">
+                            <div class="bookmark-input search-input">
+                                <div class="bookmark-input-icon"><i class="feather icon-search primary"></i></div>
+                                <input class="form-control input" type="text" placeholder="Explore Vuexy..." tabindex="0" data-search="template-list">
+                                <ul class="search-list search-list-bookmark"></ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="nav navbar-nav float-right">
+                    <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-expand"><i class="ficon fa fa-expand"></i></a></li>
+                    <li class="dropdown dropdown-notification nav-item">
+                        <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
+                            <li class="scrollable-container media-list"><a class="d-flex justify-content-between" href="javascript:void(0)"></a>
+                               <a class="d-flex justify-content-between" href="javascript:void(0)">
+                                <div class="media d-flex align-items-start">
+                                    <div class="media-left"><i class="feather icon-file font-medium-5 warning"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
+                    <div class="user-nav d-sm-flex d-none"><span class="user-name text-bold-600">{{user.get_username}}</span></div><span>
+                        {% if not user.perfil.image%}
+                        <img class="round" src="{% static 'img/foto1.jpg'%}" alt="avatar" height="40" width="40">
+                        {% else%}
+                        <img class="round" src="{{ user.perfil.image.url }}" alt="avatar" height="40" width="40">
+                        {% endif %}
+                    </span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
+                   <a class="dropdown-item" href="{% url 'videos' %}"><i class="fa fa-youtube"></i>Posta vídeo</a>
+                   <div class="dropdown-divider"></div>
+                   {% if user.is_authenticated %}
+                   <a class="dropdown-item" href="/accounts/logout"><i class="fa fa-unlock"></i>Sair</a>
+                   {% endif %}
+               </div>
+           </li>
+       </ul>
+   </div>
+</div>
+</div>
+</nav>     
+<div class="horizontal-menu-wrapper">
+    <div class="header-navbar navbar-expand-sm navbar navbar-horizontal floating-nav navbar-light navbar-without-dd-arrow navbar-shadow menu-border" role="navigation" data-menu="menu-wrapper">
+        <div class="navbar-header">
+            <ul class="nav navbar-nav flex-row">
+                <li class="nav-item mr-auto">
+                    <div class="brand-logo"></div>
+                    <img class="" src="{% static 'img/forall.png'%}" alt="avatar" height="45" width="45">                </a></li>
+                    <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i class="fa fa-times d-block d-xl-none font-medium-4 primary toggle-icon"></i><i class="toggle-icon feather icon-disc font-medium-4 d-none d-xl-block collapse-toggle-icon primary" data-ticon="icon-disc"></i></a></li>
+                </ul>
+            </div>
+            <!-- Horizontal menu content-->
+            <div class="navbar-container main-menu-content" data-menu="menu-container">
+                <!-- include ../../../includes/mixins-->
+                <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
+                    <li>
+                        {% if user.is_authenticated %}
+                        <a class="dropdown-item" href="/accounts/logout" style="color: white;"><i class="fa fa-unlock"></i>Sair</a>
+                        {% endif %}
+                    </li>
+                    <li>
+                        {% if user.is_authenticated %}
+                        <a class="dropdown-item" href="{% url 'perfil' %}" style="color: white;"><i class="fa fa-user"></i>Perfil</a>
+                        {% endif %}
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/forall.letsgo/" target="_blank" title="Facebook" style="color:white"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/forall2020_/" target="_blank" title="Instagram" style="color:white"><i class="fa fa-instagram"></i></a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+<div class="app-content content">
+    <div class="col-12">
+        {% if messages %}
+        <div class="alert alert-success" role="alert">
+            {% for message in messages %}
+            <p {% if message.tags %} class="alert alert-success{{message.tags}}" {% endif %} style="color:white;font-size: 20px;font-family: Times New Roman;text-align: center;">&nbsp;<i class="fa fa-bell-o"></i>&nbsp;{{user.get_username}}&nbsp;{{message}}
+            </p>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper">
+        <div class="content-header row">
+            <div class="content-header-left col-md-9 col-12 mb-2">
+                <div class="row breadcrumbs-top">
+                    <div class="col-12">
+                        <p class="content-header-title float-left mb-0" style="font-family: Times New Roman;font-size: 26px;color: white;"><i class="fa fa-trophy" style="color: #F2C832;"></i>&nbsp;<b>{{user.get_username}}</b> seus produtos premium
+                            <i class="fa fa-star" style="color: #F2C832;"></i>
+                            <i class="fa fa-star" style="color: #F2C832;"></i>
+                            <i class="fa fa-star" style="color: #F2C832;"></i>
+                            <i class="fa fa-star" style="color: #F2C832;"></i>
+                            <i class="fa fa-star" style="color: #F2C832;"></i>
+                        </p>
+                    </div>
+                </div>
+                <form method="GET">
+                  <div class="form-group">
+                    <input type="text"  name="busca" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Pesquise pelo produto. Exemplo: Camisa, Tv, Bola ...." value="">
+                    <small id="emailHelp" class="form-text text-muted"></small>
+                    <button type="submit" class="btn btn-primary fa fa-search" style="border-style: hidden;">&nbsp;Pesquisar</button>&nbsp;<button type="reset" class="btn btn-danger fa fa-times" style="border-style: hidden;">&nbsp;Limpa</button>
+                </div>
+            </form>
+        </div>
+    </div> 
+    <div class="content-body">
+        <!-- Wishlist Starts -->
+        <section id="wishlist" class="grid-view wishlist-items">
+            <div class="row search-content-info">
+                {% if detalhepremium%}
+                {% for p in detalhepremium%}
+                <div class="col-md-4 col-sm-6 col-12 search-content">
+                   <div class="card ecommerce-card">
+                    <div class="card-content">
+                        <div class="item-img text-center">
+                            <a href="#">
+                                <img src="{{p.image_produto.url}}" class="img-fluid" alt="img-placeholder" style="height: 350px;width: 100%;">
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <div class="item-wrapper">
+                                <div class="item-rating">
+                                    <div class="badge badge-primary badge-md">
+                                        <i class="fa fa-thumbs-up ml-25"></i>&nbsp;{{p.view_produto}}
+                                    </div>
+                                </div>
+                                <div>
+                                    <p style="font-family: Times New Roman;font-size: 20px;color: white;">
+                                        {{p.nome_produto}}
+                                    </p>
+
+                                </div>
+                                <div>
+                                    {%if p.preco_produto%}
+                                    <p style="font-family: Times New Roman;font-size: 20px;color: white;">
+                                        R$&nbsp;{{p.preco_produto}}
+                                    </p>
+                                    {%else%}
+                                    <p style="font-family: Times New Roman;font-size: 20px;color: white;">Não é venda</p>
+                                    {%endif%}
+                                </div>
+                            </div>
+                            <div class="item-name">
+                                <p style="font-family: Times New Roman;font-size: 20px;color: white;">
+                                    <i class="fa fa-trophy" style="color: #F2C832;"></i>&nbsp;{{p.nome}}<br>
+                                    <i class="fa fa-money"></i>Tipo | <b style="color: red;">{{p.tipo_transacao}}</b>
+                                </p>
+                            </div>
+                            <div>
+                                <p class="item-description">
+                                    <div class="avatar avatar-xl">
+                                        {% if user.perfil.image%}
+                                        <img class="img-fluid" src="{{p.user.perfil.image.url}}" alt="img placeholder">
+                                        {% endif%}
+                                    </div><br>
+                                </p>
+                                <p>
+                                    <a href="/editar_anuncio_premium/{{p.id}}" style="font-family: Times New Roman;font-size: 22px;color: white;" title="Editar o anúncio"><i class="fa fa-pencil"></i>
+                                    </a>&nbsp;&nbsp;                                    
+                                    <a href="/Deleta_anuncio_premium/{{p.id}}" style="font-family: Times New Roman;font-size: 22px;color: #F31D1D;" title="Excluir o anúncio"><i class="fa fa-trash"></i>
+                                    </a>                                   
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}    
+            {% else %}
+            <div class="alert alert-success col-12" role="alert">
+                <p class="mb-0" style="color: white;">
+                    Ops !! Este produto não existe, ou não tem anúncio postador por você.
+                </p>
+            </div>
+            {% endif %}
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center mt-3">
+                    <li class="page-item">
+                        {% if detalhepremium.has_previous %}
+                        <a class="page-link" href="?page={{ detalhepremium.previous_page_number }}" aria-label="Previous">
+                            <span aria-hidden="true"><i class="fa fa-angle-double-left"></i></span>
+                        </a>
+                        {%endif%}
+                    </li>
+                    {% if detalhepremium.paginator.num_pages%}
+                    <li class="page-item"><a class="page-link" href="#" style="font-family: Times New Roman;font-size: 20px;">{{ detalhepremium.number }} até {{ detalhepremium.paginator.num_pages }}</a></li>   
+                    {% endif %}
+
+                    {% if detalhepremium.has_next %}
+
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ detalhepremium.next_page_number }}" aria-label="Next">
+                            <span aria-hidden="true"><i class="fa fa-angle-double-right"></i></span>
+                        </a>
+                        {% endif %}
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+</div>
+</div>
+</div>
+<div class="sidenav-overlay"></div>
+<div class="drag-target"></div>
+{%endblock%}    

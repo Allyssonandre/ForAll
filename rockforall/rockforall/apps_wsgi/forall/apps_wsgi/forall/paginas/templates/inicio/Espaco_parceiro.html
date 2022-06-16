@@ -1,0 +1,138 @@
+{% extends "./Base/base.html" %}
+{% load static %}
+{% block content %}
+<div id="index-banner" class="parallax-container">
+  <div class="section no-pad-bot">
+    <div class="container">
+      <br><br>
+      <h1 class="header center" style="font-family: Roboto;font-weight: bold;">{{parceiros.nomeLoja|upper}}</h1>
+    </div>
+  </div>
+  <div class="parallax"><img src="{% static 'img/Loja/loja2.png'%}" alt="Unsplashed background img 1" style="opacity: 2.9;"></div>
+</div>
+<br>
+<!-- TOPO -->
+<div class="container">
+  <div class="row">
+   <div class="col s12 m6 l2"></div>
+   <div class="col s12 m6 l8">
+    <p style="font-family: Times new Roman;font-size: 20px;color: #03262C;margin: 0;text-align: center;"><i class="fa fa-hand-paper"></i>&nbsp;Olá , Espaço de(a) <b>{{parceiros.nomeLoja|upper}}</b>
+    </p>
+    <a href="{% url 'Parceiros'%}" style="font-family: Times New Roman;font-size: 20px;color: #03262C;"><i class="fa fa-reply-all"></i>Pesquisa +</a>
+  </div>
+  <div class="col s12 m6 l2"></div>
+</div>
+</div>
+<!-- ESPAÇO DO PARCEIRO -->
+<div class="container-fluid">
+  <div class="row">
+   <div class="col s12 m3">
+    <div class="card horizontal" style="border-radius: 15px;">
+      <div class="card-stacked">
+        <div class="card-content">
+          <p style="font-family: Times New Roman;font-size: 20px;margin: 0;"><i class="fa fa-check-square"></i>&nbsp;Ficha Técnica</p>
+        </div>
+        <div class="card-action">
+          <p style="font-family: Times New Roman;font-size: 19px;color: gray;margin: 0;">
+            <i class="fa fa-map-marked-alt"></i>&nbsp;{{parceiros.endereco}}<br>
+            <a href="{{parceiros.redesocial1}}" target="_blank" style="color: gray;"><i class="fab fa-facebook"></i>&nbsp;Facebook</a><br>
+            <a href="{{parceiros.redesocial2}}" target="_blank" style="color: gray;"><i class="fab fa-instagram"></i>&nbsp;Instagram</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m6">
+    <div class="card horizontal" style="border-radius: 15px;">
+      <div class="card-stacked">
+        <div class="card-content">
+          <b>{{parceiros.ramo|upper}}</b>
+          <p style="font-family: Times New Roman;font-size: 20px;margin: 0;">{{parceiros.nomeLoja}}</p>
+        </div>
+        <div class="card-action">
+          <p style="font-family: Times New Roman;margin: 0;font-size: 19px;color: gray;">
+            <a href="https://api.whatsapp.com/send?phone={{parceiros.telefone}},%20%20%20Olá Sou {{parceiros.dono}} da(o) empresa%20%20{{parceiros.nomeLoja}}." target="_blank" style="color: gray;"><i class="fa fa-phone"></i>{{parceiros.telefone}}</a>&nbsp;<i class="fa fa-map-marked-alt"></i>&nbsp;{{parceiros.cidade}}, {{parceiros.estado_uf}} | <i class="fa fa-user-tie"></i>&nbsp;{{parceiros.dono}}<br>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m3">
+    <div class="card horizontal" style="border-radius: 15px;">
+      <div class="card-stacked">
+        <div class="card-content">
+          <p style="font-family: Times New Roman;font-size: 20px;margin: 0;"><i class="fa fa-business-time"></i>&nbsp;Horários</p>
+        </div>
+        <div class="card-action">
+          <p style="font-family: Times New Roman;font-size: 20px;margin: 0;color: gray;">
+            <i class="fa fa-check"></i>{{parceiros.funcionamento}}
+          </p>
+          <br><br><br>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- FIM -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col s12 m1"></div>
+    <div class="col s12 m10">
+      <div class="card horizontal" style="border-radius: 15px;">
+        <div class="card-stacked">
+          <div class="card-content">
+            <p style="font-family: Times New Roman;font-size: 19px;color: gray;"><i class="fa fa-user-tie"></i>&nbsp;<b>Quem somos</b><br>
+              {{parceiros.sobre}}
+            </p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m1"></div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col s12 m1">
+    </div>
+    <div class="col s12 m10">
+      <div class="card horizontal" style="border-radius: 15px;">
+        <div class="card-stacked">
+          <div class="card-content">
+            <p style="font-family: Times New Roman;font-size: 19px;color: gray;"><i class="fa fa-image"></i>&nbsp;Imagens</p>
+            <div class="slider">
+              <ul class="slides">
+                <li>
+                  <img src="{{parceiros.image1.url}}" class="imgs"> <!-- random image -->
+                  <div class="caption center-align">
+                    <h3>This is our big Tagline!</h3>
+                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                  </div>
+                </li>
+                <li>
+                  <img src="{{parceiros.image2.url}}" class="imgs"> <!-- random image -->
+                  <div class="caption left-align">
+                    <h3>Left Aligned Caption</h3>
+                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                  </div>
+                </li>
+                <li>
+                  <img src="{{parceiros.image3.url}}" class="imgs"> <!-- random image -->
+                  <div class="caption right-align">
+                    <h3>Right Aligned Caption</h3>
+                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m1">
+    </div>
+  </div>
+</div>
+{%endblock%}

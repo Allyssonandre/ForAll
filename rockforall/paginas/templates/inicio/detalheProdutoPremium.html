@@ -1,0 +1,54 @@
+{% extends "./Base/base.html" %}
+{% load static %}
+{% block content %}
+<div id="index-banner" class="parallax-container">
+	<div class="section no-pad-bot">
+		<div class="container">
+			<div class="row center">
+				<br><br>
+				<a href="#" id="download-button" class="btn-large waves-effect" style="background-color: #03262C;">Produtos MarketForAll</a>
+			</div>
+			<br><br>
+
+		</div>
+	</div>
+	<div class="parallax"><img src="{% static 'img/logo.jpg' %}" alt="Unsplashed background img 1"></div>
+</div>
+<div class="container"></div>
+</div>
+<div class="container-fluid">
+	<br><br>
+	<div class="row">
+		<div class="col s12 m6 l4"></div>
+		<div class="col s12 m6 l4">
+			<div class="card">
+				<div class="card-image">
+					<img class="materialboxed" src="{{produtopremium.image_produto.url}}" width="100%" height="230px">
+				</div>
+				<div class="card-content">
+					<p style="font-family: Times New Roman;font-size: 18px;color: black;">
+						{{produtopremium.nome}}&nbsp;<i class="fa fa-star" style="color: #F2C832;;"></i><i class="fa fa-star" style="color: #F2C832;"></i><i class="fa fa-star" style="color: #F2C832;"></i><i class="fa fa-star" style="color: #F2C832;"></i><i class="fa fa-star" style="color: #F2C832;"></i><i class="fa fa-thumbs-up" style="color: #026DE2;"></i>({{produtopremium.view_produto}})<br>	
+						<i class="fa fa-tags"></i>{{produtopremium.nome_produto}}<br>
+						<i class="fa fa-globe"></i>&nbsp;{{produtopremium.cidade_mora}}<br>
+						{% if produtopremium.preco_produto %}
+						<span style="font-weight: bold;">R$&nbsp;{{produtopremium.preco_produto}}</span><br>
+						{%else%}
+						{{produtopremium.tipo_transacao}}<br>					
+						{%endif%}
+						<a href="https://api.whatsapp.com/send?phone={{produtopremium.nome}},%20%20Produto->{{produtopremium.nome_produto}}" target="_blank" style="color: black;"><img src="{% static 'img/app.png'%}" width="30px" height="30px">{{produtopremium.contato}}</a><br>
+						{{produtopremium.descrever_produto}}
+					</p>
+				</div>
+				<div class="card-action">
+					<img  class="circle" src="{{produtopremium.user.perfil.image.url}}" width="40px" height="40px" style="border-radius: 50%"><br>
+					<p style="font-family: Arial;color: gray;font-weight: bold;"><i class="fa fa-user"></i>&nbsp;{{produtopremium.nome}}</p>
+				</div>
+			</div>
+			<a href="{% url 'produtopremium'%}"><button class="btn waves-effect waves-light" type="submit" name="action" style="background-color:  #03262C">Volta a pesquisa
+				<i class="material-icons right">reply_all</i>
+			</button></a>
+		</div>
+		<div class="col s12 m6 l4"></div>
+	</div>
+</div>
+{% endblock %}

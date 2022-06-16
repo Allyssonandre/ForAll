@@ -1,0 +1,86 @@
+{% extends "./Base/base.html" %}
+{% load static %}
+{% block content %}
+<!-- style para os H1 e H2 -->
+<style type="text/css">
+	.titulo{padding: 0;margin: 0;font-family: Times New Roman;}
+	.subtitulo{padding: 9px;margin: 0;font-family: Times New Roman;font-size: 30px;color: gray;}
+	.breadcrumb-item{font-family: Times New Roman;font-size: 15px;margin: 0px;padding: 10px;color: gray;list-style: none;}
+	.cores{color: black;font-weight: bold;}
+</style>	
+<div id="index-banner" class="parallax-container">
+	<div class="section no-pad-bot">
+		<div class="container">
+			<div class="row center">
+				<br>
+				<a href="#" id="download-button" class="btn-large waves-effect" style="background-color: #03262C;">
+					Destaque
+				</a>
+			</div>
+			<br><br>
+		</div>
+	</div>
+	<div class="parallax"><img src="{% static 'admin/img/logo.jpg' %}" alt="Logo ForAll"></div>
+</div>
+<div class="container"></div>
+</div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col s12"><br></div>
+		<div class="col s12 m4 l2"></div>
+		<div class="col s12 m4 l8">
+			<p class="breadcrumb-item">
+				<a href="/" class="cores"><i class="fa fa-reply"></i>&nbsp;Página Inicial</a>:
+				<i class="fas fa-angle-right"></i>
+				Thin Lizzy, Uma breve história
+			</p>
+			<img src="{% static 'admin/img/thin.jpg' %}" style="width: 100%;height: 400px;border-radius: 5px;">
+			Créditos / Facebook
+			<br><br>
+			<h1 class="titulo">Thin Lizzy</h1>
+			<h2 class="subtitulo">Uma breve história</h2>
+			<p style="font-family: Times New Roman;font-size: 17px;text-align: justify;color: gray">
+				&nbsp;&nbsp;&nbsp;&nbsp;A República da Irlanda ocupa a maior parte da ilha da Irlanda, localizada na costa da Inglaterra e do País de Gales, a capital é Dublin. Além da beleza natural, esta nação é contemplada com talentosos artistas em vários ramos da arte como escritores, cantores e bandas. Uma das bandas que representa este talento irlandês é o Thin Lizzy, este grupo foi formado no ano de 1969, em pleno ano do surgimento de vários álbuns clássicos de bandas como The Rollings Stones, que lançaram o Let It Bleed, mas isso é um outro episódio, vamos ao 
+			        <a href="https://www.youtube.com/channel/UCvBfm-GXTovLlApGVPfsP4g" target="_blank"><b>Thin Lizzy</b></a>.<br> 
+
+				&nbsp;&nbsp;&nbsp;&nbsp;A banda trouxe em seu tempero musical vários elementos da música irlandesa que foram misturados com o rock and roll, um exemplo foi a versão do sucesso “Whiskey in the jar” tirada de um conto folclórico irlandês. O Thin Lizzy ao longo da sua carreira teve vários integrantes, mas o mais conhecido e por assim dizer o fundador foi o cantor, baixista e compositor Phil Lynott, onde os hits criados por ele foram  Jaibreak, The Boys Are Back Town e Whiskey int the jar. Lynott colocou o Thin Lizzy no mapa das maiores bandas de Hard Rock da época. <br>
+				&nbsp;&nbsp;&nbsp;&nbsp;No começo ano de 1970, a banda assinou um contrato com o selo Decca, para a gravação de três álbuns e vários compactos. Os dois primeiros foram, Thin Lizzy e o Shades of Blue Orphanage, e ainda trazia no som a prevalecia das raízes folclóricas da banda. O Thin Lizzy após lança o Shades of Blue Orphanage, entraram novamente no estúdio para inovar seu estilo, dando um peso ao seu som, deste upgrade sonora, saiu o terceiro álbum, Vagabonds of the Western Wold, com este trabalho a banda foi definidamente colocada nas paradas de sucesso. <br>
+				
+				&nbsp;&nbsp;&nbsp;&nbsp;Depois disso o Thin Lizzy já não era só uma banda da irlanda, mas do mundo, consecutivamente eles gravaram os álbuns Night Life (1974), Fighting (1979) e o estrondoso Jailbreak (1979), em seguida Johnny the Fox e o Bad Reputation  esses dois em 1977. Após o ano de 1977, a banda ainda teve tempo de emplacar um álbum ao vivo chamado Live and Dangerous, é claro que foi um sucesso, pois o Thin estava nadando no sucesso, e isso em 1978. E aproximadamente um ano depois a banda lançou o Black Rose. <br>
+				
+				&nbsp;&nbsp;&nbsp;&nbsp;Tudo estava indo bem até no ano 1980 quando problemas internos começam a surgir, o guitarrista Gary Moore sair da banda, dando lugar para Snowy White. Lynott começa a mergulhar nas drogas. Ainda no mesmo ano Lynott lança alguns trabalhos solos, mas sem o mesmo sucesso da altura do Thin Lizzy. <br>
+				
+				&nbsp;&nbsp;&nbsp;&nbsp;Em 4 de março de 1983, o Thin Lizzy grava o Thunder and Lightning seu último álbum com cantor, compositor e mentor Phil Lynott, que estava sucumbindo as drogas. Infelizmente naquele ano Lynott morreu de complicações de saúde, muito pelo o uso das drogas. Depois a banda tentou volta após sua morte, mas enfraquecida pela falta do carisma e poder poético de seu maior integrante Phil Lynott.
+				<br><br>
+				Por Redação <i class="material-icons">person_pin</i>
+			</p>
+		
+		</div>
+		<div class="col s12 m4 l2"></div>
+	</div>
+</div>
+<div class="container">	
+	<div class="row">
+		<!-- RECOMENDAÇÕES -->
+		<div>
+			<p style="padding: 0px;margin: 0px;font-size: 25px;font-family: Times New Roman;">Recomendados
+				<hr>
+			</p>
+			<br>
+		</div>
+		<div class="col s12 m6 l3">
+			<a href="{% url 'son-house'%}"><img src="{% static 'admin/img/son-house.png'%}" alt="Cantor Son House" style="width: 100%;border-radius: 5px;height: 185px;"></a>
+		</div>
+		<div class="col s12 m6 l3">
+			<a href="{% url 'tutorial'%}"><img src="{% static 'admin/img/modd.jpg' %}" alt="Banda The Moddy Blues" style="width: 100%;border-radius: 5px;height: 185px"></a>
+		</div>
+		<div class="col s12 m6 l3">
+			<a href="{% url 'dicas'%}"><img src="{% static 'admin/img/kingC.png' %}" alt="Banda king Crimson" style="width: 100%;border-radius: 5px;height: 185px"></a>
+		</div>
+		<div class="col s12 m6 l3">
+			<a href="{% url 'destaque'%}"><img src="{% static 'admin/img/jeff.png'%}" alt="Cantor Jeff Buckley" style="width: 100%;border-radius: 5px;height: 185px;"></a>
+		</div>
+		<!-- FIM -->
+	</div>
+</div>	
+{%endblock%}

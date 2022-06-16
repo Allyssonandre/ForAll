@@ -1,0 +1,146 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>ForAll</title>
+	<link rel="shortcut icon" href="{% static 'img/forall.png' %}" type="image/x-icon">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="{% static 'css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+	<link href="{% static 'css/style2.css'%}" type="text/css" rel="stylesheet" media="screen,projection"/>
+	<link href="{% static 'css/all.css'%}" type="text/css" rel="stylesheet" media="screen,projection"/>
+	<link href="{% static 'css/all.min.css'%}" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+	<nav class="white" role="navigation">
+		<div class="nav-wrapper container">
+			<a id="logo-container" href="#" class="brand-logo" style="font-family: Times New Roman;"><img src="{% static 'img/forall.png'%}" style="padding-top: 5px;height: 100px;"></a>
+			<ul class="right hide-on-med-and-down">
+				<li><a href="/" style="font-family: Times New Roman;font-size: 20px;color: gray;"><i class="fas fa-home"></i>&nbsp;Página Inicial</a></li>
+				<li><a href="{% url 'videospublicados'%}" style="font-family: Times New Roman;font-size: 20px;color: gray;"><i class="fas fa-video"></i>&nbsp;Vídeos</a></li>
+				<li><a href="/accounts/login" style="font-family: Times New Roman;font-size: 20px;color: gray;"><i class="fas fa-sign-in-alt"></i>&nbsp;Entrar</a></li>
+				<li><a href="/accounts/register" style="font-family: Times New Roman;font-size: 20px;color: gray;"><i class="fas fa-pen-square"></i>&nbsp;Cadastrar</a></li>
+			</ul>
+			<ul id="nav-mobile" class="sidenav">
+				<li><a href="/" style="font-family: Times New Roman;font-size: 20px;color: gray;"><i class="fas fa-mail-bulk"></i>&nbsp;Página Inicial</a></li>
+				<li><a href="{% url 'postados'%}" style="font-family: Times New Roman;font-size: 20px;color: gray;"><i class="fas fa-mail-bulk"></i>&nbsp;Postagens</a></li>
+				<li><a href="/accounts/login" style="font-family: Times New Roman;font-size: 20px;color: gray;"><i class="fas fa-sign-in-alt"></i>&nbsp;Entrar</a></li>
+				<li><a href="/accounts/register" style="font-family: Times New Roman;font-size: 20px;color: gray;"><i class="fas fa-pen-square"></i>&nbsp;Cadastrar</a></li>
+			</ul>
+			<a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+		</div>
+	</nav>
+	<div id="index-banner" class="parallax-container">
+		<div class="section no-pad-bot">
+			<div class="container">
+				<div class="row center">
+					<br>
+					<a href="#" id="download-button" class="btn-large waves-effect" style="background-color: #03262C;">Breve história</a>
+				</div>
+				<br><br>
+
+			</div>
+		</div>
+		<div class="parallax"><img src="{% static 'img/logo.jpg' %}" alt="Unsplashed background img 1"></div>
+	</div>
+	<div class="container"></div>
+</div>
+<div class="container">
+	<div class="section">
+		<div class="row">
+			<div class="col s12 center">
+				<div class="col s12">
+					<div class="col s1"></div>
+					<div class="col s10">
+						<img src="{% static 'img/thin.jpg' %}" style="width: 100%;height: 100%;">
+						Créditos / Facebook 
+						<p style="font-family: Times New Roman;font-size: 18px;text-align: left;color: gray">
+							A República da Irlanda ocupa a maior parte da ilha da Irlanda, localizada na costa da Inglaterra e do País de Gales, a capital é Dublin. Além da beleza natural, esta nação é contemplada com talentosos artistas em vários ramos da arte como escritores, cantores e bandas. Uma das bandas que representa este talento irlandês é o Thin Lizzy, este grupo foi formado no ano de 1969, em pleno ano do surgimento de vários álbuns clássicos de bandas como The Rollings Stones, que lançaram o Let It Bleed, mas isso é um outro episódio, vamos ao <b>Thin Lizzy</b>.<br><br>  
+
+							A banda trouxe em seu tempero musical vários elementos da música irlandesa que foram misturados com o rock and roll, um exemplo foi a versão do sucesso “Whiskey in the jar” tirada de um conto folclórico irlandês. O Thin Lizzy ao longo da sua carreira teve vários integrantes, mas o mais conhecido e por assim dizer o fundador foi o cantor, baixista e compositor Phil Lynott, onde os hits criados por ele foram  Jaibreak, The Boys Are Back Town e Whiskey int the jar. Lynott colocou o Thin Lizzy no mapa das maiores bandas de Hard Rock da época. <br><br>
+							No começo ano de 1970, a banda assinou um contrato com o selo Decca, para a gravação de três álbuns e vários compactos. Os dois primeiros foram, Thin Lizzy e o Shades of Blue Orphanage, e ainda trazia no som a prevalecia das raízes folclóricas da banda. O Thin Lizzy após lança o Shades of Blue Orphanage, entraram novamente no estúdio para inovar seu estilo, dando um peso ao seu som, deste upgrade sonora, saiu o terceiro álbum, Vagabonds of the Western Wold, com este trabalho a banda foi definidamente colocada nas paradas de sucesso. <br>
+							<br>
+							Depois disso o Thin Lizzy já não era só uma banda da irlanda, mas do mundo, consecutivamente eles gravaram os álbuns Night Life (1974), Fighting (1979) e o estrondoso Jailbreak (1979), em seguida Johnny the Fox e o Bad Reputation  esses dois em 1977. Após o ano de 1977, a banda ainda teve tempo de emplacar um álbum ao vivo chamado Live and Dangerous, é claro que foi um sucesso, pois o Thin estava nadando no sucesso, e isso em 1978. E aproximadamente um ano depois a banda lançou o Black Rose. <br>
+							<br>
+							Tudo estava indo bem até no ano 1980 quando problemas internos começam a surgir, o guitarrista Gary Moore sair da banda, dando lugar para Snowy White. Lynott começa a mergulhar nas drogas. Ainda no mesmo ano Lynott lança alguns trabalhos solos, mas sem o mesmo sucesso da altura do Thin Lizzy. <br>
+							<br>
+							Em 4 de março de 1983, o Thin Lizzy grava o Thunder and Lightning seu último álbum com cantor, compositor e mentor Phil Lynott, que estava sucumbindo as drogas. Infelizmente naquele ano Lynott morreu de complicações de saúde, muito pelo o uso das drogas. Depois a banda tentou volta após sua morte, mas enfraquecida pela falta do carisma e poder poético de seu maior integrante Phil Lynott.
+							<br><br>
+							Por Redação <i class="material-icons">person_pin</i>
+						</p>						
+						<iframe width="100%" height="300px" src="https://www.youtube.com/embed/5_xqb416S7o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+			<!-- RECOMENDAÇÕES -->
+			<div class="col s12">
+				<br><br>
+			</div>
+			<div>
+				<p style="padding: 0px;margin: 0px;font-size: 25px;font-family: Times New Roman;">Recomendados
+					<hr>
+				</p>
+				<br>
+			</div>
+			<div class="col s12 m6 l3">
+				<a href="{% url 'son-house'%}"><img src="{% static 'img/son-house.png'%}" style="width: 100%;border-radius: 5px;height: 185px;"></a>
+			</div>
+			<div class="col s12 m6 l3">
+				<a href="{% url 'tutorial'%}"><img src="{% static 'img/modd.jpg' %}" style="width: 100%;border-radius: 5px;height: 185px"></a>
+			</div>
+			<div class="col s12 m6 l3">
+				<a href="{% url 'dicas'%}"><img src="{% static 'img/kingC.png' %}" style="width: 100%;border-radius: 5px;height: 185px"></a>
+			</div>
+			<div class="col s12 m6 l3">
+				<a href="{% url 'destaque'%}"><img src="{% static 'img/jeff.png'%}" style="width: 100%;border-radius: 5px;height: 185px;"></a>
+			</div>
+			<!-- FIM -->
+		</div>
+	</div>
+</div>
+</div>
+<footer class="page-footer" style="background-color: #03262C;">
+	<div class="container">
+		<div class="row">
+			<div class="col l6 s12">
+				<img src="{% static 'img/forall.png'%}" style="padding-top: 5px;height: 60px;border-radius: 20%;">
+				<p class="grey-text text-lighten-4">Sua plataforma de entretenimento, notícias do mundo da música, compatilhamento
+				de ídeias, conhecimentos entre outros.</p>
+			</div>
+			<div class="col l3 s12">
+				<ul>
+					<li><a class="white-text" href="{% url 'postados'%}"><i class="fa fa-file"></i>&nbsp;Postagens</a></li>
+					<li><a class="white-text" href="{% url 'videospublicados'%}"><i class="fa fa-video"></i>&nbsp;Vídeos</a></li>
+				</ul>
+			</div>
+			<div class="col l3 s12">
+				<ul>
+					<li><a class="white-text" href="/accounts/login"><i class="fa fa-sign-in-alt"></i>&nbsp;Entrar</a></li>
+					<li><a class="white-text" href="/accounts/register"><i class="fas fa-pen-square"></i>&nbsp;Cadastre-se</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="footer-copyright">
+		<div class="container">
+			<p>
+				<a href="{% url 'termos'%}" style="color: white;"><i class="fa fa-gavel"></i>Termo de Uso e Política de privacidade</a>
+			</p>
+			<hr><br>
+			Copyright&nbsp;2021<a class="brown-text text-lighten-3" style="font-family: Roboto;font-size: 18px;">&nbsp;ForAll. All rights reserved. Develop.Beta version 1.0</a>
+		</div>
+	</div>
+</footer>
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/materialize.js' %}"></script>
+<script src="{% static 'js/init.js'%}"></script>
+<script src="{% static 'js/all.js'%}"></script>
+<script src="{% static 'js/all.min.js'%}"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.slider').slider();
+	});
+</script>
+</body>
+</html>

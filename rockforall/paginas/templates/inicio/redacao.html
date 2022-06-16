@@ -1,0 +1,97 @@
+{% extends "./Base/base.html" %}
+{% load static %}
+{% block content %}
+{%block google%}{{block.super}}{%endblock%}
+<title>
+{% block title %}ForAll - Redação Fontaines D.C , A poesia irlandesa{% endblock%}
+</title>
+<!-- style para os H1 e H2 -->
+<style type="text/css">
+	.titulo{padding: 0;margin: 0;font-family: Times New Roman;}
+	.subtitulo{padding: 9px;margin: 0;font-family: Times New Roman;font-size: 30px;color: gray;}
+	.breadcrumb-item{font-family: Times New Roman;font-size: 15px;margin: 0px;padding: 10px;color: gray;list-style: none;}
+	.cores{color: black;font-weight: bold;}
+	.Texto{font-family: Times New Roman;font-size: 16px;text-align: justify;color: gray;padding: 0;margin: 0;}
+	.relacionados{font-family: Times New Roman;font-size: 17px;font-weight: bold;color: #03262C;}
+	.image-relacionados{width: 23%;height: 60px;border-radius: 5px;padding: 0px;}
+	.texto-relacionados{font-family: Times New Roman;font-size: 14px;float: right;margin-top: -15px;margin: 0;color: gray;}
+	.img-principal{width: 100%;height: 400px;border-radius: 3px;}
+</style>
+
+<div class="container-fluid">
+	<!-- CONTAINER PARA PROPAGANDAS -->
+	<br><br>
+	<div class="row">
+		<div class="col s12 m6 l3"></div>
+		<div class="col s12 m12 l6">
+			
+		</div>
+		<div class="col s12 m6 l3"></div>
+	</div>
+</div><br>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col s12 m4 l3">
+			<p class="relacionados">Relacionados</p>
+			<a href="{% url 'banda-irlandesa' %}"><img src="{% static 'img/Bandas_Islandia/JFDR_Two.jpg'%}" class="image-relacionados" alt="Bandas da Islândia">
+			</a>
+			<a href="{% url 'banda-irlandesa'%}" style="color: black;">
+				<p class="texto-relacionados">
+					5 bandas islandesas
+				</p>
+			</a><br><br><br>
+			<a href="{% url 'breve-historia' %}"><img src="{% static 'img/thin.jpg'%}" alt="Banda Thin Lizzy" class="image-relacionados">
+			</a>
+			<a href="{% url 'breve-historia' %}" style="color: black;">
+				<p class="texto-relacionados">
+					Thin Lizzy, uma breve história
+				</p>
+			</a><br><br>
+		</div>
+		<div class="col s12 m4 l6">
+			<p class="breadcrumb-item">
+				<a href="/" class="cores"><i class="fa fa-reply"></i>&nbsp;Página Inicial</a>:
+				<i class="fas fa-angle-right"></i>
+				Fontaines D.C , A poesia irlandesa.
+			</p>
+			<img class="img-principal" src="{% static 'img/fontainesDC.jpg' %}" alt="Banda Fontaines D.C" style="width: 100%;height: 400px;">
+			<p class="Texto">Créditos / Facebook</p>
+			<br><br>
+			<h1 class="titulo">Fontaines D.C</h1>
+			<h2 class="subtitulo">A poesia irlandesa.</h2> 
+			<p class="Texto">
+				&nbsp;ForAll | Redação<br><br>
+				Nasce na irlanda no ano de 2017 a banda <b>Fontaines D.C</b>, formada por Gian chatten (vocal), Carlos 0´Connel(guitarra), Conor curley(guitarra), Connor Deegan III (baixo), e Tom Coll(bateria). A banda foi formada nas salas da faculdade de música, onde os integrantes frequentavam, além de serem colegas do curso de música existia um outro ingrediente ao qual os uniu que foi o amor a poesia. No começo eles faziam performances regulamente, e aí em 2018 assinaram com a gravadora Partisan records. Em 2019 a banda lançou seu primeiro álbum intitulado <b>Dogrel</b>, tendo uma boa aceitação pela crítica especializada, sendo escolhido o álbum do ano pela BBC Radio 6 Music, Rough trades loja de discos, Mercury Prize e Choice Music Prize. <br><br>
+				<iframe src="https://open.spotify.com/embed/album/5j54NcBr5wBCB129cdjad7" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+				<br><br>
+				O Fontaines D.C tem em seu trabalho vários elementos trazidos das referências musicais dos seus integrantes, por exemplo, toda a performance gestual do vocalista Gian Chatten em cima do palco traz inquietude que às vezes dar para se assemelha ao lendário vocalista do Joy Division Ian Curtis. E não para por aí, banda como <a href="https://www.youtube.com/watch?v=s11BuatTuXk" target="_blank">The pogues</a> foi uma das fontes onde o Fontaines D.C “bebeu”. <br><br>
+				Voltando aos reconhecimentos do álbum Dogrel. A banda foi convidada para um programa de TV na emissora NBC chamado The Tonight Show Starring Jimmy Fallon em 1 de maio de 2019. Após isso ainda no campo dos “louros colhidos” eles foram escalados para toca em dos maiores festivais do mundo o aclamado <b>Glastonbury Festival</b>, onde todo músico sonha em tocar. <br><br>
+				<iframe width="100%" height="300px" src="https://www.youtube.com/embed/lNmK24-wPEM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<br><br>
+
+				Já em 2020, durante a pandemia do covid 19 o Fontaines D.C lançou seu segundo álbum <b>A hero´s Death</b> em 31 julho, com as faixas: “I don't belong”,” love is the main thing”,” televised mind”,” a lucid dream”,” you said”,” oh such a spring”,” a hero's death”,” living in america”,” i was not born”,” sunny” e “No”. <br><br>
+
+				Sem sobra de dúvida este álbum estará na lista dos melhores da banda, sendo que por causa da pandemia a banda não teve a oportunidade de toca-lo ao vivo com um público presencial. Com certeza o Fontaines D.C veio para ficar com seu som coeso e poético.
+			</p>
+		</div>
+		<div class="col s12 m4 l3">
+			<p class="relacionados">Destaque</p>
+			<a href="{% url 'Artistas-brasileiros' %}"><img src="{% static 'img/ArtistasBrasileiros/FloraPurimEairtonMoreira.jpg'%}" alt="Cantores Flora Puin e Airton Moreira" class="image-relacionados">
+			</a>
+			<a href="{% url 'Artistas-brasileiros' %}" style="color: black;">
+				<p class="texto-relacionados">
+					Músicos Brasileiros
+				</p>
+			</a><br><br>
+			<a href="{% url 'Quadrinhos' %}"><img src="{% static 'img/Quadrinhos/quadrinho.png'%}" alt="Quadrinhos" class="image-relacionados">
+			</a>
+			<a href="{% url 'Quadrinhos' %}" style="color: black;">
+				<p class="texto-relacionados">
+					Quadrinhos que você tem que conhecer
+				</p>
+			</a><br><br>
+		</div>
+	</div>
+</div>
+{%endblock%}

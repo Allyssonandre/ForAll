@@ -1,0 +1,373 @@
+{% extends "./Base/BasePerfil.html" %}
+{% load embed_video_tags %}
+{% load static %}
+{% block content %}
+<style type="text/css">
+	.textos{font-family: Times New Roman;margin: 0px;float: right;color: white;}
+	.textos2{font-family: Times New Roman;margin: 0px;}
+	#texto{font-family: Times New Roman;width: 100%;color: white;margin: 0px;}
+	#alerta{width: 95%;margin: auto;margin-top: 5px;}
+	.cor{color: white;}
+	#perfil{width: 100%;height: 580px;border-radius: 9%;}
+	#aviso{color: #EA5455;font-family: Times new Roman;margin: 0px;font-size: 17px;text-align: center;}
+</style>
+<body class="horizontal-layout horizontal-menu dark-layout 2-columns  navbar-floating footer-static  " data-open="hover" data-menu="horizontal-menu" data-col="2-columns" data-layout="dark-layout">
+	<div class="horizontal-menu-wrapper">
+		<div class="header-navbar navbar-expand-sm navbar navbar-horizontal floating-nav navbar-dark navbar-without-dd-arrow navbar-shadow menu-border" role="navigation" data-menu="menu-wrapper">
+			<div class="navbar-header">
+
+			</div>
+			<!-- Horizontal menu content-->
+			<div class="navbar-container main-menu-content" data-menu="menu-container">
+				<ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
+					<li>
+						{% if user.is_authenticated %}
+						<a href="/accounts/logout" style="color: white;"><i class="fa fa-lock"></i>Sair</a>
+						{% endif %}
+					</li>
+					<li>
+						<a href="{% url 'perfil' %}" style="color: white;"><i class="fa fa-home"></i>Inicio</a>	
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- END: Main Menu-->
+
+	<!-- BEGIN: Content-->
+	<div class="app-content content">
+		<div class="content-overlay"></div>
+		<div class="header-navbar-shadow"></div>
+		<div class="content-wrapper">
+			<div class="content-header row">
+				<div class="content-header-left col-md-9 col-12 mb-2">
+					<div class="row breadcrumbs-top">
+						<div class="col-12">
+							<p class="content-header-title float-left mb-0 textos2">Perfil completo</p>
+							<div class="breadcrumb-wrapper col-12">
+								<ol class="breadcrumb">
+									<li><a href="{% url 'perfil'%}" style="color: white;"><i class="fa fa-angle-double-left"></i>&nbsp;Inicio</a>
+									</li>
+								</ol>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="content-body">
+				<div id="user-profile">
+					<div class="row">
+						<div class="col-12">
+							<div class="profile-header mb-2">
+								<div class="relative">
+									<div class="cover-container">
+										{% if not user.perfil.image%}
+										<img class="img-fluid bg-cover rounded-0 w-100" src="{% static 'img/logo.jpg'%}" alt="Imagem do perfil" id="perfil">
+										{% else%}
+										<img class="img-fluid bg-cover rounded-0 w-100 perfil" src="{{ user.perfil.image.url }}" alt="Imagem do Perfil" id="perfil">
+										{% endif%}
+									</div>
+									<div class="profile-img-container d-flex align-items-center justify-content-between">
+										{% if not user.perfil.image%}
+										<img src="{% static 'img/forall.png'%}" class="rounded-circle img-border box-shadow-1" alt="Card image">
+										{% else%}
+										<img src="{{ user.perfil.image.url }}" class="rounded-circle img-border box-shadow-1" alt="Card Profile image">
+										{% endif%}
+									</div>
+								</div>
+								<div class="d-flex justify-content-end align-items-center profile-header-nav">
+									<nav class="navbar navbar-expand-sm w-100 pr-0">
+										<div class="collapse navbar-collapse" id="navbarSupportedContent">
+											<ul class="navbar-nav justify-content-around w-75 ml-sm-auto">
+												<li>
+													<a href="{% url 'mostravideos'%}" class="nav-link font-small-3" style="color: white;" data-toggle="tooltip" data-placement="top" title="Meus vídeos"><i class="fa fa-film"></i>&nbsp;Meus vídeos</a>
+												</li>
+												<li>
+													<a href="{% url 'meustories' %}" class="nav-link font-small-3" style="color: white;" data-toggle="tooltip" data-placement="top" title="Meus stories"><i class="fa fa-comment"></i>&nbsp;Meus stories</a>
+												</li>
+												<li>
+													<a href="{% url 'meusProdutos' %}" class="nav-link font-small-3" style="color: white;" data-toggle="tooltip" data-placement="top" title="Meus anúncios"><i class="fa fa-cart-plus"></i>&nbsp;Meus anúncios</a>
+												</li>
+												<li>
+													<a href="{% url 'meusposts'%}" class="nav-link font-small-3" style="color: white;" data-toggle="tooltip" data-placement="top" title="Meus posts"><i class="fa fa-pencil-square"></i>&nbsp;Meus posts</a>
+												</li>
+												<li>
+													<a href="{% url 'postcomentados' %}" class="nav-link font-small-3" style="color: white;" data-toggle="tooltip" data-placement="top" title="Meus posts comentados"><i class="fa fa-clipboard"></i>&nbsp;Meus posts comentados</a>
+												</li>
+											</ul>
+										</div>
+									</nav>
+								</div>
+							</div>
+						</div>
+					</div>
+					<section id="profile-info">
+						<div class="row">
+							<div class="col-lg-3 col-12">
+								<div class="card">
+									<div class="card-header">
+										<p class="textos">{{user.get_username}}</p>
+									</div>
+									<div class="card-body">
+										<div class="mt-1">
+											<p class="textos2">
+												Desde: <br>
+												{{user.perfil.data}}
+											</p>
+										</div>
+										<div class="mt-1">
+											<p class="textos2">Mora:<br>
+												{{ user.perfil.cidade }}, {{ user.perfil.uf}}
+											</p>
+										</div>
+										<div class="mt-1">
+											<p class="textos2">Escolaridade:<br>
+												{{ user.perfil.escolaridade }}
+											</p>
+										</div>
+										<div class="mt-1">
+											<i class="fa fa-sitemap" data-toggle="modal" data-backdrop="false" data-target="#backdrop">&nbsp;Compartilhar minhas redes sociais
+											</i><br><br>
+											<!-- Modal -->
+											<div class="modal fade text-left" id="backdrop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel4" aria-hidden="true">
+												<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h4 class="modal-title" id="myModalLabel4">Disabled Backdrop</h4>
+															<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+																<span aria-hidden="true">&times;</span>
+															</button>
+														</div>
+														<div class="modal-body">
+															<p>
+																Candy oat cake topping topping chocolate cake. Icing pudding jelly beans I love chocolate carrot
+																cake wafer candy canes. Biscuit croissant fruitcake bonbon soufflé.
+															</p>
+														</div>
+														<div class="modal-footer">
+															<button type="button" class="btn btn-primary" data-dismiss="modal">Accept</button>
+														</div>
+													</div>
+												</div>
+											</div>
+											<button type="button" class="btn btn-sm btn-icon btn-primary mr-25 p-25"><i class="fa fa-facebook"></i></button>
+											<button type="button" class="btn btn-sm btn-icon btn-primary mr-25 p-25"><i class="fa fa-twitter"></i></button>
+											<button type="button" class="btn btn-sm btn-icon btn-primary p-25"><i class="fa fa-instagram"></i></button>
+										</div>
+									</div>
+								</div>
+								<div class="card">
+									<div class="card-header">
+										<p class="textos2">Meus Vídeos</p>
+										<p class="textos" data-toggle="tooltip" data-popup="tooltip-custom" data-placement="top" data-original-title="Mais Vídeos">
+											<a href="{% url 'mostravideos'%}" style="color: #EA5455;">
+												<i class="fa fa-plus">&nbsp;Mais Vídeos...</i>
+											</a>
+										</p>
+									</div>
+									{% if videospostados %}
+									{% for v in videospostados %}
+									<div class="card-body suggested-block">
+										<div class="d-flex justify-content-start align-items-center mb-1">
+											<div class="img-thumbnail">
+												{% video v.video '100% x 100px'%}
+											</div>
+										</div>
+									</div>
+									{%endfor%}
+									{%else%}
+									<div class="alert alert-success mb-2" role="alert" id="alerta"> 
+										<p id="texto"><i class="fa fa-bell-o">&nbsp;{{user.get_username}}</i>&nbsp;você não postou nenhum vídeo, 
+											<a href="{% url 'videos' %}" id="texto">
+												<i class="fa fa-film" data-toggle="tooltip" data-placement="top" title="Postar vídeo"></i>
+											</a>
+										</p>
+									</div>
+									{%endif%}
+								</div>
+							</div>
+
+							<div class="col-lg-6 col-12">
+								<div class="col-12">
+									{% if messages %}
+									<div class="alert alert-success" role="alert">
+										{% for message in messages %}
+										<p {% if message.tags %} class="alert alert-success{{message.tags}}" {% endif %} style="color:white;font-size: 17px;font-family: Times New Roman;text-align: center;">&nbsp;<i class="fa fa-bell-o"></i>&nbsp;{{user.get_username}}&nbsp;{{message}}
+										</p>
+										{% endfor %}
+									</div>
+									{% endif %}
+								</div>
+								<!-- COMEÇO DAS POSTAGEMS -->
+								{% if meus_posts %}
+								{% for post in meus_posts %}
+								<div class="card">
+									<div class="card-body">
+										<a href="{% url 'perfil' %}" data-toggle="tooltip" data-placement="top" title="Veja o que estar acontecendo lá fora">
+											<p id="aviso" class="pull-up"><i class="fa fa-bell-o text-success"></i>Veja o que estar acontecendo lá fora !!!!
+											</p>
+										</a>	
+									</div>
+								</div>	
+								<div class="card">
+									<div class="card-body">
+										<div class="d-flex justify-content-start align-items-center mb-1">
+											<div class="avatar mr-1 pull-up">
+												<img src="{{ user.perfil.image.url }}" alt="avtar img holder" height="45" width="45">
+											</div>
+											<div class="user-page-info">
+												<p class="textos2">{{post.user}}</p><br>
+												<span class="textos2">Post criado em {{post.criado}}</span>
+											</div>
+										</div>
+										<img class="img-fluid card-img-top rounded-sm mb-2" src="{{ post.imagem_do_post.url }}" alt="avtar img holder">
+										<p id="texto">{{post.comenta}}.</p>
+										<div class="d-flex justify-content-start align-items-center mb-1">
+											<div class="d-flex align-items-center">
+												<i class="text-danger fa fa-heart font-medium-2 mr-50 pull-up" data-toggle="tooltip" data-placement="top" title="Visualizaram e gostaram {{post.post_views}} pessoa(s)"></i>
+												<p id="texto">
+													<i class="fa fa-hashtag" data-toggle="tooltip" data-placement="top" title="Hashtag"></i>&nbsp;{{post.categoria}}&nbsp;&nbsp;
+													<a href="/deleta-perfil/{{post.id}}">
+														<i class="fa fa-trash-o text-danger font-medium-2 mr-50 pull-up" data-toggle="tooltip" data-placement="top" title="Excluir postagem ?">
+														</i>
+													</a>
+													<a href="/editar-de-perfil/{{post.id}}" data-toggle="tooltip" data-placement="top" title="Editar post"><i class="fa fa-pencil-square cor font-medium-2 mr-50 pull-up"></i></a>
+												</p>
+											</div>
+											<p class="ml-auto d-flex align-items-center">
+												<i class="fa fa-comments font-medium-2 mr-50 pull-up" data-toggle="tooltip" data-placement="top" title="Comentado por {{post.comentaposts_set.count}} pessoa(s)"></i>{{post.comentaposts_set.count}}
+											</p>
+										</div>
+										<!-- CONDICIONAIS PARA SABER QUEM COMENTOU ESTE POST ESPECIFICO -->
+										{% if post.comentaposts_set.all%}
+										{% for t in post.comentaposts_set.all%}
+										<li data-toggle="tooltip" data-popup="tooltip-custom" data-placement="top" data-original-title="{{t.user}}" class="avatar pull-up">
+											<img class="media-object rounded-circle" src="{{ t.user.perfil.image.url }}" alt="Avatar" height="30" width="30">
+										</li>
+										<p class="textos">{{t.comentarios}}</p>
+										<br>
+										{%endfor%}
+										{%else%}
+										<p class="textos2">Este post inda não foi comentado.</p>
+										{%endif%}
+										<!-- FIM DA CONDICIONAL -->
+									</div>
+								</div>
+								<!-- FIM DAS POSTAGEMS -->
+								{%endfor%}
+								
+								{%else%}
+								<br>
+								<div class="alert alert-success mb-2" role="alert" id="alerta"> 
+									<p id="texto"><strong>{{user.get_username}}</strong>&nbsp;você não postou nada, fique a vontade para compatilhar seus momentos.<a href="{% url 'momentos'%}">&nbsp;Postar</a>
+									</p>
+								</div>
+								{%endif%}
+							</div>
+							<div class="col-lg-3 col-12">
+								<div class="card">
+									{% if meusmomentos %}
+									<div class="card-header">
+										<p class="textos2">Meus stories</p>
+									</div>
+									<div class="card-body">
+										<div class="row">
+											{% for story in meusmomentos%}
+											<div class="col-md-4 col-6 user-latest-img">
+												<a href="/detalhestories/{{story.id}}">
+													<img src="{{story.img1.url}}" class="img-fluid mb-1 rounded-sm" alt="avtar img holder" data-toggle="tooltip" data-popup="tooltip-custom" data-placement="top" data-original-title="{{story.momento}}">
+												</a>
+											</div>
+											{%endfor%}
+										</div>
+										<br>
+										<a href="{% url 'meustories'%}"><p class="textos2">Veja&nbsp;<i class="fa fa-plus" data-toggle="tooltip" data-popup="tooltip-custom" data-placement="top" data-original-title="Veja Mais"></i></p></a>
+									</div>
+									{%else%}
+									<div class="alert alert-success mb-2" role="alert" id="alerta"> 
+										<p id="texto">Você não tem storie.<a href="{% url 'momentos'%}">&nbsp;Criar storie</a>
+										</p>
+									</div>
+									{%endif%}
+								</div>
+								<div class="card">
+									<div class="card-header d-flex justify-content-between">
+										<p class="textos2">Quem esta postando AGORA</p>
+										<i class="fa fa- cursor-pointer"></i>
+									</div>
+									<div class="card-body">
+										{% if postados%}
+										{% for p in postados%}
+										<div class="d-flex justify-content-start align-items-center mb-1">
+											<div class="avatar mr-50 pull-up">
+												<a href="{% url 'perfil' %}"><img src="{{ p.user.perfil.image.url }}" alt="avtar img holder" height="35" width="35" data-toggle="tooltip" data-popup="tooltip-custom" data-placement="top" data-original-title="Sou {{p.user.get_username}} venha curtir meu post.">
+												</a>
+											</div>
+											<div class="user-page-info">
+												<p class="textos">
+													{{p.user.get_username}}&nbsp;<a href="{% url 'perfil'%}" style="color: green;">Ver o post</a>
+												</p>
+											</div>
+										</div>
+										{%endfor%}
+										<p class="textos" data-toggle="tooltip" data-popup="tooltip-custom" data-placement="top" data-original-title="Mais posts">
+											<a href="{% url 'perfil'%}" style="color: #EA5455;">
+												<i class="fa fa-plus">&nbsp;Mais posts...</i>
+											</a>
+										</p>
+										{%else%}
+										{%endif%}
+									</div>
+								</div>
+								<!-- CARD DAS PLAYLISTS -->
+								<div class="card">
+									<div class="card-header">
+										<p class="textos2">Minhas playlist</p>
+									</div>
+									{% if todospotify %}
+									<div class="card-body">
+										<div class="col">
+											<hr>
+											{% for v in todospotify%}
+											<div class="avatar mr-1 pull-up">
+												<img src="{{ v.user.perfil.image.url }}" alt="avtar img holder" width="32" height="32">
+												<span class="avatar-status-online"></span>
+											</div>
+											<a href="/Deleta-Play-perfil/{{v.id}}" style="font-size: 20px;">
+												<i class="fa fa-trash pull-up text-danger" style="color: white;margin: 0px;" data-toggle="tooltip" data-popup="tooltip-custom" data-placement="top" data-original-title="Excluir playlist">
+												</i>
+											</a>
+											<br><br>
+											<div class="col">
+												<a href="{{v.video}}" target="_blank" id="texto">Sua PlayList Spotify
+													<i class="fa fa-share-square-o" data-toggle="tooltip" data-popup="tooltip-custom" data-placement="top" data-original-title="Compartilhe sua playlist">
+														
+													</i>
+												</a>
+											</div>
+										</div>
+										{%endfor%}
+									</div>
+									{%else%}
+									<div class="alert alert-success mb-2" role="alert" id="alerta"> 
+										<p id="texto"><i class="fa fa-bell-o">&nbsp;{{user.get_username}}</i>&nbsp;você não postou nenhuma playlist !!
+											<a href="{% url 'perfil'%}" id="texto" data-toggle="tooltip" data-popup="tooltip-custom" data-placement="top" data-original-title="Publique sua playlist">
+												<i class="fa fa-spotify"></i>
+											</a>
+										</p>
+									</div>
+									{%endif%}
+								</div>
+								<!-- FIM DO CARD DAS PLAYLISTS -->
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="sidenav-overlay"></div>
+	<div class="drag-target"></div>
+
+</body>
+{%endblock%}

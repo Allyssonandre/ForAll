@@ -1,0 +1,862 @@
+{% extends "./Base/BasePerfil.html" %}
+{% block content %}
+{%block google%}{{block.super}}{%endblock%}
+<title>
+    {% block title %}{{block.super}}{% endblock%}
+</title>
+{% load static %}
+{% load embed_video_tags %}
+{% load crispy_forms_tags %}
+<style type="text/css">
+    a{text-decoration: none;}
+    #configuracaoeditar{font-family: Times New Roman;color: white;}
+    #perfil{font-family: Times New Roman;font-weight: bold;font-size: 16px;}
+    #perfil2{font-family: Times New Roman;font-weight: bold;font-size: 16px;}
+</style>
+<div class="horizontal-menu-wrapper">
+    <div class="col-12">
+      {% if messages %}
+      <div class="alert alert-success" role="alert">
+        {% for message in messages %}
+        <p {% if message.tags %} class="alert alert-success{{message.tags}}" {% endif %} style="color:white;font-size: 20px;font-family: Times New Roman;text-align: center;">&nbsp;<i class="fa fa-bell-o"></i>&nbsp;{{user.get_username}}&nbsp;{{message}}
+        </p>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
+
+<div class="header-navbar navbar-expand-sm navbar navbar-horizontal floating-nav navbar-light navbar-without-dd-arrow navbar-shadow menu-border" role="navigation" data-menu="menu-wrapper">
+    <div class="navbar-header">
+        <ul class="nav navbar-nav flex-row">
+            <li class="nav-item mr-auto">
+                <div class="brand-logo"></div>
+                <img class="" src="{% static 'img/forall.png'%}" alt="avatar" height="45" width="45">
+            </a></li>
+            <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i class="fa fa-times d-block d-xl-none font-medium-4 primary toggle-icon"></i><i class="toggle-icon feather icon-disc font-medium-4 d-none d-xl-block collapse-toggle-icon primary" data-ticon="icon-disc"></i></a></li>
+        </ul>
+    </div>
+    <div class="navbar-container main-menu-content" data-menu="menu-container">
+        <!-- include ../../../includes/mixins-->
+        <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
+            <li>
+                {% if user.is_authenticated %}
+                <a class="dropdown-item" href="/accounts/logout" style="color: white;"><i class="fa fa-unlock"></i>Sair</a>
+                {% endif %}
+            </li>
+            <li>
+                <a href="{% url 'termosloja'%}" style="color: white;"><i class="fa fa-handshake-o"></i>Termo de Uso e política de privacidade</a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="{% url 'videos' %}" style="color: white;"><i class="fa fa-video-camera"></i>Posta vídeo</a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="{% url 'momentos' %}" style="color: white;"><i class="fa fa-pencil-square"></i>Criar Stories</a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="{% url 'criaranuncio' %}" style="color: white;"><i class="fa fa-cart-plus"></i>Criar anúncio</a>
+            </li>
+            <li>
+                <a href="https://www.facebook.com/forall.letsgo/" target="_blank" title="Facebook" style="color:white;"><i class="fa fa-facebook"></i></a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/forall2020_/" target="_blank" title="Instagram" style="color:white;"><i class="fa fa-instagram"></i></a>
+            </li>
+        </ul>
+    </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper">
+        <div class="content-body">
+            <div id="user-profile">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="profile-header mb-2">
+                            <div class="relative">
+                                <div class="cover-container">
+                                    {% if not user.perfil.image%}
+                                    <img class="img-fluid bg-cover rounded-0 w-100" src="{% static 'img/logo.jpg'%}" alt="Imagem do perfil">
+                                    {% else%}
+                                    <a href="{% url 'Perfil-completo' %}">
+                                        <img class="img-fluid bg-cover rounded-0 w-100 perfil" src="{{ user.perfil.image.url }}" alt="Imagem do Perfil">
+                                    </a>
+                                    {% endif%}
+                                </div>
+                                <div class="profile-img-container d-flex align-items-center justify-content-between">
+                                    {% if not user.perfil.image%}
+                                    <img src="{% static 'img/forall.png'%}" class="rounded-circle img-border box-shadow-1" alt="Card image">
+                                    {% else%}
+                                    <a href="{% url 'Perfil-completo' %}" data-toggle="tooltip" data-placement="top" title="Perfil completo">
+                                        <img src="{{ user.perfil.image.url }}" class="rounded-circle img-border box-shadow-1" alt="Card Profile image">
+                                    </a>
+                                    {% endif%}
+                                    <div class="float-right">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><br><br>
+                <section id="profile-info">
+                    <div class="row">
+                        <div class="col-lg-3 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="mt-1">
+                                        <p id="configuracaoeditar">
+                                            Configuração do seu perfil&nbsp;
+                                            <i class="fa fa-cogs pull-up"data-toggle="tooltip" data-placement="top" title="Configuração do seu perfil">
+                                            </i>
+                                        </p>
+                                    </div>
+                                    {% if not user.perfil %}
+                                    <a href="{% url 'criarperfil' %}" id="configuracaoeditar"><i class="fa fa-wrench" data-toggle="tooltip" data-placement="top" title="Complete seu perfil"></i></a>
+                                    {% else %}
+                                    <a href="{% url 'Perfil-completo' %}">
+                                        <div class="chip chip-primary mr-1">
+                                            <div class="chip-body">
+                                                <div class="avatar">
+                                                    <img class="img-fluid" src="{{ user.perfil.image.url }}" alt="generic img placeholder" height="20" width="20">
+                                                </div>
+                                                <span class="chip-text" id="perfil" data-toggle="tooltip" data-placement="top" title="Acesse seu perfil">Acesse seu Perfil&nbsp;<i class="fa fa-sign-in"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="/editaperfil/{{user.perfil.id}}" id="configuracaoeditar">
+                                        <i class="fa fa-wrench pull-up" data-toggle="tooltip" data-placement="top" title="Edite seu perfil">&nbsp;Editar perfil
+                                        </i>
+                                    </a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <p style="font-family: Times New Roman;font-size: 17px;color: white;"><i class="fa fa-shopping-cart"></i>&nbsp;Marketplace ForAll</p>
+                                    <i class="fa fa-money"></i>
+                                    <p style="font-family: Times New Roman;font-size: 15px;color: white;">
+                                        O Marketplace do <b>ForAll</b> é um ambiente para o membro da plataforma vende ou troca seus produtos, usados ou novos. O E-commerce do ForAll é só uma vitrine para os produtos dos   usuários. <br><br>
+                                        <b><i class="fa fa-tag"></i>&nbsp;COMUNICADO</b>:&nbsp;Só é permitido um anúncio por vez, se quiser cadastrar outro deverá excluir o antigo OU ser Premium. <br><br>
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#default"><i class="fa fa-star" style="color: #F2C832;"></i>&nbsp;PREMIUM</button>
+                                        <!-- Modal -->
+                                        <div class="modal fade text-left" id="default" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="myModalLabel1">PREMIUM</h5>
+                                                        <i class="fa fa-star" style="color: #F2C832;"></i><i class="fa fa-star" style="color: #F2C832;"></i><i class="fa fa-star" style="color: #F2C832;"></i><i class="fa fa-star" style="color: #F2C832;"></i><i class="fa fa-star" style="color: #F2C832;"></i>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <h5>Quero ser premium</h5>
+                                                        <p style="font-family: Times New Roman;font-size: 17px;color: white;">No premium você pode anunciar vários produtos. Para se tornar premium você deve se inscrever no botão "Quero ser premium" e colaborar com um valor de 10 por 60 dias(dois meses).</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-primary" data-dismiss="modal">Quero</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </p> 
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="divider divider-info">
+                                        <div class="divider-text"><i class="fa fa-cogs"></i></div>
+                                        <p style="font-family: Times New Roman;font-size: 17px;">Dasboard de anúncios</p>
+                                    </div>
+                                    <a href="{% url 'produtos' %}" data-toggle="tooltip" data-placement="top" title="Produtos anúnciados" style="color: white;font-size: 19px;"><i class="fa fa-cart-plus"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <!-- CONDICIONAL PARA DEFINIR SE O MEMBRO É PREMIUM OU NÃO, MOSTRANDO ASSIM BOTOÊS PARA A INSCRIÇÃO | E CANCELA A INSCRIÇÃO -->
+                                    {% if not request.user.incricaopremium%}
+                                    <p style="font-family: Times New Roman;font-size: 17px;margin: 0px;"><i class="fa fa-star" style="color: yellow;"></i><i class="fa fa-star" style="color: yellow;"></i><i class="fa fa-star" style="color: yellow;"></i><i class="fa fa-star" style="color: yellow;"></i><i class="fa fa-star" style="color: yellow;"></i><br>Quer ser Premium?</p>
+                                    <p style="font-family: Times New Roman;font-size: 15px;color: white;margin: 0px;">Publique quantos produtos quiser, seja Premium no Marketplace ForAll. Para isto solicite a sua inscrição no botão abaixo. <br><br>
+                                        <a href="{% url 'inscricaopremium' %}"><button type="button" class="btn btn-primary block-element mb-1"><i class="fa fa-star"></i>&nbsp;Quero ser premium</button></a>
+                                        {%else%}
+                                        {% for c in incricaopremium%}
+                                        <a href="/cancelapremium/{{c.id}}" data-toggle="tooltip" data-placement="top" title="Cancela Premium" style="color: white;font-size: 19px;"><i class="fa fa-trash"></i></a>
+                                        {%endfor%}
+                                        {%endif%}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    {%if produtos %}
+                                    <p style="font-family: Times New Roman;font-size: 17px;color: white;"><i class="fa fa-money"></i>&nbsp;Produto em Destaque</p>
+                                    <div class="row">
+                                        <div>
+                                            {% for p in produtos %}
+                                            <a href="{% url 'produtos'%}"><img src="{{p.image_produto.url}}" style="width: 100%;height: 280px;border-radius: 5px;"></a><br>
+                                            &nbsp;
+                                            {%endfor%}
+                                        </div>
+                                    </div>
+                                    {%else%}
+                                    <div class="alert alert-success" role="alert">
+                                        <a href="{% url 'criaranuncio' %}" style="color: white;">
+                                            <p class=" style fa fa-cart-plus mr-1 align-middle">&nbsp;Não tem produto cadastro, seja o primeiro!!   
+                                            </p>
+                                        </a>
+                                    </div>
+                                    {%endif%}
+                                    <!-- FIM -->
+                                </div>
+                            </div>
+                            <!-- POSTS COMENTADOS -->
+                            {% for c in comentados %}&nbsp;
+                            <div class="card">
+                                <div class="card-body">
+                                    <p style="font-family: Times New Roman;font-size: 17px;color: white;margin: 0;"><i class="fa fa-clipboard"></i>&nbsp;Posts comentados</p>
+                                    <div class="row">
+
+                                        <img src="{{c.comentando.imagem_do_post.url}}" style="width: 100%;height: 200px;border-radius: 5px;">
+                                        <p style="font-family: Times New Roman;font-size: 15px;margin-top: 5px;">
+                                            Autor |&nbsp;{{c.comentando.user}}<br>
+                                            Comentário:&nbsp; {{c.comente}} <br>
+                                            Quem comentou :&nbsp;<b style="color: red;">{{c.nome}}</b><br>
+                                            <i class="fa fa-clock-o"></i>&nbsp;{{c.data}}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            <!-- FIM -->
+                        </div>
+                        <div class="col-lg-6 col-12" id="posta">
+                            <!-- BOTÃO DE ACESSO A ADMINSTRAÇÃO -->
+                            {%if request.user.is_superuser %}
+                            <a href="{% url 'user' %}"><button type="button" class="btn btn-primary block-element mb-1"><i class="fa fa-cogs"></i>&nbsp;DashBoard do Administrador</button></a>
+                            {%endif%}
+                            <!-- FIM -->
+                            {% if not user.perfil%}
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <p class="mb-0" style="color: white;font-family: Times New Roamn;font-size: 18px;">
+                                    Seja Bem-vindo(a) ao ForAll, antes de publicar complete seu perfil.
+                                </p>
+                            </div>
+                            {%endif%}
+                            <!-- Card para postagens -->
+                            <div class="card">
+
+                                <div class="card-body">
+                                    <div style="text-align: center;">
+                                        <div class="avatar mr-1">
+                                           <img src="{% static 'img/forall.png' %}" alt="avtar img holder" height="45" width="45">
+                                       </div>
+                                       <button type="button" class="btn btn-light" style="margin: 0;color: black;font-size: 18px;border-radius: 20px;width: 100%;" data-toggle="modal" data-target="#primary" ></i>&nbsp;Quer publicar o quê,  {{user.get_username}} ?</button>
+                                       <hr>
+                                       <a href="{% url 'criaranuncio' %}"><button type="button" class="btn btn-primary block-element mb-1"><i class="fa fa-cart-plus"></i>&nbsp;Criar anúncio</button>
+                                       </a>
+                                       <a href="{% url 'videos' %}">&nbsp;<button type="button" class="btn btn-primary block-element mb-1"><i class="fa fa-film"></i>&nbsp;Posta vídeo</button>
+                                       </a>
+                                       <a href="{% url 'momentos' %}"><button type="button" class="btn btn-primary block-element mb-1"><i class="fa fa-pencil-square"></i>&nbsp;Criar Stories</button>
+                                       </a><br>
+                                       <a href="https://www.facebook.com/forall.letsgo/" target="_blank" title="Facebook" style="color:white;font-size: 20px;"><i class="fa fa-facebook"></i>
+                                       </a>&nbsp;&nbsp;
+                                       <a href="https://www.instagram.com/forall2020_/" target="_blank" title="Instagram" style="color:white;font-size: 20px;"><i class="fa fa-instagram"></i>
+                                       </a> <br>
+                                       <!-- NOTIFICAÇÃO DE POST COMENTADO -->
+                                       {% if meuspostscomentados%}
+                                       {% for n in meuspostscomentados%}
+                                       {%if request.user == n.postagem.user%}
+                                       <div class="position-relative d-inline-block">
+                                        <a href="/postaDetalhe/{{n.postagem.id}}"><i class="fa fa-bell-o font-medium-5 text-success"></i>
+                                            <span class="badge badge-pill badge-success badge-glow badge-up">1</span>
+                                        </a>
+                                    </div>
+                                    <b>{{n.user}}</b> comentou um post seu.
+                                    {%endif%}
+                                    {% endfor%}
+                                    {%else%}
+                                    {%endif%}
+                                    <!-- FIM -->
+                                    <!-- Modal -->
+                                    <div class="modal fade text-left" id="primary" tabindex="-1" role="dialog" aria-labelledby="myModalLabel160" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+                                            <div class="card">
+                                                <div class="modal-content">
+                                                    <div class="modal-header bg-primary white">
+                                                        <h5 class="modal-title" id="myModalLabel160" style="font-family: Times New Roman;font-size: 15px;">Publique algo, {{user.get_username}}</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p style="font-family: Times New Roman;font-size: 15px;color: white;margin: 0;">Quer publicar o quê,  {{user.get_username}} ?</p>
+                                                        <form method="POST" enctype="multipart/form-data">    
+                                                         {% csrf_token %}<br> 
+
+                                                         <fieldset class="form-label-group form-group position-relative has-icon-left input-divider-left">
+                                                            <input name="titulo" type="text" class="form-control"  placeholder="Título da Postagem" size="100">
+                                                            <div class="form-control-position">
+                                                                <i class="fa fa-pencil-square"></i>
+                                                            </div>
+                                                        </fieldset>
+
+                                                        <fieldset class="form-label-group form-group position-relative has-icon-left input-divider-left">
+                                                            <select name="categoria" class="form-control" id="basicSelect">
+                                                                <option>Categoria ? </option>
+                                                                {% for id, categoria in post.categoria.field.choices %}
+                                                                <option value="{{ id }}">{{ categoria }}</option>
+                                                                {% endfor %}
+                                                            </select>
+                                                            <div class="form-control-position">
+                                                                <i class="fa fa-tag" style="color: white;"></i>
+                                                            </div>
+                                                        </fieldset>
+
+                                                        <label for="basicInput" class="fa fa-image">&nbsp;Imagem</label>
+                                                        <fieldset class="form-group">
+                                                            <div class="custom-file">
+                                                                <input name="imagem_do_post" type="file" class="custom-file-input" id="inputGroupFile02">
+                                                                <label class="custom-file-label" for="inputGroupFile01"><i class="fa fa-image"></i>Imagem</label>
+                                                            </div>
+                                                        </fieldset>
+
+                                                        <label for="basicInput" class="fa fa-comments-o">&nbsp;Comente</label>
+                                                        <fieldset class="form-label-group mb-0">
+                                                            <textarea name="comenta" data-length=100 class="form-control char-textarea" id="textarea-counter" rows="2" placeholder="Diga algo sobre o storie.">       
+                                                            </textarea>
+                                                        </fieldset>
+                                                        <br>
+
+                                                        <button type="submit" class="btn btn-primary fa fa-sign-in" style="font-size: 15px;margin: 0;">&nbsp;Publicar</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CARD DE STORIES -->
+                    <div class="divider">
+                        <div class="divider-text"><a href="{% url 'verstories' %}" style="color: white;"><i class="fa fa-plus-square-o" style="font-size: 20px;" title="Ver todos"></i></a></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <div class="card">
+                                <div class="card-content">
+                                    {% if not user.perfil.image%}
+                                    <img class="card-img img-fluid" src="{% static 'img/forall.png'%}" alt="Card image" style="width: 100%;height: 136px;">
+                                    {% else%}
+                                    <img class="card-img img-fluid" src="{{ user.perfil.image.url }}" alt="Card image" style="width: 100%;height: 136px;">
+                                    {%endif%}
+                                    <p class="card-text text-white" style="color: black;margin: 0;padding: 2px;text-align: center;">Criar story <a href="{% url 'momentos' %}" style="color: white;"><i class="fa fa-plus-circle"></i></a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        {% for story in meusmomentos%}
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <div class="card">
+                                <a href="/detalhestories/{{story.id}}">
+                                    <div class="card-content">
+                                        <img class="card-img img-fluid" src="{{story.img1.url}}" alt="Card image" style="width: 100%;height: 136px;">
+                                        <div class="card-img-overlay overflow-hidden">
+                                            <p class="card-text text-white" style="font-family: Times New Roman;font-size: 14px;">{{story.user.username}}</p>
+                                        </div>
+                                        <img src="{{ story.user.perfil.image.url }}" alt="avtar img holder" height="45" width="45" style="position: absolute;left: 5px;
+                                        top: 87%;border-radius: 50%">
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        {%endfor%}
+                    </div>
+                    <!-- FIM -->
+                    <!-- MINHAS ATIVIDADES -->
+                    <div class="divider divider-info">
+                        <div class="divider-text"><i class="fa fa-user"></i></div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-start align-items-center mb-1">
+                                <div class="avatar mr-1">
+                                   {% if not user.perfil.image%}
+                                   <img src="{% static 'img/forall.png' %}" alt="avtar img holder" height="45" width="45">
+                                   {%else%}
+                                   <img src="{{ user.perfil.image.url }}" alt="avtar img holder" height="45" width="45">
+                                   {%endif%}
+                               </div>
+                           </div> 
+                           <p class="mb-0" style="font-family: Times New Roman;font-size: 18px;color: white;margin: 0;">Minhas atividades</p>
+                           {% if mensagemUmUsuario%}
+                           <a href="{% url 'MinhasMensagens' %}"><p style="margin: 0;color: white;font-family: Times New Roman;font-style: 17px;">Você tem mensagem não lidas&nbsp;<i class="fa fa-envelope"></i><b class="spinner-grow text-danger"></b>
+                           </p></a>
+                           {%else%}
+                           <p style="margin: 0;color: white;">
+                            Você não tem mensagem <i class="fa fa-envelope"></i>
+                        </p>
+                        {%endif%}
+                        <hr>
+                        <a href="{% url 'mostravideos' %}" style="font-size: 18px;color: white;" data-toggle="tooltip" data-placement="top" title="Meus vídeos"><i class="fa fa-film"></i></a>
+                        <a href="{% url 'meustories' %}" style="font-size: 18px;color: white;" data-toggle="tooltip" data-placement="top" title="Meus stories"><i class="fa fa-comment"></i>
+                        </a>
+                        <a href="{% url 'meusProdutos' %}" style="font-size: 18px;color: white;" data-toggle="tooltip" data-placement="top" title="Meus anúncios"><i class="fa fa-cart-plus"></i></a>
+                        <a href="{% url 'meusposts'%}" style="font-size: 18px;color: white;" data-toggle="tooltip" data-placement="top" title="Meus posts"><i class="fa fa-pencil-square"></i></a>
+                        <a href="{% url 'postcomentados' %}" style="font-size: 18px;color: white;" data-toggle="tooltip" data-placement="top" title="Meus posts comentados"><i class="fa fa-clipboard"></i>
+                        </a>
+                        <a href="{% url 'SalaForAll' %}" style="font-size: 18px;color: white;" data-toggle="tooltip" data-placement="top" title="Criar sala de bate-papo"><i class="fa fa-weixin"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- FIM -->
+                <!-- CRIAR PENSAMENTO -->
+                <div class="divider divider-dark">
+                    <div class="divider-text"><i class="fa fa-quote-right"></i></div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <form method="POST" enctype="multipart/form-data">
+                            <div class="avatar mr-1">
+                                {% if not user.perfil.image%}
+                                <img src="{% static 'img/forall.png'%}" alt="avtar img holder" height="45" width="45">
+                                {%else%}
+                                <img src="{{ user.perfil.image.url }}" alt="avtar img holder" height="45" width="45">
+                                {%endif%}
+                            </div>    
+                            {% csrf_token %}<br>
+                            <fieldset class="form-label-group mb-0">
+                                <textarea name="ideia" data-length=20 class="form-control char-textarea" id="textarea-counter" rows="3" placeholder="O que você esta pensando ? Post suas idéias..." required></textarea>
+                            </fieldset><br>                               
+                            <button type="submit" class="btn btn-primary mr-1 mb-1 fa fa-share-alt" id="position-top-center" style="font-size: 15px;">&nbsp;Compartilhar</button>
+                        </form>
+                        <div class="row"></div>
+                    </div>
+                </div>
+                <!-- FIM -->
+                <!-- MEUS PENSAMENTOS -->
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-body">
+                            <div class="media-list media-bordered">
+                                {% if pensando%}
+                                {% for t in pensando %}
+                                <div class="media">
+                                    <a class="media-right" href="#">
+                                        <img class="rounded-circle" src="{{user.perfil.image.url}}" alt="Generic placeholder image" height="38" width="38" />
+                                    </a>&nbsp;
+                                    <a href="/pensamento/{{t.id}}" data-toggle="tooltip" data-placement="top" title="Excluir pensamento" style="color: #e53935;"><i class="fa fa-trash" style="font-size: 18px;margin: 0;"></i>
+                                    </a>
+                                    <div class="media-body text-right">
+                                        <p style="margin: 0;color: white;font-family: Times New Roman;font-size: 18px;">
+                                            <i class="fa fa-quote-left"></i>&nbsp;
+                                            {{t.ideia|lower}}&nbsp;
+                                            <i class="fa fa-quote-right"></i>
+                                        </p>
+                                    </div>
+                                </div>
+                                {%endfor%}
+                                {%else%}
+                                <p style="font-family: Times New Roman;font-size: 17px;">Você ainda não tem pensamento <i class="spinner-grow text-info"></i></p>
+                                {%endif%}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- FIM -->
+                <div class="divider divider-warning">
+                    <div class="divider-text"><i class="fa fa-cart-plus" style="color: yellow;font-size: 18px;"></i></div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <!-- CONDICIONAL VERIFICANDO SE O USUÁRIO PAGOU A MENSALIDADE -->
+                        {%if request.user.incricaopremium.ativado == False%}
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <p class="mb-0" style="color: white;font-family: Times New Roamn;font-size: 19px;">
+                                <i class="fa fa-bell-o"></i>&nbsp;Consta em nosso banco de dados que você não fez o pagamento deste mês, realize o pagamento pelo botão "Pagamento mensal", se não for o caso desconsidere a mensagem.
+                            </p>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true"><i class="fa fa-times-circle"></i></span>
+                            </button>
+                        </div>
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <p class="mb-0" style="color: white;font-family: Times New Roamn;font-size: 19px;">
+                                <i class="fa fa-bell-o"></i>&nbsp;Você esta desativado para anúnciar produtos, por causa da falta de pagamento, se você não atualiza seu pagamento seus anúncios publicados serão apagados do nosso sistema em uma semana após a verificação do débito. 
+                            </p>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true"><i class="fa fa-times-circle"></i></span>
+                            </button>
+                        </div>
+                        {%endif%}
+                        <!-- FIM -->
+                        <!-- TESTE PARA USÚARIO PREMIUM, PARA DIVULGA VÁRIOS PRODUTOS -->
+                        {%if request.user.incricaopremium.ativado == True%}
+
+                        {% if perms.paginas.add_lojapremium%}
+                        <p style="font-family: Times New Roman;font-size: 17px;color: white;">Sou Premium&nbsp;<i class="fa fa-star" style="color: #F2C832;"></i><i class="fa fa-star" style="color: #F2C832;"></i><i class="fa fa-star" style="color: #F2C832;"></i><i class="fa fa-star" style="color: #F2C832;"></i><i class="fa fa-star" style="color: #F2C832;"></i>
+                        </p>
+                        <a href="{% url 'lojapremium' %}" data-toggle="tooltip" data-placement="top" title="Posta meus produtos" style="color: white;font-size: 19px;"><i class="fa fa-cart-plus"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                        {%else%}
+                        {%endif%}
+                        {%endif%}
+                        {%if request.user.incricaopremium%}
+                        {%else%}
+                        <a href="{% url 'inscricaopremium' %}"><button type="button" class="btn btn-primary block-element mb-1"><i class="fa fa-star"></i>&nbsp;Quero ser premium</button></a>
+                        {%endif%}   
+                        <!-- FIM -->
+                        <!-- LINK DE PAGAMENTO MARKETPLACE FORALL -->
+                        {% if request.user.incricaopremium.linkPagamento%}
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <p class="mb-0" style="color: white;font-family: Times New Roman;font-size: 17px;">
+                                <i class="fa fa-bell-o"></i>&nbsp;Seu Link de pagamento mensal.
+                            </p>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true"><i class="fa fa-times-circle"></i></span>
+                            </button>
+                        </div>
+                        {% for p in incricaopremium%}
+                        <a href="{{p.linkPagamento}}" target="_blank" ata-toggle="tooltip" data-placement="top" title="Pagamento mensal" style="color: white;font-size: 19px;"><i class="fa fa-money"></i></a>
+                        {%endfor%}
+                        {%else%}
+                        {%if request.user.incricaopremium%}
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <p class="mb-0" style="color: white;font-family: Times New Roamn;font-size: 18px;margin: 0px;">
+                                <i class="fa fa-bell-o"></i>&nbsp;A sua inscrição esta sendo avaliada, em 24 Horas ou menos você receberá um link de pagamento.
+                            </p>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true"><i class="fa fa-times-circle"></i></span>
+                            </button>
+                        </div>
+                        {%endif%} 
+                        {%endif%}
+                        {%if request.user.incricaopremium.ativado%}
+                        {% if perms.paginas.add_lojapremium%}
+                        <div class="divider divider-info">
+                            <div class="divider-text"><i class="fa fa-cogs"></i></div>
+                        </div>
+                        <p style="font-family: Times New Roman;font-size: 17px;color: white;margin: 0px;"><i class="fa fa-trophy" style="color: #F2C832;"></i>&nbsp;<b>{{user.get_username}}</b>&nbsp;Você pode editar seus anúncios.
+                            <div class="float-right">
+                                <a href="{% url 'anuncios_usuarios_premium' %}"><button type="button" class="btn btn-icon btn-icon rounded-circle btn-primary mr-1" data-toggle="tooltip" data-placement="top" title="Editar">
+                                    <i class="fa fa-pencil"></i>
+                                </button></a>
+                            </div>
+                        </p>
+                        {%endif%}
+                        {%else%}
+                        {%endif%}
+                    </div>
+                </div>
+                <!-- FIM -->
+                <!-- BOTÃO PARA VISUALIZA POSTAGEMS DE PRODUTOS PREMIUM -->
+                <div class="card">
+                    <div class="card-body">
+                        <p style="font-family: Times New Roman;font-size: 17px;color: white;">Anúncios Premium&nbsp;<i class="fa fa-star" style="color: #F2C832;"></i><i class="fa fa-star" style="color: #F2C832;"></i><i class="fa fa-star" style="color: #F2C832;"></i><i class="fa fa-star" style="color: #F2C832;"></i><i class="fa fa-star" style="color: #F2C832;"></i>
+                        </p>
+                        <a href="{% url 'produtospremius'%}"><button type="button" class="btn btn-primary block-element mb-1"><i class="fa fa-eye"></i>&nbsp;veja</button>
+                        </a>
+                    </div>
+                </div>
+                <!-- FIM -->
+                <div class="divider divider-success">
+                    <div class="divider-text"><i class="fa fa-pencil-square"></i></div>
+                </div>
+                {% if comentariosTempoReal%}
+                {% for t in comentariosTempoReal%}
+                {% if request.user == t.postagem.user%}
+                <div class="card">
+                    <div class="card-header">
+                        <p class="card-title" style="font-family: Times New Roman;color: white;font-size: 20px;">Seus posts comentados - Em tempo Real</p>
+                        <div class="spinner-grow text-success" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-body">
+                            <img src="{{t.postagem.imagem_do_post.url}}" alt="" style="width: 70px;height: 70px;border-radius: 9px;" />
+                            <p style="font-family: Times New Roman;font-size: 20px;color: white;">
+                                <br>
+                                <i class="fa fa-tumblr"></i>&nbsp;{{t.postagem.titulo}}<br>
+                                <i class="fa fa-commenting"></i>&nbsp;"{{t.comentarios}}"<br>
+                                <i class="fa fa-comments"></i>&nbsp;
+                                <img class="round" src="{{ t.user.perfil.image.url }}" alt="avatar" height="35" width="35">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {%endif%}
+                {%endfor%}
+                {%else%}
+                {%endif%}
+                <!-- CARD DE SEUS COMETÁRIOS, DE OUTROS MEMBROS -->
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-body">
+                            {%if meusComentados%}
+                            <p style="font-family: Times New Roman;font-size: 18px;color: white;">Posts comentado por você.</p>
+                            <hr>    
+                            <div class="row align-items-center">
+                                {% for i in meusComentados%}
+                                <div class="col">
+                                    <div class="avatar mr-1">
+                                        <img src="{{ i.postagem.user.perfil.image.url }}" alt="avtar img holder" width="32" height="32">
+                                        <span class="avatar-status-online"></span>
+                                    </div><br>  
+                                    <b style="font-family: Times New Roman;font-size: 18px;"><i class="fa fa-user"></i>&nbsp;{{i.postagem.user}}</b>
+                                    <br>
+                                    <p style="font-family: Times New Roman;font-size: 18px;">Comentario<b style="color: yellow;">&nbsp;<i class="fa fa-quote-left"></i>&nbsp;{{i.comentarios|lower|truncatewords:2}}..&nbsp;<i class="fa fa-quote-right"></i></b><br>
+                                        Titulo&nbsp;<b style="color: yellow;">&nbsp;{{i.postagem.titulo|lower}}</b><br>
+                                        <i class="fa fa-clock-o"></i>&nbsp;{{i.data_comenta}}
+                                    </p>
+                                </div>
+                                {%endfor%}
+                            </div>
+                            {%else%}
+                            <p style="font-family: Times New Roman;font-size: 20px;color: white;">Você não tem post para ser comentados.
+                            </p>
+                            {%endif%}
+                        </div>
+                    </div>
+                </div>
+                <!-- FIM DO CARD -->
+                <!-- CARD DE PLAYLIST, DE OUTROS MEMBROS -->
+                <div class="divider divider-primary">
+                    <div class="divider-text"><i class="fa fa-spotify" style="color: green;font-size: 18px;"></i></div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                {% if spotify%}
+                                {% for i in spotify%}  
+                                <div class="col">
+                                    <p style="font-family: Times New Roman;font-size: 17px;color: white;margin: 0px;">
+                                        Sua Playlist do Spotify. <i class="fa fa-headphones"></i>
+                                    </p>
+                                    <hr>
+                                    <div class="avatar mr-1">
+                                        <img src="{{ i.user.perfil.image.url }}" alt="avtar img holder" width="32" height="32">
+                                        <span class="avatar-status-online"></span>
+                                    </div>
+                                    <a href="/deletePlay/{{i.id}}" style="font-size: 20px;"><i class="fa fa-trash" style="color: white;margin: 0px;" title="Excluir a playlist"></i>
+                                    </a>
+                                    <br><br>
+                                    <div class="col">
+                                        <a href="{{i.video}}" target="_blank" style="font-family: Times New Roman;font-size: 16px;color: white;" title="Escuta">Sua PlayList Spotify <i class="fa fa-share-square-o"></i></a>
+                                    </div>
+                                </div>
+                                {%endfor%}
+                                {%else%}
+                                <!-- Modal -->
+                                <p style="font-family: Times New Roman;font-size: 17px;color: white">
+                                    Antes de compatilhar sua playlist siga as dicas de como obter 
+                                    o link no botão. <b>Assista</b>
+                                    <button type="button" class="btn btn-primary block-element mb-1 fa fa-youtube" data-toggle="modal" data-backdrop="false" data-target="#backdrop" style="padding: 13px;">
+                                        Assista
+                                    </button><br>
+                                    Divulgue sua playlist do Spotify<i class="spinner-grow text-info"></i><i class="fa fa-hand-o-right"></i>
+                                    <a href="{% url 'spotify' %}" style="color: white;" title="Clque aqui, e divulgue sua playlist do Spotify"><i class="fa fa-spotify"></i></a>
+                                </p>
+                                <div class="modal fade text-left" id="backdrop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel4" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title" id="myModalLabel4"><i class="fa fa-spotify"></i>&nbsp;Como obter o link do Spotify</h4>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p>
+                                                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/ggKKky3iNJ4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                </p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-primary" data-dismiss="modal">Já assisti</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>     
+                                {%endif%}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- FIM DO CARD -->
+                <div class="divider divider-info">
+                    <div class="divider-text"><i class="fa fa-users" style="font-size: 23px;"></i></div>
+                </div>
+                <!-- ATIVIDADES DE OUTROS MEMBROS -->
+                <div class="card">
+                    <div class="card-body">
+                     <div class="avatar mr-1">
+                        <img src="{% static 'img/forall.png'%}" alt="avtar img holder" height="40" width="40">
+                    </div>
+                    <p class="mb-0" style="font-family: Times New Roman;font-size: 16px;color: white;margin: 0;">Atividades dos membros <br>
+                     <a href="{% url 'verstories' %}" style="font-size: 18px;color: white;" alt="avtar img holder" height="23" width="23" data-toggle="tooltip" data-placement="top" title="Stories"><i class="fa fa-comment"></i></a>
+                     <a href="{% url 'verpostagens' %}" style="font-size: 18px;color: white;" alt="avtar img holder" height="23" width="23" data-toggle="tooltip" data-placement="top" title="Últimos posts"><i class="fa fa-clipboard"></i>
+                     </a>
+                     <a href="{% url 'todosvideos' %}" style="font-size: 18px;color: white;" alt="avtar img holder" height="23" width="23" data-toggle="tooltip" data-placement="top" title="Posts de vídeos"><i class="fa fa-film"></i></a>
+                     <a href="{% url 'comentados' %}" style="font-size: 18px;color: white;" alt="avtar img holder" height="23" width="23" data-toggle="tooltip" data-placement="top" title="Posts mais comentados"><i class="fa fa-clipboard"></i></a>
+                 </p>
+             </div>
+         </div>
+         <!-- FIM -->
+         <div>
+         </div>
+         <!-- parallax swiper ends -->
+         {% if postados %}
+         {% for p in postados %}
+         <div class="card">    
+            <div class="card-body" style="height: 100%">
+                <div class="avatar mr-1" style="padding: 5px;">
+                    <img src="{{ p.user.perfil.image.url }}" alt="avtar img holder" height="30" width="30"  data-toggle="tooltip" data-placement="top" title="{{p.user}}">
+                </div>
+                <div class="badge badge-primary badge-md">
+                    {{p.post_views}} <i class="fa fa-thumbs-up ml-25"></i>
+                </div>
+                <img class="card-img img-fluid mb-1" src="{{ p.imagem_do_post.url }}" alt="Card image cap">
+                <p class="card-title" style="font-family: Times New Roman;color: white;font-size: 15px;margin: 0;">
+                    <i class="fa fa-tumblr-square"></i>&nbsp;{{p.titulo}}<br>
+                    <i class="fa fa-pencil-square-o"></i>&nbsp;{{p.comenta}}<br>
+                    <i class="fa fa-clock-o"></i>&nbsp;{{p.criado}}<br>
+                    <i class="fa fa-thumbs-o-up
+                    "></i>&nbsp;Este post foi visto por <b style="color: red;">{{p.post_views}}</b> pessoa(s)<br><br>
+                    <a href="/postaDetalhe/{{p.id}}"><button type="button" class="btn btn-primary block-element mb-1">Detalhes&nbsp;<i class="fa fa-sign-out"></i></button>
+                    </a>&nbsp; <a href="/postaDetalhe/{{p.id}}" style="color: white;">Tem <b style="color: red;">{{p.comentaposts_set.count}}</b> comentário(s) deste post</a>
+                </p>
+                {%if not request.user == p.user%}
+                <p style="font-family: Times New Roman;color: white;font-size: 16px;margin: 0;">
+                    {% if not user.perfil.image%}
+                    <img class="round" src="{% static 'img/forall.png'%}" alt="avatar" height="40" width="40">
+                    {% else%}
+                    <img class="round" src="{{ user.perfil.image.url }}" alt="avatar" height="40" width="40">
+                    {% endif %}  
+                    <b>{{user.get_username}}</b>&nbsp;
+                    <a href="/postaDetalhe/{{p.id}}" style="color: white;">você pode comenta este post
+                        <i class="fa fa-pencil"></i>
+                    </a>
+                </p>
+                {%endif%} 
+            </div>
+        </div>
+        <hr>
+        {% endfor %}
+        {%else%}
+        <div class="alert alert-success" role="alert">
+            <p class=" style fa fa-bell-o mr-1 align-middle" style="color: white;font-size: 16px;margin: 0;">&nbsp;Seja o primero a posta
+                <a href="#posta" style="color: white;"><i class="fa fa-clipboard" id="posta"></i></a>
+            </p>
+        </div>
+        {%endif%}
+    </div>
+    <div class="col-lg-3 col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 style="font-family: Times New Roman;">Membros da Rede social</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="chip chip-success mr-1">
+                        <div class="chip-body">
+                           <div class="avatar">
+                            <img class="img-fluid" src="{{ user.perfil.image.url }}" alt="generic img placeholder" height="20" width="20">
+                        </div>
+                        <a href="{% url 'membros'%}">
+                            <span class="chip-text" id="perfil2" data-toggle="tooltip" data-placement="top" title="Membros da Rede social">Membros da Rede social&nbsp;<i class="fa fa-users"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h5 style="font-family: Times New Roman;"><i class="fa fa-play"></i>&nbsp;Dica dos membros</h5>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                {% if videos %}
+                {% for v in videos %}
+                {% video v.video '100% x 280px'%}&nbsp;
+                <p style="font-family: Times New Roman;font-size: 14px;text-align: center;">Publicado por:&nbsp;<b style="color: green;">{{v.user}}</b></p>
+                <br>
+                <hr>
+                {%endfor%}
+                {%else%}
+                <div class="alert alert-success" role="alert">
+                    <a href="{% url 'videos' %}" style="color: white;">
+                        <p class=" style fa fa-bell-o mr-1 align-middle">&nbsp;Seja o primero a posta videos 
+                            <i class="fa fa-video-camera"></i>     
+                        </p>
+                    </a>
+                </div>
+                {%endif%}
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h5 style="font-family: Times New Roman;"><i class="fa fa-clipboard"></i>&nbsp;Post de outros membros</h5>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                {% if todoPost%}
+                {% for p in todoPost %}&nbsp;&nbsp;
+                <img src="{{p.imagem_do_post.url}}" style="width: 100%;height: 280px;border-radius: 5px;"/>
+                <p style="font-family: Times New Roman;font-size: 14px;text-align: center;">Publicado por:&nbsp;<b style="color: green;">{{p.user}}</b><br>
+                    <i class="fa fa-clock-o" style="font-size: 14px;"></i>&nbsp;{{p.criado}}
+                </p>
+                {%endfor%}
+                {%else%}
+                <div class="alert alert-success" role="alert">
+                    <p class=" style fa fa-bell-o mr-1 align-middle" style="color: white;">&nbsp;Ninguém ainda postou nada!!
+                    </p>
+                </div>
+                {%endif%}
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h5 style="font-family: Times New Roman;"><i class="fa fa-spotify"></i>&nbsp;PlayLists Spotify</h5><br>
+            {%if todospotify%}
+            {%for s in todospotify%}
+            <br>
+            <div class="media">
+                <div class="media-body text-right">
+                    <a href="{{s.video}}" target="_blank" data-toggle="tooltip" data-placement="top" style="font-family: Times New Roman;font-size: 14px;color: white;margin: 0;" title="Ir para playlist">Minha PlayList Spotify</a>
+                    <hr>
+                </div>
+                <div class="avatar mr-1">
+                    <a href="{{s.video}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{s.user}}"><img src="{{ s.user.perfil.image.url }}" alt="avtar img holder" width="32" height="32"></a>
+                    <span class="avatar-status-online"></span>
+                </div>
+            </div>
+            <br>
+            {%endfor%}
+            {%else%}
+            <div class="alert alert-success" role="alert">
+                <a href="{% url 'spotify' %}" style="color: white;">
+                    <p class=" style fa fa-bell-o mr-1 align-middle">&nbsp;Seja o primeiro a posta suas músicas do Spotify 
+                        <i class="fa fa-spotify"></i>   
+                    </p>
+                </a>
+            </div>
+            {%endif%}
+            <hr>
+        </div>
+        <div class="card-body">
+            <div class="row">
+            </div>
+        </div>
+    </div>
+</div> 
+</section>
+</div>
+</div>
+</div>
+</div>
+<div class="sidenav-overlay"></div>
+<div class="drag-target"></div>
+{%endblock%}

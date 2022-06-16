@@ -1,0 +1,129 @@
+{% extends "./Base/BasePerfil.html" %}
+{% block content %}
+{% load embed_video_tags %}
+{% load static %}
+<style type="text/css">
+    a{
+        text-decoration: none;
+    }
+</style>
+<div class="horizontal-menu-wrapper">
+    <div class="header-navbar navbar-expand-sm navbar navbar-horizontal floating-nav navbar-light navbar-without-dd-arrow navbar-shadow menu-border" role="navigation" data-menu="menu-wrapper">
+        <div class="navbar-header">
+            <ul class="nav navbar-nav flex-row">
+                <li class="nav-item mr-auto">
+                    <div class="brand-logo"></div>
+                    <img class="" src="{% static 'img/forall.png'%}" alt="avatar" height="45" width="45">                </a></li>
+                    <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i class="fa fa-times d-block d-xl-none font-medium-4 primary toggle-icon"></i><i class="toggle-icon feather icon-disc font-medium-4 d-none d-xl-block collapse-toggle-icon primary" data-ticon="icon-disc"></i></a></li>
+                </ul>
+            </div>
+            <!-- Horizontal menu content-->
+            <div class="navbar-container main-menu-content" data-menu="menu-container">
+                <!-- include ../../../includes/mixins-->
+                <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
+                    <li>
+                        {% if user.is_authenticated %}
+                        <a class="dropdown-item" href="/accounts/logout" style="color: white;"><i class="fa fa-unlock"></i>Sair</a>
+                        {% endif %}
+                    </li>
+                    <li>
+                        {% if user.is_authenticated %}
+                        <a class="dropdown-item" href="{% url 'perfil' %}" style="color: white;"><i class="fa fa-user"></i>Perfil</a>
+                        {% endif %}
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/forall.letsgo/" target="_blank" title="Facebook" style="color:white"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/forall2020_/" target="_blank" title="Instagram" style="color:white"><i class="fa fa-instagram"></i></a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper">
+        <div class="content-body">
+            <section id="media-player-wrapper">
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="card-body">
+                                    <div class="avatar mr-1" style="padding: 2px;">
+                                        <img src="{{ post.user.perfil.image.url }}" alt="avtar img holder" height="30" width="30" data-toggle="tooltip" data-placement="top" title="{{post.user}}">
+                                    </div>
+                                    <div class="badge badge-primary badge-md">
+                                        {{post.post_views}} <i class="fa fa-thumbs-up ml-25"></i>
+                                    </div>
+                                    <img class="card-img img-fluid mb-1" src="{{ post.imagem_do_post.url }}" alt="Card image cap">
+                                    <p class="card-title" style="font-family: Times New Roman;color: white;font-size: 15px;">
+                                        <i class="fa fa-tumblr-square"></i>&nbsp;{{post.titulo}}<br>
+                                        <i class="fa fa-pencil-square-o"></i>&nbsp;{{post.comenta}}<br>
+                                        <i class="fa fa-clock-o"></i>&nbsp;{{post.criado}}<br>
+                                        <i class="fa fa-thumbs-o-up
+                                        "></i>&nbsp;Este post foi visto por <b style="color: red;">{{post.post_views}}</b> pessoa(s)<br>
+                                        <br>
+                                        {% if not request.user == post.user%}
+                                        <a href="/detalhar-post/{{post.id}}"><button type="button" class="btn btn-primary block-element mb-1" style="font-size: 17px;">Comente sobre isto</button>
+                                        </a>&nbsp;
+                                        {%else%}                                        
+                                        {%endif%}
+                                        <a href="{% url 'perfil' %}"><button type="button" class="btn btn-primary block-element mb-1"><i class="fa fa-reply-all"></i>Volta</button>
+                                        </a>&nbsp;
+                                    </p>   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2"></div> 
+                </div>
+                <!-- COMENTÁRIOS -->
+                <div class="col-xl-12 col-lg-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title" style="font-family: Times New Roman;font-size: 17px;"><i class="fa fa-comments"></i>&nbsp;Comentários deste post</h4>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-body">
+                                {% if post.comentaposts_set.all%}
+                                {% for t in post.comentaposts_set.all%}
+                                <div class="media-list">
+                                    <div class="media">
+                                        <a class="media-left" href="">
+                                            <img class="rounded-circle" src="{{t.user.perfil.image.url}}" alt="Generic placeholder image" data-toggle="tooltip" data-placement="top" title="{{t.user}}" height="30" width="30" />
+                                        </a>
+                                        <div class="media-body">
+                                            <h4 class="media-heading" style="font-family: Times New Roman;font-size: 19px;"></h4>
+                                            <p style="font-family: Times New Roman;font-size: 16px;color: white;">
+                                                " {{t.comentarios}} "&nbsp;&nbsp;&nbsp;
+                                                <i class="fa fa-clock-o"></i>&nbsp;{{t.data_comenta}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                {%endfor%}
+                                {%else%}
+                                <div class="alert alert-primary" role="alert">
+                                    <i class="fa fa-bell mr-1 align-middle" style="color: white;"></i>
+                                    <span style="font-family: Times New Roman;font-size: 16px;color: white;">Este post ainda não tem comentário.</span>
+                                </div>
+                                {%endif%}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- FIM -->
+            </div>
+        </section>
+    </div>
+</div>
+</div>
+<div class="sidenav-overlay"></div>
+<div class="drag-target"></div>
+{%endblock%}

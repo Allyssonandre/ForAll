@@ -1,0 +1,223 @@
+{% extends "./Base/BasePerfil.html" %}
+{% block content %}
+{% load static %}
+{% load crispy_forms_tags %}
+<style type="text/css">
+    a{
+        text-decoration: none;
+    }
+</style>
+<div class="horizontal-menu-wrapper">
+    <div class="header-navbar navbar-expand-sm navbar navbar-horizontal floating-nav navbar-light navbar-without-dd-arrow navbar-shadow menu-border" role="navigation" data-menu="menu-wrapper">
+        <div class="navbar-header">
+            <ul class="nav navbar-nav flex-row">
+                <li class="nav-item mr-auto">
+                    <div class="brand-logo"></div>
+                    <img class="" src="{% static 'img/forall.png'%}" alt="avatar" height="45" width="45">                </a></li>
+                    <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i class="fa fa-times d-block d-xl-none font-medium-4 primary toggle-icon"></i><i class="toggle-icon feather icon-disc font-medium-4 d-none d-xl-block collapse-toggle-icon primary" data-ticon="icon-disc"></i></a></li>
+                </ul>
+            </div>
+            <!-- Horizontal menu content-->
+            <div class="navbar-container main-menu-content" data-menu="menu-container">
+                <!-- include ../../../includes/mixins-->
+                <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
+                    <li>
+                        {% if user.is_authenticated %}
+                        <a class="dropdown-item" href="/accounts/logout" style="color: white;"><i class="fa fa-unlock"></i>Sair</a>
+                        {% endif %}
+                    </li>
+                    <li>
+                        {% if user.is_authenticated %}
+                        <a class="dropdown-item" href="{% url 'perfil' %}" style="color: white;"><i class="fa fa-user"></i>Perfil</a>
+                        {% endif %}
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="{% url 'videos' %}" style="color: white;"><i class="fa fa-video-camera"></i>Posta vídeo</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="{% url 'momentos' %}" style="color: white;"><i class="fa fa-pencil-square"></i>Criar Stories</a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/forall.letsgo/" target="_blank" title="Facebook" style="color:white"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/forall2020_/" target="_blank" title="Instagram" style="color:white"><i class="fa fa-instagram"></i></a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper">
+        <div class="content-body">
+            <section id="floating-label-layouts">
+                <div class="row match-height">
+                    <div class="col-md-2 col-12"></div>
+                    <div class="col-md-8 col-12">
+                      {% if not user.eccommence %}
+                      <div class="card">
+                        <div class="card-header">
+                            <p class="card-title fa fa-shopping-cart" style="font-size: 18px;margin: 0;">&nbsp;Criar anúncio</p>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-body">
+                                <form method="POST" enctype="multipart/form-data">    
+                                   {% csrf_token %}<br> 
+                                   <fieldset class="form-label-group form-group position-relative has-icon-left input-divider-left">
+                                    <input name="nome" type="text" class="form-control"  placeholder="Nome Completo" size="100" required>
+                                    <div class="form-control-position">
+                                        <i class="fa fa-user"></i>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="form-label-group form-group position-relative has-icon-left input-divider-left">
+                                    <input name="titulo_produto" type="text" class="form-control"  placeholder="Descreva em 20 caracteres o nome do produto" size="20" required>
+                                    <div class="form-control-position">
+                                        <i class="fa fa-shopping-basket"></i>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="form-label-group form-group position-relative has-icon-left input-divider-left">
+                                    <select name="categori_produto" class="form-control" id="basicSelect" required>
+                                        <option>Selecione a categoria</option>
+                                        {% for id, categori_produto in produtos.categori_produto.field.choices %}
+                                        <option value="{{ id }}">{{ categori_produto }}</option>
+                                        {% endfor %}
+                                    </select>
+                                    <div class="form-control-position">
+                                        <i class="fa fa-tag" style="color: white;"></i>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="form-label-group form-group position-relative has-icon-left input-divider-left">
+                                    <select name="tipo_transacao" class="form-control" id="basicSelect" required>
+                                        <option>Tipo de transação ?</option>
+                                        {% for id, tipo_transacao in produtos.tipo_transacao.field.choices %}
+                                        <option value="{{ id }}">{{ tipo_transacao }}</option>
+                                        {% endfor %}
+                                    </select>
+                                    <div class="form-control-position">
+                                        <i class="fa fa-credit-card-alt" style="color: white;"></i>
+                                    </div>
+                                </fieldset>
+
+
+                                <fieldset class="form-label-group form-group position-relative has-icon-left input-divider-left">
+                                    <input name="cep" type="text" id="cep" class="form-control"  placeholder="Cep da sua cidade" size="10" required>
+                                    <div class="form-control-position">
+                                        <i class="fa fa-envelope"></i>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="form-label-group form-group position-relative has-icon-left input-divider-left">
+                                    <input name="rua" type="text" id="rua" class="form-control" placeholder="Rua" size="60" required>
+                                    <div class="form-control-position">
+                                        <i class="fa fa-street-view"></i>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="form-label-group form-group position-relative has-icon-left input-divider-left">
+                                    <input name="bairro" type="text" id="bairro" class="form-control" placeholder="Bairro" size="40" required>
+                                    <div class="form-control-position">
+                                        <i class="fa fa-globe"></i>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="form-label-group form-group position-relative has-icon-left input-divider-left">
+                                    <input name="cidade" type="text" id="cidade" class="form-control" placeholder="Cidade" size="40" required>
+                                    <div class="form-control-position">
+                                        <i class="fa fa-home"></i>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="form-label-group form-group position-relative has-icon-left input-divider-left">
+                                    <input name="uf" type="text" id="uf" class="form-control" placeholder="UF" size="2" required>
+                                    <div class="form-control-position">
+                                        <i class="fa fa-flag-o"></i>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="form-label-group form-group position-relative has-icon-left input-divider-left">
+                                    <select name="cartao" class="form-control" id="basicSelect" required>
+                                        <option>Cartão, depende da transação</option>
+                                        {% for id, cartao in produtos.cartao.field.choices %}
+                                        <option value="{{ id }}">{{ cartao }}</option>
+                                        {% endfor %}
+                                    </select>
+                                    <div class="form-control-position">
+                                        <i class="fa fa-credit-card" style="color: white;"></i>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="form-label-group form-group position-relative has-icon-left input-divider-left">
+                                    <select name="estado_produto" class="form-control" id="basicSelect" required>
+                                        <option>Como esta o produto ?</option>
+                                        {% for id, estado_produto in produtos.estado_produto.field.choices %}
+                                        <option value="{{ id }}">{{ estado_produto }}</option>
+                                        {% endfor %}
+                                    </select>
+                                    <div class="form-control-position">
+                                        <i class="fa fa-product-hunt" style="color: white;"></i>
+                                    </div>
+                                </fieldset>
+
+                                <label for="basicInput" class="fa fa-money">&nbsp;Preço R$</label>
+                                <fieldset class="form-label-group form-group position-relative has-icon-left input-divider-left">
+                                    <div class="input-group">
+                                        <input name="preco_produto" type="text" class="touchspin" value="50" data-bts-step="0.5" data-bts-decimals="2" size="10" required>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="form-label-group form-group position-relative has-icon-left input-divider-left">
+                                    <input name="contato" type="text"  class="form-control"  placeholder="Contato(WhatsApp), formato 5584XXXXXXXXX'" size="13" required>
+                                    <div class="form-control-position">
+                                        <i class="fa fa-phone"></i>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="form-group">
+                                    <div class="custom-file">
+                                        <input name="image_produto" type="file" class="custom-file-input" id="inputGroupFile01" required>
+                                        <label class="custom-file-label" for="inputGroupFile01">Image do produto. Tamanho 200 X 200:</label>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="form-label-group mb-0">
+                                    <textarea name="descrever_produto" data-length=20 class="form-control char-textarea" id="textarea-counter" rows="3" placeholder="Descreva em detalhes sobre o produto ao qual esta vendendo ou trocando." required>       
+                                    </textarea>
+                                </fieldset>
+                                <br>
+
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary mr-1 mb-1 fa fa-sign-in" style="font-size: 15px;">&nbsp;Cadastra produto</button>
+                                    <button type="reset" class="btn btn-warning mr-1 mb-1 fa fa-times-circle-o" style="font-size: 15px;">Errei</button>
+                                </div>
+                            </form>
+                        </div>
+                        {%else%}
+                        <div class="alert alert-success col-12" role="alert">
+
+                            <p class="mb-0" style="color: white;">
+                                Ops!!, você já tem um anúncio. Se você quer criar outro anúncio EXCLUAR o anterior OU torne-se Premium e anúncie quantos produtos quiser no botão "Quero ser premium" no seu perfil.  <i class="fa fa-hand-o-down"></i> <br>&nbsp;&nbsp;<a href="{% url 'meusProdutos'%}"><button type="button" class="btn btn-success" style="padding: 10px;">Excluir anúncio anterior</button></a>&nbsp; ou &nbsp;&nbsp;<a href="{% url 'perfil'%}"><button type="button" class="btn btn-success" style="padding: 10px;">Volte para seu perfil</button></a> 
+                            </p>
+                        </div>
+
+                    </div>
+                    {%endif%}
+                </div>
+            </div>
+            <div class="col-md-2 col-12"></div>
+        </div>
+    </section>
+</div>
+</div>
+</div>
+<!-- END: Content-->
+<div class="sidenav-overlay"></div>
+<div class="drag-target"></div>
+{%endblock%}

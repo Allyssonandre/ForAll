@@ -1,0 +1,240 @@
+{% extends "./Base/base.html" %}
+{% load static %}
+{% block content %}
+<!-- style para os H1 e H2 -->
+<style type="text/css">
+	.titulo{padding: 0;margin: 0;font-family: Times New Roman;}
+	.subtitulo{padding: 9px;margin: 0;font-family: Times New Roman;font-size: 30px;color: gray;}
+	.breadcrumb-item{font-family: Times New Roman;font-size: 15px;margin: 0px;padding: 10px;color: gray;list-style: none;}
+	.cores{color: black;font-weight: bold;}
+</style>
+<div id="index-banner" class="parallax-container">
+	<div class="section no-pad-bot">
+		<div class="container">
+			<div class="row center">
+				<br>
+				<a href="#" id="download-button" class="btn-large waves-effect" style="background-color: #03262C;">Redação</a>
+			</div>
+			<br><br>
+		</div>
+	</div>
+	<div class="parallax"><img src="{% static 'admin/img/logo.jpg' %}" alt="Logo Marca ForAll"></div>
+</div>
+<div class="container"></div>
+</div><br>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col s12"></div>
+		<div class="col s12 m4 l3">
+			<p style="font-family: Times New Roman;font-size: 19px;font-weight: bold;color: #03262C;">Mais+
+				<hr style="background-color: #559C9E;height: 0.3px;">
+			</p>
+			<a href="{% url 'redacao' %}"><img src="{% static 'admin/img/fontainesDC.jpg'%}" style="width: 100%;height: 195px;border-radius: 5px;"></a><br><hr>
+			<a href="{% url 'banda-irlandesa' %}"><img src="{% static 'admin/img/Bandas_Islandia/JFDR_Two.jpg'%}" style="width: 100%;border-radius: 5px;height: 195px" title="Bandas islandesas"></a><br><hr>
+		</div>
+		<div class="col s12 m4 l6">
+			<p class="breadcrumb-item">
+				<a href="/" class="cores"><i class="fa fa-reply"></i>&nbsp;Página Inicial</a>:
+				<i class="fas fa-angle-right"></i>
+				10 Bandas de Southern para curtir
+			</p>
+			<br>
+			<h1 class="titulo">Conheça 10 Pérolas do Southern rock que você deveria escuta</h1>
+			<h2 class="subtitulo">Southern rock</h2>
+			<div class="chip">
+				<img src="{% static 'admin/img/forall.png' %}" alt="Contact Person">
+				<b style="font-size: 13px;font-family: Times New Roman;">Indicação</b>
+			</div><br>
+			<p style="font-family: Times New Roman;font-size: 17px;text-align: justify;color: gray;margin: 0;">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>"<span style="font-size: 2rem;font-weight: bold;
+				color: gray;font-family: Times New Roman;">H</span>oje os redatores do ForAll vão indicar 10 bandas de Southern rock para você imergir neste
+				subgênero do rock. O southern rock nasceu na região sul dos Estados Unidos, tendo como as
+				maiores influências o blues, o rock e country music, tendo o núcleo do seu som a guitarra elétrica e
+			os vocais."</b> <br><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Os primórdios do southern rock é datado dos anos 50 e 60, baseado principalmente na
+			música sulista, e da influência de alguns artista do rock and roll da época como Bo Diddley, Elvis
+			Presley, Little Richard, Buddy Holly e Jerry Lee Lewis, isso nos anos 50, já na década seguinte outros
+			subgêneros estavam dando as caras como o folk rock e rock psicodélico. <br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Um dos motivos da ascensão do southern rock além dos novos gêneros, foi a invasão
+			britânica nos meados dos anos 60, mudando assim o foco para sul americano. Neste mesmo ano
+			surgiu os primeiros álbuns de bandas como Creedence Clearwater Revival e The band, e em 1969
+			outra banda importante do southern rock lançou seu primeiro álbum o The Allman Brothers Band
+			lançaram o intitulado The Allman Brothers Band , sem sombra de dúvidas essas duas bandas
+			foram a pedra fundamental para o crescimento do southern rock no mundo do Rock. <br><br>
+		</p>
+		<strong> Abaixo, bandas fundamentais para conhecer o southern rock, indicadas pela redação.</strong>
+		<!-- CONTEÚDO -->
+
+		<div class="col s12 m6">
+			<div class="card">
+				<div class="card-image waves-effect waves-block waves-light">
+					<img class="activator" src="{% static 'admin/img/souternRock/TheAllmanBrothers.jpg'%}" height="150px">
+				</div>
+				<div class="card-content">
+					<span class="card-title activator grey-text text-darken-4" style="font-family: Times New Roman;font-size: 14.5px;">The allman brothers band, saiba+<i class="material-icons right">more_vert</i></span>
+				</div>
+				<div class="card-reveal">
+					<span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+					<p>
+						<iframe src="https://open.spotify.com/embed/album/3BnNGoffl0O96ZlxYiPuml"  width="100%" height="100px" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="col s12 m6">
+			<div class="card">
+				<div class="card-image waves-effect waves-block waves-light">
+					<img class="activator" src="{% static 'admin/img/souternRock/blackberry-smoke.jpg'%}" height="150px">
+				</div>
+				<div class="card-content">
+					<span class="card-title activator grey-text text-darken-4" style="font-family: Times New Roman;font-size: 14.5px;">Blackberry Smoke, saiba+<i class="material-icons right">more_vert</i></span>
+				</div>
+				<div class="card-reveal">
+					<span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+					<p>
+						<iframe src="https://open.spotify.com/embed/album/4RTNA0EiZA2ZXkJnX6mt7g" width="100%" height="100" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="col s12 m6">
+			<div class="card">
+				<div class="card-image waves-effect waves-block waves-light">
+					<img class="activator" src="{% static 'admin/img/souternRock/BlackFoot.jpg'%}" height="150px">
+				</div>
+				<div class="card-content">
+					<span class="card-title activator grey-text text-darken-4" style="font-family: Times New Roman;font-size: 14.5px;">Blackfoot, saiba+<i class="material-icons right">more_vert</i></span>
+				</div>
+				<div class="card-reveal">
+					<span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+					<p>
+						<iframe  src="https://open.spotify.com/embed/album/2nI6tciaY3r6CQR8YkXaYM" width="100%" height="100" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="col s12 m6">
+			<div class="card">
+				<div class="card-image waves-effect waves-block waves-light">
+					<img class="activator" src="{% static 'admin/img/souternRock/ccrevival.jpg'%}" height="150px">
+				</div>
+				<div class="card-content">
+					<span class="card-title activator grey-text text-darken-4" style="font-family: Times New Roman;font-size: 14.5px;">Creedence Clearwater R., saiba+<i class="material-icons right">more_vert</i></span>
+				</div>
+				<div class="card-reveal">
+					<span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+					<p>
+						<iframe src="https://open.spotify.com/embed/album/0i9mOB6mPGqwVvtJEXiwPG" width="100%" height="100" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="col s12 m6">
+			<div class="card">
+				<div class="card-image waves-effect waves-block waves-light">
+					<img class="activator" src="{% static 'admin/img/souternRock/johnnycash.jpg'%}" height="150px">
+				</div>
+				<div class="card-content">
+					<span class="card-title activator grey-text text-darken-4" style="font-family: Times New Roman;font-size: 14.5px;">Johnny Cash	, saiba+<i class="material-icons right">more_vert</i></span>
+				</div>
+				<div class="card-reveal">
+					<span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+					<p>
+						<iframe src="https://open.spotify.com/embed/album/2BlL4Gv2DLPu8p58Wcmlm9" width="100%" height="100" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="col s12 m6">
+			<div class="card">
+				<div class="card-image waves-effect waves-block waves-light">
+					<img class="activator" src="{% static 'admin/img/souternRock/LynyrdSkynyrd.jpg'%}" height="150px">
+				</div>
+				<div class="card-content">
+					<span class="card-title activator grey-text text-darken-4" style="font-family: Times New Roman;font-size: 14.5px;">Lynyrd Skynyrd, saiba+<i class="material-icons right">more_vert</i></span>
+				</div>
+				<div class="card-reveal">
+					<span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+					<p>
+						<iframe src="https://open.spotify.com/embed/album/3THuBNp86ScbTXwpTmAbdw" width="100%" height="100" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="col s12 m6">
+			<div class="card">
+				<div class="card-image waves-effect waves-block waves-light">
+					<img class="activator" src="{% static 'admin/img/souternRock/mamaspride.jpg'%}" height="150px">
+				</div>
+				<div class="card-content">
+					<span class="card-title activator grey-text text-darken-4" style="font-family: Times New Roman;font-size: 14.5px;">Mama´s pride, saiba+<i class="material-icons right">more_vert</i></span>
+				</div>
+				<div class="card-reveal">
+					<span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+					<p>
+						<iframe src="https://open.spotify.com/embed/album/5FFqgQgnzZEPwqMawYVF1N" width="100%" height="100" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="col s12 m6">
+			<div class="card">
+				<div class="card-image waves-effect waves-block waves-light">
+					<img class="activator" src="{% static 'admin/img/souternRock/theKentuckyHeadHunters.jpg'%}" height="150px">
+				</div>
+				<div class="card-content">
+					<span class="card-title activator grey-text text-darken-4" style="font-family: Times New Roman;font-size: 14.5px;">The kentucky headhunters, saiba+<i class="material-icons right">more_vert</i></span>
+				</div>
+				<div class="card-reveal">
+					<span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+					<p>
+						<iframe src="https://open.spotify.com/embed/album/41vJl1Y4TloGsRanSTMaJr" width="100%" height="100" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="col s12 m6">
+			<div class="card">
+				<div class="card-image waves-effect waves-block waves-light">
+					<img class="activator" src="{% static 'admin/img/souternRock/TheSteelWoods.jpg'%}" height="150px">
+				</div>
+				<div class="card-content">
+					<span class="card-title activator grey-text text-darken-4" style="font-family: Times New Roman;font-size: 14.5px;">The Stell Woods, saiba+<i class="material-icons right">more_vert</i></span>
+				</div>
+				<div class="card-reveal">
+					<span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+					<p>
+						<iframe src="https://open.spotify.com/embed/album/4qaAjhI72YFVMbusfwiO6x" width="100%" height="100" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="col s12 m6">
+			<div class="card">
+				<div class="card-image waves-effect waves-block waves-light">
+					<img class="activator" src="{% static 'admin/img/souternRock/WhiskeyMyers.jpg'%}" height="150px">
+				</div>
+				<div class="card-content">
+					<span class="card-title activator grey-text text-darken-4" style="font-family: Times New Roman;font-size: 14.5px;">Whiskey Myers, saiba+<i class="material-icons right">more_vert</i></span>
+				</div>
+				<div class="card-reveal">
+					<span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+					<p>
+						<iframe src="https://open.spotify.com/embed/album/5YrOTxB5pmtK6uD4qcpAw5" width="100%" height="100" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+					</p>
+				</div>
+			</div>
+		</div>
+		<!-- FIM -->
+	</div>
+	<div class="col s12 m4 l3">
+		<p style="font-family: Times New Roman;font-size: 19px;font-weight: bold;color: #03262C;">Outros destaques
+			<hr style="background-color: #559C9E;height: 0.3px;">
+		</p>
+		<a href="{% url 'Bob_Mould' %}"><img src="{% static 'admin/img/Tutorial/BobMould/bob.jpg'%}" style="width: 100%;height: 195px;border-radius: 5px;"></a><br><hr>
+		<a href="{% url 'Redacao_reportagem' %}"><img src="{% static 'admin/img/bandas.jpg'%}" style="width: 100%;border-radius: 5px;height: 195px;" title="Você conhece ?"></a>
+		<hr>
+	</div>
+</div>
+</div>
+{%endblock%}

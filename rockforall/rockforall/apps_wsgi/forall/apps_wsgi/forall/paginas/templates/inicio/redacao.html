@@ -1,0 +1,73 @@
+{% extends "./Base/base.html" %}
+{% load static %}
+{% block content %}
+<!-- style para os H1 e H2 -->
+<style type="text/css">
+	.titulo{padding: 0;margin: 0;font-family: Times New Roman;}
+	.subtitulo{padding: 9px;margin: 0;font-family: Times New Roman;font-size: 30px;color: gray;}
+	.breadcrumb-item{font-family: Times New Roman;font-size: 15px;margin: 0px;padding: 10px;color: gray;list-style: none;}
+	.cores{color: black;font-weight: bold;}
+</style>
+<div id="index-banner" class="parallax-container">
+	<div class="section no-pad-bot">
+		<div class="container">
+			<div class="row center">
+				<br>
+				<a href="#" id="download-button" class="btn-large waves-effect" style="background-color: #03262C;">Redação</a>
+			</div>
+			<br><br>
+
+		</div>
+	</div>
+	<div class="parallax"><img src="{% static 'admin/img/logo.jpg' %}" alt="Logo Marca do ForAll"></div>
+</div>
+<div class="container"></div>
+</div><br>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col s12"></div>
+		<div class="col s12 m4 l2">
+			<p style="font-family: Times New Roman;font-size: 22px;font-weight: bold;color: #03262C;">Mais+
+				<hr style="background-color: #559C9E;height: 1px;">
+			</p>
+			<a href="{% url 'destaque'%}"><img src="{% static 'admin/img/jeff.png'%}" alt="Cantor Jeff Buckley" style="width: 100%;height: 195px;border-radius: 5px;"></a><br><hr>
+			<a href="{% url 'Terceira-resenha'%}"><img src="{% static 'admin/img/robert.jpg' %}" alt="Cantor Robert Johnson" style="width: 100%;border-radius: 5px;height: 195px" title="Robert Johnson"></a><br><hr>
+		</div>
+		<div class="col s12 m4 l8">
+			<p class="breadcrumb-item">
+				<a href="/" class="cores"><i class="fa fa-reply"></i>&nbsp;Página Inicial</a>:
+				<i class="fas fa-angle-right"></i>
+				Fontaines D.C , A poesia irlandesa
+			</p>
+			<img src="{% static 'admin/img/fontainesDC.jpg' %}" alt="Banda Fontaines D.C" style="width: 100%;height: 400px;">
+			Créditos / Facebook
+			<br><br>
+			<h1 class="titulo">Fontaines D.C</h1>
+			<h2 class="subtitulo">A poesia irlandesa</h2> 
+			<p style="font-family: Times New Roman;font-size: 17px;text-align: justify;color: gray;">
+				&nbsp;&nbsp;&nbsp;&nbsp;Nasce na irlanda no ano de 2017 a banda 
+                                <a href="https://www.youtube.com/channel/UCVtO4Hc3qiKScQBad51RAIQ" target="_blank"><b>Fontaines D.C</b></a>, formada por Gian chatten (vocal), Carlos 0´Connel(guitarra), Conor curley(guitarra), Connor Deegan III (baixo), e Tom Coll(bateria). A banda foi formada nas salas da faculdade de música, onde os integrantes frequentavam, além de serem colegas do curso de música existia um outro ingrediente ao qual os uniu que foi o amor a poesia. No começo eles faziam performances regulamente, e aí em 2018 assinaram com a gravadora Partisan records. Em 2019 a banda lançou seu primeiro álbum intitulado <b>Dogrel</b>, tendo uma boa aceitação pela crítica especializada, sendo escolhido o álbum do ano pela BBC Radio 6 Music, Rough trades loja de discos, Mercury Prize e Choice Music Prize. <br>
+				<iframe src="https://open.spotify.com/embed/album/5j54NcBr5wBCB129cdjad7" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+				<br><br>
+				O Fontaines D.C tem em seu trabalho vários elementos trazidos das referências musicais dos seus integrantes, por exemplo, toda a performance gestual do vocalista Gian Chatten em cima do palco traz inquietude que às vezes dar para se assemelha ao lendário vocalista do Joy Division Ian Curtis. E não para por aí, banda como <a href="https://www.youtube.com/watch?v=s11BuatTuXk" target="_blank">The pogues</a> foi uma das fontes onde o Fontaines D.C “bebeu”. <br><br>
+				<iframe width="100%" height="300px" src="https://www.youtube.com/embed/s11BuatTuXk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				Voltando aos reconhecimentos do álbum Dogrel. A banda foi convidada para um programa de TV na emissora NBC chamado The Tonight Show Starring Jimmy Fallon em 1 de maio de 2019. Após isso ainda no campo dos “louros colhidos” eles foram escalados para toca em dos maiores festivais do mundo o aclamado <a href="https://www.youtube.com/watch?v=lNmK24-wPEM" target="_blank">Glastonbury Festival</a>, onde todo músico sonha em tocar. <br><br>
+				<iframe width="100%" height="300px" src="https://www.youtube.com/embed/lNmK24-wPEM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				Já em 2020, durante a pandemia do covid 19 o Fontaines D.C lançou seu segundo álbum <a href="https://www.youtube.com/watch?v=A17xOusHXIQ&list=OLAK5uy_nGZVDEsNI_3DfnCWteRyrA9YaaurQcSnE" target="_blank">A hero´s Death</a> em 31 julho, com as faixas: “I don't belong”,” love is the main thing”,” televised mind”,” a lucid dream”,” you said”,” oh such a spring”,” a hero's death”,” living in america”,” i was not born”,” sunny” e “No”. <br>
+
+				Sem sobra de dúvida este álbum estará na lista dos melhores da banda, sendo que por causa da pandemia a banda não teve a oportunidade de toca-lo ao vivo com um público presencial. Com certeza o Fontaines D.C veio para ficar com seu som coeso e poético. <br>
+				
+				<br><br>
+				Por Redação. <b>ForAll</b> <i class="material-icons">person_pin</i>
+			</p>
+		</div>
+		<div class="col s12 m4 l2">
+			<p style="font-family: Times New Roman;font-size: 22px;font-weight: bold;color: #03262C;">Outros destaques
+				<hr style="background-color: #559C9E;height: 1px;">
+			</p>
+			<a href="{% url 'son-house'%}"><img src="{% static 'admin/img/son-house.png'%}" alt="Cantor Son House" style="width: 100%;height: 195px;border-radius: 5px;"></a><br><hr>
+			<a href="{% url 'Primeira-resenha' %}"><img src="{% static 'admin/img/rosseta.jpg'%}" alt="Cantora Rosetta Tharpe" style="width: 100%;border-radius: 5px;height: 195px;" title="Sister Rosetta Tharpe"></a><br><hr>
+		</div>
+	</div>
+</div>
+{%endblock%}

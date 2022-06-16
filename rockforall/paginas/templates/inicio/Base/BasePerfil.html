@@ -1,0 +1,246 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="loading" lang="pt-br" data-textdirection="ltr">
+<head>
+    {% block google%}
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);} 
+        gtag('js', new Date());
+
+        gtag('config', 'G-G1CGT7ENYC');
+
+    </script>
+    {%endblock%}
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description" content="Sua plataforma de entretenimento, notícias do mundo da música e compatilhamento de ídeias">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="André Luiz">
+    <meta name="keywords" content="ForAll, Música, Entretenimento, Rock, Loja, lLoja Virtual">
+    <meta name="copyright" content="ForAll" />
+    <meta property="og:title" content="Sua plataforma de entretenimento, notícias do mundo da música e compatilhamento de ídeias">
+    <meta property="og:type" content="article"/>
+    <meta property="og:description" content="Quer saber sobre os assuntos mais relevantes da atualidade, acesse o ForAll.">
+    <meta property="og:url" content="aoSerUsado" />
+    <meta property="og:site_name" content="ForAll"/>
+    <meta property="fb:admins" content="ForAll"/>
+    
+    <title>
+        {% block title%}ForAll&nbsp;Olá&nbsp;{{user.get_username}}{%endblock%}
+    </title>
+    <link rel="shortcut icon" href="{% static '../static//img/forall.png' %}" type="image/x-icon">
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"> -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/appChat.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-extended.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/colors.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/components.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dark-layout.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dropzone.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/datatables.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dataTables.checkboxes.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dropzone.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/data-list-view.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/horizontal-menu.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/eccommence.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/form-validation.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/pickadate.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/palette-gradient.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/sweetalert2.min.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/swiper.min.css' %}"> 
+    <link rel="stylesheet" type="text/css" href="{% static 'css/semi-dark-layout.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/swiper.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/select2.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/users.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/vertical-menu.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/vendor2.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/vendors.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/touchspin.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dark-layout.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/semi-dark-layout.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
+</head>
+<body class="horizontal-layout horizontal-menu dark-layout 2-columns  navbar-floating footer-static"  data-open="hover" data-menu="horizontal-menu" data-col="2-columns" data-layout="dark-layout" id="topo">
+    <nav class="header-navbar navbar-expand-lg navbar navbar-with-menu navbar-fixed navbar-shadow navbar-brand-center">
+        <div class="navbar-wrapper">
+            <div class="navbar-container content">
+                <div class="navbar-collapse" id="navbar-mobile">
+                    <div class="mr-auto float-left bookmark-wrapper d-flex align-items-center">
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item mobile-menu d-xl-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="fa fa-align-justify"></i></a></li>
+                        </ul>
+                        <ul class="nav navbar-nav">
+                            <div class="bookmark-input search-input">
+                                <div class="bookmark-input-icon"><i class="fa fa-search primary"></i></div>
+                                <input class="form-control input" type="text" placeholder="Explore Vuexy..." tabindex="0" data-search="template-list">
+                                <ul class="search-list search-list-bookmark"></ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="nav navbar-nav float-right">
+                    <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-expand"><i class="ficon fa fa-expand"></i></a></li>
+                    <li class="dropdown dropdown-notification nav-item">
+                        <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
+                            <li class="scrollable-container media-list"><a class="d-flex justify-content-between" href="javascript:void(0)"></a>
+                             <a class="d-flex justify-content-between" href="javascript:void(0)">
+                                <div class="media d-flex align-items-start">
+                                    <div class="media-left"><i class="feather icon-file font-medium-5 warning"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
+                    <div class="user-nav d-sm-flex d-none">
+                        {% if request.user.is_superuser %}
+                        <span class="user-name text-bold-600">Administrador | {{user.get_username}}</span>
+                        {%else%}
+                        <span class="user-name text-bold-600">{{user.get_username}}</span>
+                        {%endif%}
+                    </div>
+                    <span>
+                        {% if not user.perfil.image%}
+                        <img class="round" src="{% static 'img/forall.png'%}" alt="avatar" height="40" width="40">
+                        {% else%}
+                        <img class="round" src="{{ user.perfil.image.url }}" alt="avatar" height="40" width="40">
+                        {% endif %}
+                    </span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="/editaperfil/{{user.perfil.id}}"><i class="fa fa-user"></i> Edita Perfil</a>
+                    <a class="dropdown-item" href="{% url 'videos' %}"><i class="fa fa-youtube"></i>Posta vídeo</a>
+                    <a class="dropdown-item" href="{% url 'mostravideos' %}"><i class="fa fa-play"></i>Meus vídeos</a>
+                    <div class="dropdown-divider"></div>
+                    {% if user.is_authenticated %}
+                    <a class="dropdown-item" href="/accounts/logout"><i class="fa fa-unlock"></i>Sair</a>
+                    {% endif %}
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+</nav>
+{% block content %}
+
+{% endblock%}
+<!-- BEGIN: Footer-->
+<footer class="footer footer-static footer-light navbar-shadow">
+    <p class="clearfix blue-grey lighten-2 mb-0"><span class="float-md-left d-block d-md-inline-block mt-25">&copy; 2021 ForAll.&nbsp;&nbsp;All rights reserved. Develop.Beta version 1.0</span>&nbsp;&nbsp;
+        <a href="https://www.facebook.com/forall.letsgo/" target="_blank" title="Facebook" style="color:white;"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.instagram.com/forall2020_/" target="_blank" title="Facebook" style="color:white;text-decoration: none;"><i class="fa fa-instagram"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        <a href="#topo"><button class="btn btn-primary btn-icon scroll-top" type="button"><i class="fa fa-arrow-up"></i></button></a>
+    </p>
+</footer>
+<script src="{% static 'js/vendors.min.js' %}"></script>
+<script src="{% static 'js/jquery.sticky.js' %}"></script>
+<script src="{% static 'js/app-menu.js' %}"></script>
+<script src="{% static 'js/app.js' %}"></script>
+<script src="{% static 'js/components.js' %}"></script>
+<script src="{% static 'js/user-profile.js'%}"></script>
+<script src="{% static 'js/dashboard-analytics.min.js'%}"></script>
+<script src="{% static 'js/dashboard-analytics.js'%}"></script>
+<script src="{% static 'js/polyfill.min.js'%}"></script>
+<script src="{% static 'js/swiper.min.js'%}"></script>
+<script src="{% static 'js/swiper.js'%}"></script>
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/vendor2.js' %}"></script>
+<script src="{% static 'js/select2.full.min.js' %}"></script>
+<script src="{% static 'js/jqBootstrapValidation.js' %}"></script>
+<script src="{% static 'js/picker.js' %}"></script>
+<script src="{% static 'js/picker.date.js' %}"></script>
+<script src="{% static 'js/app-user.js' %}"></script>
+<script src="{% static 'js/navs.js' %}"></script>
+<script src="{% static 'js/user-profile.js'%}"></script>
+<script src="{% static 'js/appChat.js' %}"></script>
+<script src="{% static 'js/eccommence.js' %}"></script>
+<script src="{% static 'js/dropzone.min.js' %}"></script>
+<script src="{% static 'js/datatables.min.js' %}"></script>
+<script src="{% static 'js/datatables.buttons.min.js' %}"></script>
+<script src="{% static 'js/datatables.bootstrap4.min.js' %}"></script>
+<script src="{% static 'js/buttons.bootstrap.min.js' %}"></script>
+<script src="{% static 'js/dataTables.select.min.js' %}"></script>
+<script src="{% static 'js/datatables.checkboxes.min.js' %}"></script>
+<script src="{% static 'js/data-list-view.js' %}"></script>
+<script src="{% static 'js/jquery.bootstrap-touchspin.js' %}"></script>
+<script src="{% static 'js/number-input.js' %}"></script>
+<script src="{% static 'js/popovers.js' %}"></script>
+
+
+<!-- API DO APICEP -->
+<script>
+
+    $(document).ready(function() {
+
+        function limpa_formulário_cep() {
+                // Limpa valores do formulário de cep.
+                $("#rua").val("");
+                $("#bairro").val("");
+                $("#cidade").val("");
+                $("#uf").val("");
+                
+            }
+            
+            //Quando o campo cep perde o foco.
+            $("#cep").blur(function() {
+
+                //Nova variável "cep" somente com dígitos.
+                var cep = $(this).val().replace(/\D/g, '');
+
+                //Verifica se campo cep possui valor informado.
+                if (cep != "") {
+
+                    //Expressão regular para validar o CEP.
+                    var validacep = /^[0-9]{8}$/;
+
+                    //Valida o formato do CEP.
+                    if(validacep.test(cep)) {
+
+                        //Preenche os campos com "..." enquanto consulta webservice.
+                        $("#rua").val("...");
+                        $("#bairro").val("...");
+                        $("#cidade").val("...");
+                        $("#uf").val("...");
+
+
+                        //Consulta o webservice viacep.com.br/
+                        $.getJSON("https://viacep.com.br/ws/"+ cep +"/json/?callback=?", function(dados) {
+
+                            if (!("erro" in dados)) {
+                                //Atualiza os campos com os valores da consulta.
+                                $("#rua").val(dados.logradouro);
+                                $("#bairro").val(dados.bairro);
+                                $("#cidade").val(dados.localidade);
+                                $("#uf").val(dados.uf);
+                                
+                            } //end if.
+                            else {
+                                //CEP pesquisado não foi encontrado.
+                                limpa_formulário_cep();
+                                alert("CEP não encontrado.");
+                            }
+                        });
+                    } //end if.
+                    else {
+                        //cep é inválido.
+                        limpa_formulário_cep();
+                        alert("Formato de CEP inválido.");
+                    }
+                } //end if.
+                else {
+                    //cep sem valor, limpa formulário.
+                    limpa_formulário_cep();
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>

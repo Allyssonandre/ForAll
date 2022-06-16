@@ -1,0 +1,94 @@
+{% extends "./Base/base.html" %}
+{% load static %}
+{% block content %}
+{%block google%}{{block.super}}{%endblock%}
+<title>
+{% block title %}ForAll - Destaque Jeff Buckley, o legado{% endblock%}
+</title>
+<!-- style para os H1 e H2 -->
+<style type="text/css">
+	.titulo{padding: 0;margin: 0;font-family: Times New Roman;}
+	.subtitulo{padding: 9px;margin: 0;font-family: Times New Roman;font-size: 30px;color: gray;}
+	.breadcrumb-item{font-family: Times New Roman;font-size: 15px;margin: 0px;padding: 10px;color: gray;list-style: none;}
+	.cores{color: black;font-weight: bold;}
+	.Texto{font-family: Times New Roman;font-size: 16px;text-align: justify;color: gray;padding: 0;margin: 0;}
+	.relacionados{font-family: Times New Roman;font-size: 17px;font-weight: bold;color: #03262C;}
+	.image-relacionados{width: 23%;height: 60px;border-radius: 5px;padding: 0px;}
+	.texto-relacionados{font-family: Times New Roman;font-size: 14px;float: right;margin-top: -15px;margin: 0;color: gray;}
+</style>
+<div class="container-fluid">
+	<!-- CONTAINER PARA PROPAGANDAS -->
+	<br><br>
+	<div class="row">
+		<div class="col s12 m6 l3"></div>
+		<div class="col s12 m12 l6">
+			
+		</div>
+		<div class="col s12 m6 l3"></div>
+	</div>
+</div><br>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col s12 m4 l3">
+			<p class="relacionados">Relacionados</p>
+			<a href="{% url 'indicacao' %}"><img src="{% static 'img/stone2.jpg'%}" alt="Bandas de Stone Rock" class="image-relacionados">
+			</a>
+			<a href="{% url 'indicacao' %}" style="color: black;">
+				<p class="texto-relacionados">
+					10 Álbuns essencias de Stone Rock
+				</p>
+			</a><br><br>
+			<a href="{% url 'Bob_Mould'%}"><img src="{% static 'img/Tutorial/BobMould/Bob.jpg'%}" alt="Cantor Bob Mould" class="image-relacionados">
+			</a>
+			<a href="{% url 'Bob_Mould'%}" style="color: black;">
+				<p class="texto-relacionados">
+					Bob Mould
+				</p>
+			</a>
+		</div>
+		<div class="col s12 m4 l6">
+			<p class="breadcrumb-item">
+				<a href="/" class="cores"><i class="fa fa-reply"></i>&nbsp;Página Inicial</a>:
+				<i class="fas fa-angle-right"></i>
+				Jeff Buckley, o legado.
+			</p>
+			<img src="{% static 'img/jeff.png' %}" style="width: 100%;height: 400px;border-radius: 5px;">
+			<p class="Texto">Créditos / Facebook</p>
+			<h1 class="titulo">Jeff Buckley</h1>
+			<h2 class="subtitulo">O legado</h2>
+			<p class="Texto">
+				ForAll | Redação <br><br>
+				A vida ás vezes nos prega algumas peças, e tem horas que se pegamos pensando porque certas coisas acontecem, isto é a vida, e com <b>Jeffrey Scott Buckley</b> não foi diferente. Nascido em Anaheim, em 17 de novembro de 1966 foi cantor, compositor e guitarrista, com o talento inigualável ganhou notoriedade entre chefões do mundo musical, aclamado pela crítica, sendo considerado uma das maiores revelações da década de 90.  Contudo, Jeff morreu por afogamento em um afluente do Rio Mississipi no ano de 1997, deixando um legado. Pois apesar de um tempo curto de carreira foi crucial na música como um todo, influenciado artistas como Radiohead, Coldplay, Muse  entre outros. <br><br>
+
+				A vida do garoto Jeff Buckley foi como uma novela mexicana com pitadas de roteiros hollywoodianos, filho de <b>Mary Guibert</b> e o cantor de jazz e de Folk Tim Buckley, onde o jovem Jeff o viu uma única vez aos 8 anos de idade. Após a morte do pai, Jeff que era chamado como Scott “Scottie” Moorhead mudou definitivamente seu nome para Jeff Buckley.  Ele que além de ter o DNA musical herdado do seu pai, sua mãe também era formada em música clássica, não deu outra o garoto teria o caminho natural para trilha que seria a música.  Em 1991, Jeff foi chamado para cantar em um tributo ao seu pai, cantando ele surpreendeu a todos, pois sua voz era semelhante ao do Pai (Tim Buckley), foi neste interim que foi convidado a toca em uma Banda chamada Gods of Monsters junto com o ex-guitarrista do <b>Captain Beefheart, Gary Lucas</b>. Composições prontas, ensaios perfeitos e um álbum preste a ser assinado, Jeff Buckley decidi deixa a banda já que ele tinha em seu DNA um talento raro, e achava que em uma Banda sua ambição criativa poderia ser reprimida. <br><br>
+
+				Com isso Jeff Beckley seguiu seu caminho tocando em um bar junto de seu violão, foi em um bar chamado de <b>Sin-é</b> que um Empresário de uma grande gravadora chamada Columbia o viu canta, e imediatamente ele o chamou para assina com a Gravadora Columbia Records, onde Jeff estreou com um LP de 5 faixas. Daí por diante a vida do primogênito de Tim Buckley começo a mudar, fazendo uma turnê pela Europa no ano de 1992. <br><br>
+
+				Mas faltava uma obra prima para o legado de Jeff Buckley, e ela veio no ano de 1994 com o álbum <b>Grace</b>, produzido por <b>Andy Wallace</b>, cheio de canções lindíssimas e de uma poesia sublime como na faixa Last GoodBye, o disco causou um burburinho no mundo musical, ainda que o álbum não tenha sido um sucesso de vendas, mas deixou medalhões como <b>Robert Plant e Jimmy Page</b> surpreendidos com o talento de Jeff. Em uma ocasião disse Jimmy Page <b>“Quando o Plant e eu vimos ele tocando na Austrália, ficamos assustados. Foi realmente tocante”</b>. <br><br>
+
+				Este foi Jeff Buckley um artista como poucos que veio ao mundo da música, e teve pouco tempo de sucesso, mas deixou seu legado em forma de poesia retratada em suas músicas. Talvez apareça outros talentos a ser comparado com Jeff Buckley, mas Jeff foi o único a gravar GRACE, e ainda ser reverenciado por grandes nomes como Paul Mccartney, Jimmy Page, Chris Cornell e Bono vox. <br><br>
+				<iframe src="https://open.spotify.com/embed/album/7yQtjAjhtNi76KRu05XWFS" width="100%" height="300px" frameborder="0" allowtransparency="true" allow="encrypted-media" style="margin-right: 17px;"></iframe>
+			</p>
+		</div>
+		<div class="col s12 m4 l3">
+			<p class="relacionados">Destaque</p>
+			<a href="{% url 'breve-historia' %}"><img src="{% static 'img/thin.jpg'%}" alt="Banda Thin Lizzy" class="image-relacionados">
+			</a>
+			<a href="{% url 'breve-historia' %}" style="color: black;">
+				<p class="texto-relacionados">
+					Thin Lizzy, uma breve história
+				</p>
+			</a><br><br>
+			<a href="{% url 'tutorial' %}"><img src="{% static 'img/modd.jpg' %}" alt="Banda The Moody Blues" class="image-relacionados">
+			</a>
+			<a href="{% url 'tutorial' %}" style="color: black;">
+				<p class="texto-relacionados">
+					Uma banda clássica
+				</p>
+			</a>
+		</div>
+	</div>
+</div>
+
+{%endblock%}

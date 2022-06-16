@@ -1,0 +1,82 @@
+{% extends "./Base/base.html" %}
+{% load static %}
+{% block content %}
+<!-- style para os H1 e H2 -->
+<style type="text/css">
+	.titulo{padding: 0;margin: 0;font-family: Times New Roman;}
+	.subtitulo{padding: 9px;margin: 0;font-family: Times New Roman;font-size: 30px;color: gray;}
+	.breadcrumb-item{font-family: Times New Roman;font-size: 15px;margin: 0px;padding: 10px;color: gray;list-style: none;}
+	.cores{color: black;font-weight: bold;}
+</style>
+<div id="index-banner" class="parallax-container">
+	<div class="section no-pad-bot">
+		<div class="container">
+			<div class="row center">
+				<br>
+				<a href="#" id="download-button" class="btn-large waves-effect" style="background-color: #03262C;">Alicerces do Blues
+				</a>
+			</div>
+			<br><br>
+		</div>
+	</div>
+	<div class="parallax"><img src="{% static 'admin/img/logo.jpg' %}" alt="Logo Marca do ForAll"></div>
+</div>
+<div class="container"></div>
+</div>
+<div class="container-fluid">	
+	<div class="row">
+		<div class="col s12"><br></div>
+		<div class="col s12 m4 l2"></div>
+		<div class="col s12 m4 l8">
+			<p class="breadcrumb-item">
+				<a href="/" class="cores"><i class="fa fa-reply"></i>&nbsp;Página Inicial</a>:
+				<i class="fas fa-angle-right"></i>
+				Charley Patton
+			</p>
+			<img src="{% static 'admin/img/charlie.jpg' %}" alt="Cantor Charley Patton" style="width: 100%;height: 400px;border-radius: 5px;">
+			Créditos / YouTube
+			<br><br>
+			<h1 class="titulo">Charley Patton</h1> 
+			<p style="font-family: Times New Roman;font-size: 17px;text-align: justify;color: gray">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O Blues rural que era feito no Delta do Mississípi, muito antes dos anos de reconhecimento do blues, que foi na década de 60, era repleto de artistas maravilhosos, dentre eles estava <b>Charley Patton</b> ou simplesmente Charlie, nascido supostamente no ano de 1891, no Condado de Hinds, Mississípi. cantor e guitarrista Patton foi uns dos primeiros guitarristas a influência vários outros artista do Delta do Mississípi. Ele foi casado com Bertha Lee.  Patton passou a maior parte da vida no Delta, pelos anos de 1900, onde trabalhava em plantações de algodão no condado de Sunflower. Onde lá com outros artistas do blues, como Willie Brown e Tommy Johnson se reuniam para criar músicas, harmonias e ideias. <br>
+
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Uma das características da música de Patton foi as canções populares, que eram apreciadas por dançarinos em festas organizadas em barracões rurais. Ele gravou 70 músicas, sempre com sua voz grave e as vezes incompreensível, acompanhado com um violão acústico de afinação percussiva. Em suas gravações mais famosas estão “Pony Blues”, “Down the Dirt Road”, “Shake It and Break It”, “Water Everywhere” e “Moon Going Down”, e até música gospel ele gravou, com tudo isso sua popularidade só cresceu ao longo de sua carreira.   Até hoje, Patton é considerado o “Pai do Delta blues”, para se ter ideia, muito antes do formidável Jimi Hendrix abalar seus espectadores com um modo peculiar de tocar guitarra, Patton já era um showman, tocando com os joelhos e atrás de sua cabeça ou nas costas, através destes fatos não se pode nega que Charley Patton foi dos músicos mais populares dos Estados Unidos.  <br>
+
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Patton deixou seu legado na música blues, e também em outros gêneros que “bebem” da fonte do blues como o Rock and roll.  Seu reconhecimento veio no ano de 2003, através do Screamin ‘eo Hollerin’ The Blues: The Worlds of Charley Patton, é um box set das obras gravadas de Charley Patton, ganhando três Grammy Awards de melhor álbum da História, Best Boxed ou Special Limited Editi on Package. <br>
+
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Patton faleceu em 28 de abril de 1934 de insuficiência cardíaca, sendo enterrado em Holly Ridge, como as custas do enterro pagas por um artista da época John Fogerty . A vários boatos sobre a autenticidade da foto colocada em seu túmulo, alguns dizem que existia apenas uma fotografia, e que ela é de propriedade de um colecionado chamado John Tefteller. Apesar de todas as façanhas artísticas de Charley Patton sua morte não fora anunciada em jornais da época. <br>
+
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Esta foi uma síntese do artística que foi Patton, sendo um dos percursores da música blues, que apesar de pouco recursos técnicos conseguiu impor uma maneira de tocar, e emociona a todos com a atitude e a força de sua música.   
+				<br>
+				Por Redação <i class="material-icons">person_pin</i>
+			</p>
+                       <iframe width="100%" height="315" src="https://www.youtube.com/embed/56R83MOpBGg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+		<div class="col s12 m4 l2"></div>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<!-- RECOMENDAÇÕES -->		
+		<div>
+			<p style="padding: 0px;margin: 0px;font-size: 25px;font-family: Times New Roman;">Recomendados
+				<hr>
+			</p>
+			<br>
+		</div>
+		<div class="col s12 m6 l3">
+			<a href="{% url 'son-house'%}"><img src="{% static 'admin/img/son-house.png'%}" alt="Cantor Son House" style="width: 100%;border-radius: 5px;height: 185px;"></a>
+		</div>
+		<div class="col s12 m6 l3">
+			<a href="{% url 'tutorial'%}"><img src="{% static 'admin/img/modd.jpg' %}" alt="Banda The Moody Blues" style="width: 100%;border-radius: 5px;height: 185px"></a>
+		</div>
+		<div class="col s12 m6 l3">
+			<a href="{% url 'dicas'%}"><img src="{% static 'admin/img/kingC.png' %}" alt="Banda King Crimson" style="width: 100%;border-radius: 5px;height: 185px"></a>
+		</div>
+		<div class="col s12 m6 l3">
+			<a href="{% url 'destaque'%}"><img src="{% static 'admin/img/jeff.png'%}" alt="Cantor Jeff Buckley" style="width: 100%;border-radius: 5px;height: 185px;"></a>
+		</div>
+		<!-- FIM -->
+	</div>
+</div>
+{%endblock%}	

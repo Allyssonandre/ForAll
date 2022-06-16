@@ -1,0 +1,142 @@
+{% extends "./Base/base.html" %}
+{% load static %}
+{% block content %}
+{%block google%}{{block.super}}{%endblock%}
+<title>
+{% block title %}ForAll - Redação 10 álbuns essências de Stone Rock{% endblock%}
+</title>
+<!-- style para os H1 e H2 -->
+<style type="text/css">
+	.titulo{padding: 0;margin: 0;font-family: Times New Roman;}
+	.subtitulo{padding: 9px;margin: 0;font-family: Times New Roman;font-size: 30px;color: gray;}
+	.breadcrumb-item{font-family: Times New Roman;font-size: 15px;margin: 0px;padding: 10px;color: gray;list-style: none;}
+	.cores{color: black;font-weight: bold;}
+	.Texto{font-family: Times New Roman;font-size: 16px;text-align: justify;color: gray;padding: 0;margin: 0;}
+	.relacionados{font-family: Times New Roman;font-size: 17px;font-weight: bold;color: #03262C;}
+	.image-relacionados{width: 23%;height: 60px;border-radius: 5px;padding: 0px;}
+	.texto-relacionados{font-family: Times New Roman;font-size: 14px;float: right;margin-top: -15px;margin: 0;color: gray;}
+	.img-principal{width: 100%;height: 400px;border-radius: 3px;}
+	.img-bandas{width: 100%;height: 230px;border-radius: 3px;}
+</style>
+
+<div class="container-fluid">
+	<!-- CONTAINER PARA PROPAGANDAS -->
+	<br><br>
+	<div class="row">
+		<div class="col s12 m6 l3"></div>
+		<div class="col s12 m12 l6">
+			
+		</div>
+		<div class="col s12 m6 l3">
+			
+		</div>
+	</div>
+</div><br>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col s12 m4 l3">
+			<p class="relacionados">Relacionados</p>
+			<a href="{% url 'destaque' %}"><img src="{% static 'img/jeff.png'%}" alt="Cantor Jeff Buckley" class="image-relacionados">
+			</a>
+			<a href="{% url 'destaque' %}" style="color: black;">
+				<p class="texto-relacionados">
+					O legado.
+				</p>
+			</a><br><br>
+			<a href="{% url 'Redacao_reportagem' %}"><img src="{% static 'img/bandas.jpg'%}" alt="Banda de Punk Rock Hardcore" class="image-relacionados">
+			</a>
+			<a href="{% url 'Redacao_reportagem' %}" style="color: black;">
+				<p class="texto-relacionados">
+					Bandas que você tem que conhecer.
+				</p>
+			</a>			
+		</div>
+		<div class="col s12 m4 l6">
+			<p class="breadcrumb-item">
+				<a href="/" class="cores"><i class="fa fa-reply"></i>&nbsp;Página Inicial</a>:
+				<i class="fas fa-angle-right"></i>
+				10 Álbuns essências de Stone Rock
+			</p>
+			<br><br>
+			<h1 class="titulo">Indicação da Redação</h1>
+			<h2 class="subtitulo">10 Álbuns essências de Stone Rock</h2>
+			<p class="Texto">
+				ForAll | Redação<br><br>
+				O stone rock, foi rotulado pela mídia como um gênero oriundo da fusão com o rock, que harmoniza com elementos do heavy metal, doom metal, rock psicodélico e o acid rock. tendo seu nome referenciado ao consumo da cannabis. o termo rock do deserto é geralmente usado de forma similar com o termo “rock stoner” para descrever esse gênero; no entanto, nem todas as bandas de rock stoner cairiam sob o rotulo de “desert rock”. <br><br>
+
+				O stoner rock é caracterizado pelo ritmo lento, e fortes distorções em suas linhas de guitarra, harmonizando com uma linha de baixo similar a guitarra  vocais melódicos, e produção “retro”.  o gênero surgiu no início dos anos 90 e foi pioneiro principalmente por monster magnet e as bandas californianas fu manchu , kyuss  e sleep.
+				<br><br>
+			</p>
+			<div class="col s12 m4 l6">
+				<img class="img-bandas" src="{% static 'img/band1.jpg' %}" alt="Banda Kyuss">		
+				<p class="Texto">Welcome to Sky Valley</p><br>
+				<iframe src="https://open.spotify.com/embed/album/1npen0QK3TNxZd2hLNzzOj" width="100%" height="200" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe><br><br>
+			</div>
+			<div class="col s12 m4 l6">
+				<img class="img-bandas" src="{% static 'img/band2.jpg' %}"  alt="Banda Queen of the Stone Age">	
+				<p class="Texto">Songs for the deaf</p><br>
+				<iframe src="https://open.spotify.com/embed/album/4w3NeXtywU398NYW4903rY" width="100%" height="200" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe><br><br>
+			</div>	
+			<div class="col s12 m4 l6">
+				<img class="img-bandas" src="{% static 'img/band3.jpg' %}" alt="Banda Orange Goblin">	
+				<p class="Texto">The Travelling Blues</p><br>
+				<iframe src="https://open.spotify.com/embed/album/7hhrMCHknQRSshggDg0zAv" width="100%" height="200px" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe><br><br>
+			</div>
+			<div class="col s12 m4 l6">
+				<img class="img-bandas" src="{% static 'img/band4.png' %}" alt="Banda Saint Vitus">	
+				<p class="Texto">Born Too Late</p><br>
+				<iframe src="https://open.spotify.com/embed/album/6CyKigkGRtW3xTDZczqlRC" width="100%" height="200px" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe><br><br>
+			</div>
+			<div class="col s12 m4 l6">
+				<img class="img-bandas" src="{% static 'img/band5.png' %}" alt="Banda Stone Jesus">	
+				<p class="Texto">Seven Thunders Roar</p><br>
+				<iframe src="https://open.spotify.com/embed/album/5KEs1CBh2Keg4OMVsYfaZU" width="100%" height="200px" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe><br><br>
+			</div>
+			<div class="col s12 m4 l6">
+				<img class="img-bandas" src="{% static 'img/band6.png' %}" alt="Banda Uncle Acid & the Deadbeats">	
+				<p class="Texto">Blood Lust</p><br>
+				<iframe src="https://open.spotify.com/embed/album/3nGKNhRZwE0u0GkGSps8C8" width="100%" height="200px" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe><br><br>
+			</div>
+			<div class="col s12 m4 l6">
+				<img class="img-bandas" src="{% static 'img/band7.png' %}" alt="Banda Sleep">	
+				<p class="Texto">The Sciences</p><br>
+				<iframe src="https://open.spotify.com/embed/album/6X0ErPKlQAxQDhWKNprz7u" width="100%" height="200px" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe><br><br>
+			</div>
+			<div class="col s12 m4 l6">
+				<img class="img-bandas" src="{% static 'img/band8.png' %}" alt="Banda Fu Manchu">	
+				<p class="Texto">The Action is Go</p><br>
+				<iframe src="https://open.spotify.com/embed/album/7xYJinzZ19pVPVmEAakYv9" width="100%" height="200px" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe><br><br>
+			</div>
+			<div class="col s12 m4 l6">
+				<img class="img-bandas" src="{% static 'img/band9.png' %}" alt="Banda Ché">	
+				<p class="Texto">Sounds of Liberation</p><br>
+				<iframe src="https://open.spotify.com/embed/album/64j8xD4dOF2Vm4zdJMdqLQ" width="100%" height="200px" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe><br><br>
+			</div>
+			<div class="col s12 m4 l6">
+				<img class="img-bandas" src="{% static 'img/band10.png' %}" alt="Banda Brant Bjork">
+				<p class="Texto">Brant Bjork - Brant Bjork & The Operators</p><br>
+				<iframe src="https://open.spotify.com/embed/album/5PC5eLiQQ9WE7OjZxEDqaP" width="100%" height="200px" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe><br><br>
+			</div>
+		</div>
+		<div class="col s12 m4 l3">
+			<p class="relacionados">Destaque</p>
+			<a href="{% url 'southern-rock' %}"><img src="{% static 'img/souternRock/johnnycash.jpg' %}" alt="Bandas de Southern rock" class="image-relacionados">
+			</a>
+			<a href="{% url 'southern-rock' %}" style="color: black;">
+				<p class="texto-relacionados">
+					Pérolas do Southern rock.
+				</p>
+			</a><br><br>
+			<a href="{% url 'Quadrinhos' %}"><img src="{% static 'img/Quadrinhos/quadrinho.png'%}" alt="Quadrinhos" class="image-relacionados">
+			</a>
+			<a href="{% url 'Quadrinhos' %}" style="color: black;">
+				<p class="texto-relacionados">
+					Quadrinhos que você tem que conhecer
+				</p>
+			</a>
+		</div>
+	</div>
+</div>
+{%endblock%}
+

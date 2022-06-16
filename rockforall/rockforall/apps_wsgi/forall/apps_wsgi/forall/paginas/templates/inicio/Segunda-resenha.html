@@ -1,0 +1,81 @@
+{% extends "./Base/base.html" %}
+{% load static %}
+{% block content %}
+<!-- style para os H1 e H2 -->
+<style type="text/css">
+	.titulo{padding: 0;margin: 0;font-family: Times New Roman;}
+	.subtitulo{padding: 9px;margin: 0;font-family: Times New Roman;font-size: 30px;color: gray;}
+	.breadcrumb-item{font-family: Times New Roman;font-size: 15px;margin: 0px;padding: 10px;color: gray;list-style: none;}
+	.cores{color: black;font-weight: bold;}
+</style>
+<div id="index-banner" class="parallax-container">
+	<div class="section no-pad-bot">
+		<div class="container">
+			<div class="row center">
+				<br>
+				<a href="#" id="download-button" class="btn-large waves-effect" style="background-color: #03262C;">
+					Alicerces do Blues 
+				</a>
+			</div>
+			<br><br>
+
+		</div>
+	</div>
+	<div class="parallax"><img src="{% static 'admin/img/logo.jpg' %}" alt="Logo Marca do ForAll"></div>
+</div>
+<div class="container"></div>
+</div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="row">
+			<div class="col s12"><br></div>
+			<div class="col s12 m4 l2"></div>
+			<div class="col s12 m4 l8">
+				<p class="breadcrumb-item">
+					<a href="/" class="cores"><i class="fa fa-reply"></i>&nbsp;Página Inicial</a>:
+					<i class="fas fa-angle-right"></i>
+					Jimmy Preston
+				</p>
+				<img src="{% static 'admin/img/jimmiPreston.jpg' %}" alt="Cantor Jimmy Preston" style="width: 100%;height: 400px;border-radius: 5px;">
+				Créditos / YouTube <br>
+				<h1 class="titulo">Jimmy Preston</h1> 
+				<p style="font-family: Times New Roman;font-size: 17px;text-align: justify;color: gray">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O final da década de 40, o Rhythm and Blues estava em ascensão fazendo uma mudança significativa no mercado fonográfico da época. Como um gênero poderia se dizer que ele deu origem ao rock and roll, sendo considerado um dos “pais” do rock. Nesse ínterim vários artistas se destacaram dentre eles estava <b>Jimmy Preston</b>.<br>
+
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>James Alfred Smith Preston</b>, nasceu em Chester, Pennsylvania, Preston formou sua banda em 1945, colocando um nome sugestivo para banda como Jimmy Preston  And His Pestonians. No ano de 1949 eles gravam a canção “Hucklebuck Daddy”, gravado pela Gotham Records da Filadélfia, sendo que mesmo ano eles também gravaram uma das músicas que é considerada como um dos marcos do conceito da música rock, chamada de “Rock the Joint” com o ritmo  espirituoso, e  vigoroso do rock and roll, sendo regravada depois por Jimmy Cavallo em 1951, e Bill Haley and the Saddlemen em 1952. Com a gravação de “Rock The Joint” Preston definitivamente ajudou a fomenta o movimento, com a mistura de vários instrumentos como: Sons de saxofone, uma melodia baseada com o blues como elementos do boogie bass. Ajudando a difundi o gênero, Jimmy Prestou mais tarde foi identificado com um dos principais coadjuvantes do recém rotulado Rock and Roll. <br>
+
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Surpreendentemente jimmy Preston, desistiu de toca música no ano de 1952, se tornando reverendo da Igreja Batista da vitória em 1952. Prestou faleceu na Filadélfia no ao de 1984, tendo 71 anos.  
+					<br>
+					Por Redação <i class="material-icons">person_pin</i>
+				</p>						
+				<iframe width="100%" height="315" src="https://www.youtube.com/embed/WLKlF7TX2BI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+			<div class="col s12 m4 l2"></div>
+		</div>
+	</div>
+</div>	
+<div class="container">
+	<div class="row">
+		<!-- RECOMENDAÇÕES -->
+		<div>
+			<p style="padding: 0px;margin: 0px;font-size: 25px;font-family: Times New Roman;">Recomendados
+				<hr>
+			</p>
+			<br>
+		</div>
+		<div class="col s12 m6 l3">
+			<a href="{% url 'son-house'%}"><img src="{% static 'admin/img/son-house.png'%}" alt="Cantor Son House" style="width: 100%;border-radius: 5px;height: 185px;"></a>
+		</div>
+		<div class="col s12 m6 l3">
+			<a href="{% url 'tutorial'%}"><img src="{% static 'admin/img/modd.jpg' %}" alt="Banda The Moody Blues" style="width: 100%;border-radius: 5px;height: 185px"></a>
+		</div>
+		<div class="col s12 m6 l3">
+			<a href="{% url 'dicas'%}"><img src="{% static 'admin/img/kingC.png' %}" alt="Banda King Crimson" style="width: 100%;border-radius: 5px;height: 185px"></a>
+		</div>
+		<div class="col s12 m6 l3">
+			<a href="{% url 'destaque'%}"><img src="{% static 'admin/img/jeff.png'%}" alt="Cantor Jeff Buckley" style="width: 100%;border-radius: 5px;height: 185px;"></a>
+		</div>
+		<!-- FIM -->
+	</div>
+</div>
+{%endblock%}

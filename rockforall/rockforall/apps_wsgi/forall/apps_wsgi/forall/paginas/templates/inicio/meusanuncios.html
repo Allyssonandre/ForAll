@@ -1,0 +1,158 @@
+{% extends "./Base/BasePerfil.html" %}
+{% block content %}
+{% load embed_video_tags %}
+{% load static %}   
+<div class="horizontal-menu-wrapper">
+    <br><br><br>
+    <div class="col-12">
+        {% if messages %}
+        <div class="alert alert-success" role="alert">
+            {% for message in messages %}
+            <p {% if message.tags %} class="alert alert-success{{message.tags}}" {% endif %} style="color:white;font-size: 20px;font-family: Times New Roman;text-align: center;">&nbsp;<i class="fa fa-bell-o"></i>&nbsp;{{message}}
+
+            </p>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+    <div class="header-navbar navbar-expand-sm navbar navbar-horizontal floating-nav navbar-light navbar-without-dd-arrow navbar-shadow menu-border" role="navigation" data-menu="menu-wrapper">
+        <div class="navbar-header">
+            <ul class="nav navbar-nav flex-row">
+                <li class="nav-item mr-auto">
+                    <div class="brand-logo"></div>
+                    <img class="" src="{% static 'img/forall.png'%}" alt="avatar" height="45" width="45">                </a></li>
+                    <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i class="fa fa-times d-block d-xl-none font-medium-4 primary toggle-icon"></i><i class="toggle-icon feather icon-disc font-medium-4 d-none d-xl-block collapse-toggle-icon primary" data-ticon="icon-disc"></i></a></li>
+                </ul>
+            </div>
+            <!-- Horizontal menu content-->
+            <div class="navbar-container main-menu-content" data-menu="menu-container">
+                <!-- include ../../../includes/mixins-->
+                <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
+                    <li>
+                        {% if user.is_authenticated %}
+                        <a class="dropdown-item" href="/accounts/logout" style="color: white;"><i class="fa fa-unlock"></i>Sair</a>
+                        {% endif %}
+                    </li>
+                    <li>
+                        {% if user.is_authenticated %}
+                        <a class="dropdown-item" href="{% url 'perfil' %}" style="color: white;"><i class="fa fa-user"></i>Perfil</a>
+                        {% endif %}
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="{% url 'mostravideos' %}" style="color: white;"><i class="fa fa-film"></i>Meus vídeos</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="{% url 'meustories' %}" style="color: white;"><i class="fa fa-comment"></i>Meus stories</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="{% url 'meusposts' %}" style="color: white;"><i class="fa fa-pencil-square-o"></i>Meus posts</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="{% url 'postcomentados' %}" style="color: white;"><i class="fa fa-clipboard"></i>Meus posts comentados</a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/forall.letsgo/" target="_blank" title="Facebook" style="color:white"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/forall2020_/" target="_blank" title="Instagram" style="color:white"><i class="fa fa-instagram"></i></a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper">
+        <div class="content-header row">
+            <div class="content-header-left col-md-9 col-12 mb-2">
+                <div class="row breadcrumbs-top">
+                    <div class="col-12">
+                        <br><br><br><br><br><br>
+                        <h2 class="content-header-title float-left mb-0">Meus Anúncios</h2>
+                        <div class="breadcrumb-wrapper col-12">
+                            <ol class="breadcrumb">
+                                <li style="font-size: 17px;"><a href="{% url 'perfil'%}" style="color: white;" class="fa fa-user">&nbsp;Perfil</a>
+                                </li>&nbsp;&nbsp;
+                                <li style="font-size: 17px;"><a href="{% url 'criaranuncio'%}" class="fa fa-cart-plus" style="color: white;">&nbsp;Criar anúncio</a>
+                                </li>&nbsp;&nbsp;
+                                <li class="breadcrumb-item" style="font-size: 17px;"><a href="{% url 'produtos'%}" class="fa fa-money" style="color: white;">&nbsp;Produtos anúnciados</a>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-body">
+            <hr>
+            <section id="wishlist" class="grid-view wishlist-items">
+                <div class="row search-content-info">
+                    {% if meus_produtos %}
+                    {% for p in meus_produtos %}
+                    <div class="col-3"></div>
+                    <div class="col-md-6 col-sm-6 col-12 search-content">
+                       <div class="card ecommerce-card">
+                        <div class="card-content">
+                            <div class="item-img text-center">
+                                <a href="/detalheproduto/{{p.id}}">
+                                    <img src="{{p.image_produto.url}}" class="img-fluid" alt="img-placeholder" style="height: 350px;width: 100%;">
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <div class="item-wrapper">
+                                    <div class="item-rating">
+                                        <div class="badge badge-primary badge-md">
+                                            {{p.view_produto}} <i class="fa fa-thumbs-up ml-25"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        {% if p.preco_produto%}
+                                        <h6 class="item-price">
+                                            R$&nbsp;{{p.preco_produto}}
+                                        </h6>
+                                        {%endif%}
+                                    </div>
+                                </div>
+                                <div class="item-name">
+                                    <p style="color: white;font-family: Tims New Roman;font-size: 15px;">
+                                        <a href="/detalheproduto/{{p.id}}" style="color: white;" data-toggle="tooltip" data-placement="top" title="Detalhe do produto">
+                                            {{p.titulo_produto}}
+                                        </a>
+                                        <i class="fa fa-tags"></i>{{p.categori_produto}}
+                                        <br>
+                                        <i class="fa fa-money"></i>&nbsp;Tipo | <b style="color: red;">{{p.tipo_transacao}}</b>
+                                    </p>
+                                    <div class="avatar avatar-xl">
+                                        {% if user.perfil.image%}
+                                        <img class="img-fluid" src="{{p.user.perfil.image.url}}" alt="img placeholder">
+                                        {% endif%}
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="/detalheproduto/{{p.id}}" data-toggle="tooltip" data-placement="top" title="Detalhe do produto" style="color: white;font-size: 19px;"><i class="fa fa-eye"></i></a>
+                                    <a href="/deletaproduto/{{p.id}}" data-toggle="tooltip" data-placement="top" title="Excluir anúncio" style="color: #e53935;font-size: 19px;"><i class="fa fa-trash"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3"></div>
+                {% endfor %}    
+                {% else %}
+                <div class="alert alert-success col-12" role="alert">
+                    <p class="mb-0" style="color: white;">
+                        Não tem produto com esta categoria, ou VOCÊ NÃO TEM ANÚNCIO, Pesquise novamente.&nbsp;<a href="{% url 'criaranuncio'%}"><button type="button" class="btn btn-success" style="padding: 10px;">Criar anúncio</button></a>
+                    </p>
+                </div>
+                {% endif %}
+            </div>
+        </section>
+    </div>
+</div>
+</div>
+<div class="sidenav-overlay"></div>
+<div class="drag-target"></div>
+{%endblock%}

@@ -1,0 +1,68 @@
+{% extends "./Base/base.html" %}
+{% load static %}
+{% block content %}
+<!-- style para os H1 e H2 -->
+<style type="text/css">
+	.titulo{padding: 0;margin: 0;font-family: Times New Roman;}
+	.subtitulo{padding: 9px;margin: 0;font-family: Times New Roman;font-size: 30px;color: gray;}
+</style>
+<div id="index-banner" class="parallax-container">
+	<div class="section no-pad-bot">
+		<div class="container">
+			<div class="row center">
+				<br>
+				<a href="#" id="download-button" class="btn-large waves-effect" style="background-color: #03262C;">Nossa Loja</a>
+			</div>
+			<br><br>
+
+		</div>
+	</div>
+	<div class="parallax"><img src="{% static 'admin/img/logo.jpg' %}" alt="Logo ForAll"></div>
+</div>
+<div class="container"></div>
+</div>
+<div class="container">
+	<div class="section">
+		<div class="row">
+			<br>
+			<h1 class="titulo">Detalhe do Produto</h1>
+			<div class="col s12 m3"></div>
+			<div class="col s12 m6">
+				<div class="card">
+					<div class="card-image">
+						<img src="{{loja.produto_image.url}}" height="280px" width="100%" class="materialboxed">
+						<p class="card-title" style="color: rgb(255, 129, 0);font-family: Times New Roman;font-weight: bold;font-size: 20px;">{{loja.produto_nome}}&nbsp;R${{loja.preco_produto}}</p>
+						<a class="btn-floating halfway-fab waves-effect" style="background-color:  #03262C";><i class="material-icons">local_grocery_store</i></a>
+					</div>
+					<div class="card-content">
+						<p style="font-family: Times New Roman;">
+							<b>Para compra este produto você deve entra em contato pelos
+							telefones descritos abaixo.</b>
+							<br>
+							<a href="https://api.whatsapp.com/send?phone={{loja.contato_principal}},%20%20{{loja.dono}}%20,Olá compre!!%20%20%20Sou%20%20{{loja.dono}}||" target="_blank">
+                                                          WhatsApp                                                        
+                                                        </a>
+							
+							<a href="https://api.whatsapp.com/send?phone={{loja.contato_principal}},%20%20{{loja.dono}}%20,Olá compre!!%20%20%20Sou%20%20{{loja.dono}}||" style="color: black;" target="_blank">{{loja.contato_principal}}</a>
+							<br> 
+							<i class="material-icons">person_pin</i>{{loja.dono}}<br>
+							<i class="material-icons">format_size</i>
+							{{loja.descricao}}
+						</p>						
+					</div>
+				</div>
+			</div>
+			<div class="col s12 m3"></div>
+		</div>
+		<div class="col s12 m4"></div>
+		<div class="col s12 m2">
+			<a href="{% url 'loja' %}"><button class="btn waves-effect waves-light" type="submit" name="action" style="background-color:  #03262C">Ver mais produtos
+				<i class="material-icons right">reply_all</i>
+			</button>
+		</a>
+	</div>
+	<div class="col s12 m4"></div>
+</div>
+</div>
+</div>
+{%endblock%}	

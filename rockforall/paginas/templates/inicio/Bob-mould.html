@@ -1,0 +1,163 @@
+{% extends "./Base/base.html" %}
+{% load static %}
+{% block content %}
+<title>
+{% block title %}ForAll - Matéria especial, Bob Mould{% endblock%}
+</title>
+<!-- style para os H1 e H2 -->
+<style type="text/css">
+	.titulo{padding: 0;margin: 0;font-family: Times New Roman;}
+	.subtitulo{padding: 9px;margin: 0;font-family: Times New Roman;font-size: 30px;color: gray;}
+	.breadcrumb-item{font-family: Times New Roman;font-size: 15px;margin: 0px;padding: 10px;color: gray;list-style: none;}
+	.cores{color: black;font-weight: bold;}
+	.Texto{font-family: Times New Roman;font-size: 16px;text-align: justify;color: gray;padding: 0;margin: 0;}
+	.relacionados{font-family: Times New Roman;font-size: 17px;font-weight: bold;color: #03262C;}
+	.image-relacionados{width: 23%;height: 60px;border-radius: 5px;padding: 0px;}
+	.texto-relacionados{font-family: Times New Roman;font-size: 14px;float: right;margin-top: -15px;margin: 0;color: gray;}
+	.img-principal{width: 100%;height: 400px;border-radius: 3px;}
+</style>
+
+<div class="container-fluid">
+	<!-- CONTAINER PARA PROPAGANDAS -->
+	<br><br>
+	<div class="row">
+		<div class="col s12 m6 l3"></div>
+		<div class="col s12 m12 l6">
+			
+		</div>
+		<div class="col s12 m6 l3"></div>
+	</div>
+</div><br>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col s12 m4 l3">
+			<p class="relacionados">Relacionados</p>
+			<a href="{% url 'power-metal-bandas' %}"><img src="{% static 'img/powermetal/helloween.jpg'%}" class="image-relacionados" alt="Banda de Power Metal">
+			</a>
+			<a href="{% url 'power-metal-bandas' %}" style="color: black;">
+				<p class="texto-relacionados">
+					5 bandas de Power Metal alemão que <br>você tem que conhecer.
+				</p>
+			</a><br><br>
+			<a href="{% url 'Redacao_reportagem' %}"><img src="{% static 'img/bandas.jpg'%}" alt="Banda de Punk Rock Hardcore" class="image-relacionados">
+			</a>
+			<a href="{% url 'Redacao_reportagem' %}" style="color: black;">
+				<p class="texto-relacionados">
+					Bandas que você tem que conhecer.
+				</p>
+			</a>
+		</div>
+		<div class="col s12 m4 l6">
+			<p class="breadcrumb-item">
+				<a href="/" class="cores"><i class="fa fa-reply"></i>&nbsp;Página Inicial</a>:
+				<i class="fas fa-angle-right"></i>
+				Bob Mould, Matéria especial.
+			</p>
+			<img class="img-principal" src="{% static 'img/Tutorial/BobMould/Bob.jpg' %}" alt="Cantor Bob Mould">
+			<p class="Texto"> Créditos / Facebook </p><br>
+			<h1 class="titulo">Bob Mould</h1>
+			<h2 class="subtitulo">O poeta o punk</h2>
+			<br>
+			<p class="Texto">
+				ForAll | Redação<br><br>
+				Robert Arthur Mould (nascido em 16 de outubro de 1960) é um músico americano, conhecido principalmente por seu trabalho como guitarrista, vocalista e compositor das bandas de rock alternativo Hüsker Dü nos anos 1980 e Sugar nos anos 1990. Nascido em Malone , Nova York , Mould morou em vários lugares, incluindo Minneapolis-St. Paul área, onde frequentou o Macalester College . Lá, ele formou o Hüsker Dü no final dos anos 1970 com o baterista / cantor Grant Hart e o baixista Greg Norton .  Mould e Hart foram os principais compositores de Hüsker Dü, com os vocais agudos de Hart e o barítono de Mould assumindo a liderança em canções alternativas.
+				<br><br>
+				<b>No Hüsker Dü</b><br>
+				Formado em 1979, o Hüsker Dü ganhou notoriedade pela primeira vez como um grupo de punk rock com uma série de gravações no selo independente SST Records . Em 1986, eles assinaram com uma grande gravadora ( Warner Bros. Records), mas encontraram apenas um modesto sucesso comercial. No entanto, eles foram frequentemente citados mais tarde como uma das principais influências no rock alternativo dos anos 1990 , incluindo bandas como Nirvana e Pixies . <br><br>  
+				No final dos anos 1980, Hüsker Dü se separou amargamente em meio ao abuso de drogas dos membros , problemas pessoais, disputas por créditos de composição, direção musical e o suicídio do empresário da banda, David Savoy. Mould e Grant Hart , o outro compositor e vocalista da banda, ainda davam golpes ocasionais um no outro na imprensa até a morte de Hart em 2017, embora os dois revisitaram brevemente seu catálogo Hüsker Dü juntos em um Concerto beneficente de 2004 para um amigo doente, o falecido Karl Mueller, do Soul Asylum.
+			</p>
+			<br>
+			<div class="carousel">
+				<br><br>
+				<p class="Texto">Álbuns da era <b>Hüsker Dü</b></p>
+				<a class="carousel-item" href="#one!"><img src="{% static 'img/Tutorial/BobMould/HuskerDu/EverythingFallaApart1983.png' %}" alt="Everything Fall apart"></a>
+				<a class="carousel-item" href="#two!"><img src="{% static 'img/Tutorial/BobMould/HuskerDu/LandSpeed1983.png' %}" alt="Land Speed"></a>
+				<a class="carousel-item" href="#three!"><img src="{% static 'img/Tutorial/BobMould/HuskerDu/MetalCircus1983.png' %}" alt="Metal Circus"></a>
+				<a class="carousel-item" href="#four!"><img src="{% static 'img/Tutorial/BobMould/HuskerDu/NewDayRising1985.png' %}" alt="NewDay Rising"></a>
+				<a class="carousel-item" href="#five!"><img src="{% static 'img/Tutorial/BobMould/HuskerDu/FlipYourWig1985.png' %}" alt="Flip Your Wig"></a>
+				<a class="carousel-item" href="#six!"><img src="{% static 'img/Tutorial/BobMould/HuskerDu/CandyAppleGrey1986.png' %}" alt="Candy Apple Grey"></a>
+				<a class="carousel-item" href="#seven!"><img src="{% static 'img/Tutorial/BobMould/HuskerDu/TheLivingEnd1994.png' %}" alt="The Living End"></a>
+				<a class="carousel-item" href="#eight!"><img src="{% static 'img/Tutorial/BobMould/HuskerDu/WareHouseSongsAndStories.png' %}" alt="WareHouse: songs and Stories"></a>
+				<a class="carousel-item" href="#nine!"><img src="{% static 'img/Tutorial/BobMould/HuskerDu/zenArcade1984.png' %}" alt="zen arcade"></a>
+			</div>
+			<p class="Texto">
+				<b>No Sugar</b><br>
+				Mould então formou o grupo Sugar, com o baixista David Barbe e o baterista Malcolm Travis. Junto com uma extensa turnê, o Sugar lançou dois álbuns, um EP e uma coleção de lados B antes de se separar. Copper Blue de 1992 foi nomeado Álbum do Ano de 1992 da NME e foi o álbum comercial de maior sucesso de Mould, vendendo quase 300.000 cópias. <br><br>
+
+				Enquanto na banda Sugar, em 1993 ele contribuiu com a faixa "Can't Fight It" como um artista solo para o AIDS Benefit Album No Alternative produzido pela Red Hot Organization.  Em 1994, ele gravou "Turning of the Tide" para Beat The Retreat, um álbum em homenagem ao guitarrista e compositor inglês Richard Thompson. 
+			</p>
+			<p class="Texto">
+				<br>
+				Álbuns da era <b>Sugar</b>
+			</p>
+			<div class="col s12 m4 l6">
+				<img src="{% static 'img/Tutorial/BobMould/Sugar/Beaster1993.png' %}" alt="Beaster" class="materialboxed" style="width: 100%;height: 200px;border-radius: 10px;padding: 2px;">
+			</div>
+			<div class="col s12 m4 l6">
+				<img src="{% static 'img/Tutorial/BobMould/Sugar/CopperBlue1992.png' %}" alt="Copper Blue" class="materialboxed" style="width: 100%;height: 200px;border-radius: 10px;padding: 2px;">
+			</div>
+			<div class="col s12 m4 l6">
+				<img src="{% static 'img/Tutorial/BobMould/Sugar/FileUnder1994.png' %}" alt="File Under" class="materialboxed" style="width: 100%;height: 200px;border-radius: 10px;padding: 2px;">
+			</div>
+			<div class="col s12 m4 l6">
+				<img src="{% static 'img/Tutorial/BobMould/Sugar/sugar.jpg' %}" alt="Sugar Besides" class="materialboxed" style="width: 100%;height: 200px;border-radius: 10px;padding: 2px;">
+			</div>
+			<div class="carousel">
+				<br><br>
+				<p class="Texto">
+					Álbuns da carreira <b>Solo</b>
+				</p>
+				<a class="carousel-item" href="#one!"><img src="{% static 'img/Tutorial/BobMould/Solo/BlueHearts2020.png' %}" alt="Blue Hearts"></a>
+				<a class="carousel-item" href="#two!"><img src="{% static 'img/Tutorial/BobMould/Solo/Beauty&Ruin2014.png' %}" alt="Beauty & Ruin"></a>
+				<a class="carousel-item" href="#three!"><img src="{% static 'img/Tutorial/BobMould/Solo/BlackSheetsOfRain1990.png' %}" alt="Black sheets of rain"></a>
+				<a class="carousel-item" href="#four!"><img src="{% static 'img/Tutorial/BobMould/Solo/BobMould1996.png' %}" alt="Bob Mould solo"></a>
+				<a class="carousel-item" href="#five!"><img src="{% static 'img/Tutorial/BobMould/Solo/BobMouldBandLive2010.png' %}" alt="Bob Mould Live"></a>
+				<a class="carousel-item" href="#six!"><img src="{% static 'img/Tutorial/BobMould/Solo/BodyOfSong2005.png' %}" alt="Body of song"></a>
+				<a class="carousel-item" href="#seven!"><img src="{% static 'img/Tutorial/BobMould/Solo/DistrictLine2008.png' %}" alt="District Line"></a>
+				<a class="carousel-item" href="#eight!"><img src="{% static 'img/Tutorial/BobMould/Solo/LifeAndTimes2009.png' %}" alt="Life and times"></a>
+				<a class="carousel-item" href="#nine!"><img src="{% static 'img/Tutorial/BobMould/Solo/Modulate2002.png' %}" alt="Modulate"></a>
+				<a class="carousel-item" href="#ten!"><img src="{% static 'img/Tutorial/BobMould/Solo/PatchTheSky2016.png' %}" alt="Patch the sky"></a>
+				<a class="carousel-item" href="#eleven!"><img src="{% static 'img/Tutorial/BobMould/Solo/PoisoYears1994.png' %}" alt="Poison years"></a>
+				<a class="carousel-item" href="#twelve!"><img src="{% static 'img/Tutorial/BobMould/Solo/SilverAge2012.png' %}" alt="Silver Age"></a>
+				<a class="carousel-item" href="#thirteen!"><img src="{% static 'img/Tutorial/BobMould/Solo/SunshineRock2019.png' %}" alt="Sunshine Rock"></a>
+				<a class="carousel-item" href="#fourteen!"><img src="{% static 'img/Tutorial/BobMould/Solo/TheLastDogAndPonyShow1998.png' %}" alt="The last dog and pony show"></a>
+				<a class="carousel-item" href="#fiveteen!"><img src="{% static 'img/Tutorial/BobMould/Solo/Workbook1989.jpg' %}" alt="Workbook"></a>
+			</div>
+			<p class="Texto">
+				<b>A importância de Bob Mould como compositor, segundo Dave Grohl.</b><br>
+				Recentemente Dave Grohl, frontman do Foo Fighters concedeu uma entrevista ao site <a href="https://www.loudersound.com/news/dave-grohl-reveals-his-favourite-american-songwriter" target="_blank">Classic Rock</a>, falando sobre sua admiração pelo trabalho de Bob Mould. <br>
+				Dave Grohl: 
+			</p>
+			<blockquote class="Texto"><i>&nbsp;“Quando descobri o punk rock no início dos anos 80, havia bandas que se destacavam por &nbsp;seu peso, velocidade ou dissonância”, continua Grohl. Mas Hüsker Dü, que era a banda &nbsp;original de Bob Mould, tinha esse senso de melodia clássica - era quase como uma banda de &nbsp;punk rock tocando canções de Byrds, o que eles realmente faziam quando faziam um cover &nbsp;de Eight Miles High . Mas havia toda uma sensação de emoção, com bela melodia, que às &nbsp;vezes podia ser contrabalançada com essa raiva e distorção que eram realmente incomuns &nbsp;na época.”</i> </blockquote><br>
+
+			<blockquote class="Texto"><i>&nbsp;“Eles foram a primeira banda de punk rock que ouvi que tinha um álbum duplo - o álbum &nbsp;Zen Arcade , que foi de violões thrash buzzsaw a baladas acústicas”, diz Grohl, referindo-se &nbsp;à obra-prima do trio em 1984 na SST. “E tendo crescido nos Beatles e amando o White &nbsp;Album e os dois maiores sucessos, 'The Early Years' e 'The Later Years', havia algo nessa &nbsp;dinâmica que eu amava. Eu não preciso ( bate o ritmo da britadeira ) DA-NA-NA-NA&nbsp;o &nbsp;tempo todo. Especialmente se houver uma letra e uma melodia que eu possa cantarolar. &nbsp;Posso cantarolar uma música do Minor Threat, mas posso cantar uma música do Hüsker &nbsp;Dü.”</i></blockquote> <br>
+
+			<blockquote class="Texto"><i>&nbsp;“Se você voltar e ouvir, vai ouvir a influência dele nas coisas que fiz”, reconhece ele. “Tanto &nbsp;que faço referência a Hüsker Dü em muitas letras - há até uma referência no novo álbum [ &nbsp;Medicine At Midnight ]. Gosto de deixar falas aqui e ali.”</i></blockquote><br>
+
+			<blockquote class="Texto"><i>&nbsp;“Eu o tinha visto tocar em 1984 ou 85, mas eu era apenas um garoto que mergulhava no &nbsp;palco e dançava batendo, cantando junto com as músicas. Finalmente consegui conhecê-lo &nbsp;há cerca de 10 anos. Eu disse, 'Eu só tenho que te agradecer, porque eu realmente aprendi &nbsp;muito com a sua música.' E ele disse: 'Eu sei'. ”</i></blockquote>
+			<br>
+			<img class="img-principal" src="{% static 'img/Tutorial/BobMould/BobDave.jpg' %}" alt="Bob Mould e Dave Grohl">
+			<p class="Texto">Facebook | Da esquerda para direita Jason Narducy, Bob Mould, Dave Grohl e Ian MacKaye(Minor Threat)</p><br>  
+		</p>
+	</div>
+	<div class="col s12 m4 l3">
+		<p class="relacionados">Destaque</p>
+		<a href="{% url 'southern-rock' %}"><img src="{% static 'img/souternRock/johnnycash.jpg' %}" alt="Bandas de Southern rock" class="image-relacionados">
+		</a>
+		<a href="{% url 'southern-rock' %}" style="color: black;">
+			<p class="texto-relacionados">
+				Pérolas do Southern rock.
+			</p>
+		</a><br><br>
+		<a href="{% url 'Quadrinhos' %}"><img src="{% static 'img/Quadrinhos/quadrinho.png'%}" alt="Quadrinhos" class="image-relacionados">
+		</a>
+		<a href="{% url 'Quadrinhos' %}" style="color: black;">
+			<p class="texto-relacionados">
+				Quadrinhos que você tem que conhecer
+			</p>
+		</a>
+	</div>
+</div>
+</div>
+{%endblock%}

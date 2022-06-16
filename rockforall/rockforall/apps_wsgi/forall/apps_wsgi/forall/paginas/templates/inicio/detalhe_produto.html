@@ -1,0 +1,143 @@
+{% extends "./Base/BasePerfil.html" %}
+{% block content %}
+{% load embed_video_tags %}
+{% load static %}
+<style type="text/css">
+    a{
+        text-decoration: none;
+    }
+</style>    
+<div class="horizontal-menu-wrapper">
+    <div class="header-navbar navbar-expand-sm navbar navbar-horizontal floating-nav navbar-light navbar-without-dd-arrow navbar-shadow menu-border" role="navigation" data-menu="menu-wrapper">
+        <div class="navbar-header">
+            <ul class="nav navbar-nav flex-row">
+                <li class="nav-item mr-auto">
+                    <div class="brand-logo"></div>
+                    <img class="" src="{% static 'admin/img/forall.png'%}" alt="avatar" height="45" width="45">                </a></li>
+                    <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i class="fa fa-times d-block d-xl-none font-medium-4 primary toggle-icon"></i><i class="toggle-icon feather icon-disc font-medium-4 d-none d-xl-block collapse-toggle-icon primary" data-ticon="icon-disc"></i></a></li>
+                </ul>
+            </div>
+            <!-- Horizontal menu content-->
+            <div class="navbar-container main-menu-content" data-menu="menu-container">
+                <!-- include ../../../includes/mixins-->
+                <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
+                    <li>
+                        {% if user.is_authenticated %}
+                        <a class="dropdown-item" href="/accounts/logout" style="color: white;"><i class="fa fa-unlock"></i>Sair</a>
+                        {% endif %}
+                    </li>
+                    <li>
+                        {% if user.is_authenticated %}
+                        <a class="dropdown-item" href="{% url 'perfil' %}" style="color: white;"><i class="fa fa-user"></i>Perfil</a>
+                        {% endif %}
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/forall.letsgo/" target="_blank" title="Facebook" style="color:white"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/forall2020_/" target="_blank" title="Instagram" style="color:white"><i class="fa fa-instagram"></i></a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper">
+        <div class="content-header row">
+            <div class="content-header-left col-md-9 col-12 mb-2">
+                <div class="row breadcrumbs-top">
+                    <div class="col-12">
+                        <p style="font-family: Times New Roman;font-size: 21px;color: white;">Detalhe do produto | <b style="color: red;">{{detalheProduto.titulo_produto}}</b>
+                        </p>
+                        <div class="breadcrumb-wrapper col-12">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="{% url 'produtos'%}" style="color: white;font-size: 20px;font-family: Times New Roman;">&nbsp;<i class="fa fa-shopping-cart"></i>&nbsp;Veja mais produtos</a>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-body">
+            <section class="app-ecommerce-details">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row mb-5 mt-2">
+                            <div class="col-12 col-md-5 d-flex align-items-center justify-content-center mb-2 mb-md-0">
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <img src="{{detalheProduto.image_produto.url}}" class="img-fluid" alt="product image" style="height: 350px;width: 350px;">
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <p style="font-family: Times New Roman;font-size: 20px;color: white;">
+                                    {{detalheProduto.titulo_produto}}<br>
+                                    Membro <b>{{detalheProduto.user}}</b>&nbsp;<br>
+                                    Tipo da transação | <b>{{detalheProduto.tipo_transacao}}</b><br>
+                                    Meio de pagamento | <b>{{detalheProduto.cartao}}</b>   
+                                </p>
+                                <div class="ecommerce-details-price d-flex flex-wrap">
+
+                                    <p style="color: white;">
+                                        {%if detalheProduto.preco_produto%}
+                                        R$ {{detalheProduto.preco_produto}}
+                                        {%endif%}
+                                        &nbsp;
+                                        <i class="fa fa-thumbs-up"></i>&nbsp;&nbsp;{{detalheProduto.view_produto}}&nbsp;Visualização do seu produto
+                                    </p>
+                                </div>
+                                <hr>
+                                <!-- app ecommerce details end -->
+                                <div class="accordion" id="accordionExample">
+                                    <div class="collapse-margin">
+                                        <div class="card-header" id="headingOne" data-toggle="collapse" role="button" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                            <p style="font-family: Times New Roman;font-size: 20px;color: white;">
+                                                <i class="fa fa-hand-o-up"></i>&nbsp;Descrição do Produto
+                                            </p>
+                                        </div>
+
+                                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                            <p style="font-family: Times New Roman;font-size: 20px;color: white;">
+                                                &nbsp;{{detalheProduto.descrever_produto}}<br>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="collapse-margin">
+                                    <div class="card-header" id="headingTwo" data-toggle="collapse" role="button" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                     <p style="font-family: Times New Roman;font-size: 20px;color: white;">
+                                         <i class="fa fa-hand-o-up"></i>&nbsp; Dados gerais do produto
+                                     </p>
+                                 </div>
+                                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                      <p style="font-size: 15px;color: white;"><br>
+                                        {{detalheProduto.nome}}<br>
+                                        {{detalheProduto.cidade_mora}} -
+                                        {{detalheProduto.estado_mora}}<br>
+                                        <a href="https://api.whatsapp.com/send?phone={{detalheProduto.contato}},%20%20{{detalheProduto.nome}}" target="_blank" style="color: white;"><i class="fa fa-phone">&nbsp;{{detalheProduto.contato}}</i></a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <p style="font-family: Times New Roman;color: white;">
+                            <img class="rounded-circle" src="{% static 'img/forall.png'%}" alt="Generic placeholder image" height="40" width="40" />&nbsp;By ForAll
+                        </a>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+</div>
+<!-- END: Content-->
+<div class="sidenav-overlay"></div>
+<div class="drag-target"></div>
+{%endblock%}

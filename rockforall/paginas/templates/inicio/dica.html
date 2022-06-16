@@ -1,0 +1,310 @@
+{% extends "./Base/base.html" %}
+{% load static %}
+{% block content %}
+{%block google%}{{block.super}}{%endblock%}
+<title>
+	{% block title %}ForAll - Destaque, O Álbum mais aclamado do King Crimson {% endblock%}
+</title>
+<!-- style para os H1 e H2 -->
+<style type="text/css">
+	.titulo{padding: 0;margin: 0;font-family: Times New Roman;}
+	.subtitulo{padding: 9px;margin: 0;font-family: Times New Roman;font-size: 30px;color: gray;}
+	.breadcrumb-item{font-family: Times New Roman;font-size: 15px;margin: 0px;padding: 10px;color: gray;list-style: none;}
+	.cores{color: black;font-weight: bold;}
+	.image-relacionados{width: 28%;height: 60px;border-radius: 5px;padding: 0px;}
+	.texto-musica{font-family: Times New Roman;font-size: 15px;text-align: left;color: gray;text-align: left}
+	.texto-principal{font-family: Times New Roman;font-size: 17px;text-align: justify;color: gray;}
+	.relacionados{font-family: Times New Roman;font-size: 17px;font-weight: bold;color: #03262C;}
+	.texto-relacionados{font-family: Times New Roman;font-size: 14px;float: right;margin-top: -15px;margin: 0;color: gray;}
+</style>	
+<div class="container-fluid">
+	<!-- CONTAINER PARA PROPAGANDAS -->
+	<br><br>
+	<div class="row">
+		<div class="col s12 m6 l3"></div>
+		<div class="col s12 m12 l6">
+			
+		</div>
+		<div class="col s12 m6 l3"></div>
+	</div>
+</div><br>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col s12 m4 l2">
+			<p class="relacionados">Relacionados</p>
+			<a href="{% url 'redacao' %}"><img src="{% static 'img/fontainesDC.jpg'%}" class="image-relacionados" alt="fontaines DC">
+			</a>
+			<a href="{% url 'redacao'%}" style="color: black;">
+				<p class="texto-relacionados">
+					A Poesia irlandesa
+				</p>
+			</a><br><br><br>
+			<a href="{% url 'Quarta-resenha'%}"><img src="{% static 'img/WillieBrown.jpg'%}" class="image-relacionados" alt="Cantor Willie Brown">
+			</a>
+			<a href="{% url 'Quarta-resenha'%}" style="color: black;">
+				<p class="texto-relacionados">
+					Willie Brown
+				</p>
+			</a>
+		</div>
+		<div class="col s12 m4 l7">
+			<p class="breadcrumb-item">
+				<a href="/" class="cores"><i class="fa fa-reply"></i>&nbsp;Página Inicial</a>:
+				<i class="fas fa-angle-right"></i>
+				O álbum mais aclamado do King Crimson
+			</p>
+			<h1 class="titulo">O álbum mais aclamado do King Crimson</h1>
+			<h2 class="subtitulo">"In the court of the crimson king"</h2>
+			<br>
+			<p class="texto-principal">
+
+				É um consenso que alguns amantes da boa música, em especifico o do Rock and Roll, dizem que o ano de 1969 foi um ano fértil para do gênero.  Vários álbuns foram lançados neste ano, e digamos de passagem bandas clássicas deleitaram sua criatividade neste período. Contudo iremos mostra nestas breves linhas um álbum fenomenal, de uma banda chamada King Crimson, sendo o álbum em questão o poético In Court of the Crimson King. <br><br>
+				<img src="{% static 'img/kingC.png' %}" alt="Banda King Crimson" style="width: 400px%;height: 100%;border-radius: 5px;">
+				<br>
+				<b>In Court of the Crimson King</b>, foi o álbum de estreia do King Crimson.  Lançado em 10 de outubro de 1969 pela Island Records, junto com o On the Threshold of a Dream da banda The moody blues, são considerados os primeiros álbuns que mais influenciaram o rock progressivo, ambos com pitadas de jazz, música clássica e sinfônica. O In Court of the Crimson King com as faixas 21st Century Schizoid Man, I talk to the Wind, Moonchild, a faixa título The Count of the Crimson King e Epitaph alcançou a quinta posição na parada Inglesa, e também o número 28 na Billboard dos EUA, sendo ouro pela Recording Industry Association of America. O álbum foi reeditado em vários anos, mas no aniversário de 40° foi lançado com mixagens e efeitos diversos. <br>
+				<b>Integrantes:</b> <br> 
+				Robert Fripp – Guitarrista <br>
+				Michael Giles – bateria, percussão, vocais secundários, produção. <br>
+				Greg Lake – vocal, guitarra baixo, produção. <br>
+				Ian McDonald – instrumentos de sopro (saxofone, flauta, clarinete, clarinete baixo), teclados ( Mellotron, cravo , de piano , órgão ), vibrafone, backing vocals, produção 
+				Peter Sinfield – letra, iluminação, produção.
+			</p>
+		</div>
+		<div class="col s12 m4 l3">
+			<p class="relacionados">Destaque</p>
+			<a href="{% url 'Nada-trivial-jonathan-hulten' %}"><img src="{% static 'img/nadatrivial/jonathan_hunten.jpg'%}" class="image-relacionados" alt="Jonathan Hultén">
+			</a>
+			<a href="{% url 'Nada-trivial-jonathan-hulten' %}" style="color: black;">
+				<p class="texto-relacionados">
+					Nada Trivial, Jonathan Hultén
+				</p>
+			</a><br><br><br>
+			<a href="{% url 'power-metal-bandas' %}"><img src="{% static 'img/powermetal/helloween.jpg'%}" class="image-relacionados" alt="Banda de Power Metal">
+			</a>
+			<a href="{% url 'power-metal-bandas' %}" style="color: black;">
+				<p class="texto-relacionados">
+					5 bandas de Power Metal alemão que <br>você tem que conhecer.
+				</p>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col s12 m4 l3"></div>
+		<div class="col s12 m4 l6">
+			<p class="texto-principal"><i class="material-icons">library_music</i>&nbsp;Letras do Álbum</p>
+			<ul class="collapsible expandable">
+				<li>
+					<div class="collapsible-header texto-principal"><i class="material-icons">music_note</i>21st Century Schizoid Man</div>
+					<div class="collapsible-body">
+						<span class="texto-musica">
+							Cat’s foot iron claw 
+							Neurosurgeons scream for more 
+							At paranoia’s poison door 
+							Twenty first century schizoid man 
+							<br><br>
+							Blood rack, barbed wire 
+							Politicians’ funeral pyre 
+							Innocents raped with napalm fire 
+							Twenty first century schizoid man 
+							<br><br>
+							Death seed blind man’s greed 
+							Poets starving, children bleed 
+							Nothing he’s got he really needs 
+							Twenty first century schizoid man 
+							<br><br>
+							Compositores: <br>Robert Fripp / Michael Rex Giles / Greg Lake / Ian Mcdonald / Peter John Sinfield
+						</span>
+					</div>
+				</li>
+				<li>
+					<div class="collapsible-header texto-principal"><i class="material-icons">music_note</i>Moonchild</div>
+					<div class="collapsible-body">
+						<span class="texto-musica">
+							Dancing in the shallows of a river 
+							Lonely moonchild 
+							Dreaming in the shadow 
+							Of the willow. 
+							<br><br>
+							Talking to the trees of the 
+							Cobweb strange 
+							Sleeping on the steps of a fountain 
+							Waving silver wands to the 
+							Night-birds song 
+							Waiting for the sun on the mountain. 
+							<br><br>
+							She’s a moonchild 
+							Gathering the flowers in a garden. 
+							Lovely moonchild 
+							Drifting on the echoes of the hours. 
+							<br><br>
+							Sailing on the wind 
+							In a milk white gown 
+							Dropping circle stones on a sun dial 
+							Playing hide and seek 
+							With the ghosts of dawn 
+							Waiting for a smile from a sun child 
+							<br><br>
+							Compositores:<br> Robert Fripp / Petter John Sinfield / Greg Lake / Ian Mcdonald / Michael Rex Giles 
+						</span>
+					</div>
+				</li>
+
+				<li>
+					<div class="collapsible-header texto-principal"><i class="material-icons">music_note</i>Epitaph</div>
+					<div class="collapsible-body">
+						<span class="texto-musica">
+							The wall on which the prophets wrote 
+							Is cracking at the seams 
+							Upon the instruments of death 
+							The sunlight brightly gleams 
+							When every man is torn apart 
+							With nightmares and with dreams 
+							Will no one lay the laurel wreath 
+							When silence drowns the screams 
+							<br><br>
+							Confusion will be my epitaph 
+							As I crawl a cracked and broken path 
+							If we make it, we can all sit back and laugh 
+							But I fear, tomorrow, I’ll be crying 
+							Yes, I fear, tomorrow, I’ll be crying 
+							Yes, I fear, tomorrow, I’ll be crying 
+							<br><br>
+							Between the iron gates of fate 
+							The seeds of time were sown 
+							And watered by the deeds of those 
+							Who know and who are known 
+							Knowledge is a deadly friend 
+							If no one sets the rules 
+							The fate of all mankind, I see 
+							Is in the hands of fools 
+							<br><br>
+							The wall on which the prophets wrote 
+							Is cracking at the seams 
+							Upon the instruments of death 
+							The sunlight brightly gleams 
+							When every man is torn apart 
+							With nightmares and with dreams 
+							Will no one lay the laurel wreath 
+							When silence drowns the screams 
+							<br><br>
+							Confusion will be my epitaph 
+							As I crawl, a cracked and broken path 
+							If we make it, we can all sit back and laugh 
+							But I fear, tomorrow, I’ll be crying 
+							Yes, I fear, tomorrow, I’ll be crying 
+							Yes, I fear, tomorrow, I’ll be crying 
+							Crying, crying 
+							Yes, I fear, tomorrow, I’ll be crying 
+							Yes, I fear, tomorrow, I’ll be crying 
+							Yes, I fear, tomorrow, I’ll be crying 
+							Crying 
+							<br><br>
+							Compositores: <br>Greg Lake / Ian Mcdonald / Michael Rex Giles / Peter John Sinfield / Robert Fripp 
+						</span>
+					</div>
+				</li>
+
+				<li>
+					<div class="collapsible-header texto-principal"><i class="material-icons">music_note</i>I Talk to the Wind</div>
+					<div class="collapsible-body">
+						<span class="texto-musica">
+							Said the straight man to the late man 
+							Where have you been 
+							I’ve been here and I’ve been there 
+							And I’ve been in between 
+							<br><br>
+							I talk to the wind 
+							My words are all carried away 
+							I talk to the wind 
+							The wind does not hear 
+							The wind cannot hear 
+							<br><br>
+							I’m on the outside looking inside 
+							What do I see 
+							Much confusion, disillusion 
+							All around me 
+							<br><br>
+							I talk to the wind 
+							My words are all carried away 
+							I talk to the wind 
+							The wind does not hear 
+							The wind cannot hear 
+							<br><br>
+							You don’t possess me 
+							Don’t impress me 
+							Just upset my mind 
+							Can’t instruct me or conduct me 
+							Just use up my time 
+							<br><br>
+							I talk to the wind 
+							My words are all carried away 
+							I talk to the wind 
+							The wind does not hear 
+							The wind cannot hear 
+							<br><br>
+							I talk to the wind 
+							My words are all carried away 
+							I talk to the wind 
+							The wind does not hear 
+							The wind cannot hear 
+							<br><br>
+							Said the straight man to the late man 
+							Where have you been 
+							I’ve been here and I’ve been there and 
+							I’ve been in betwee
+						</span>
+					</div>
+				</li>
+				<li>
+					<div class="collapsible-header texto-principal"><i class="material-icons">music_note</i>The Court of the Crimson King</div>
+					<div class="collapsible-body">
+						<span class="texto-musica">
+							The rusted chains of prison moons 
+							Are shattered by the sun 
+							I walk a road horizons change 
+							The tournament’s begun 
+							The purple piper plays his tune 
+							The choir softly sing 
+							Three lullabies in an ancient tongue 
+							For the court of the crimson king 
+							<br><br>
+							The keeper of the city keys 
+							Puts shutters on the dreams 
+							I wait outside the pilgrim’s door 
+							With insufficient schemes 
+							The black queen chants the funeral march 
+							The cracked brass bells will ring 
+							To summon back the fire witch 
+							To the court of the crimson king 
+							<br><br>
+							The gardener plants an evergreen 
+							Whilst trampling on a flower 
+							I chase the wind of a prism ship 
+							To taste the sweet and sour 
+							The pattern juggler lifts his hand 
+							The orchestra begin 
+							As slowly turns the grinding wheel 
+							In the court of the crimson king 
+							<br><br>
+							On soft grey mornings widows cry 
+							The wise men share a joke 
+							I run to grasp divining signs 
+							To satisfy the hoax 
+							The yellow jester does not play 
+							But gently pulls the strings 
+							And smiles as the puppets dance 
+							In the court of the crimson king 
+							<br><br>
+							Compositores:<br> Greg Lake / Ian Mcdonald / Michael Rex Giles / Peter John Sinfield / Robert Fripp 
+						</span>
+					</div>
+				</li>
+
+			</ul>	
+		</div>
+		<div class="col s12 m4 l3"></div>
+	</div>
+</div>
+{%endblock%}

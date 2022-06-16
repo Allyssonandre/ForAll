@@ -1,0 +1,103 @@
+{% extends "./Base/base.html" %}
+{% load static %}
+{% block content %}
+{%block google%}{{block.super}}{%endblock%}
+<title>
+	{% block title %}ForAll - Nada Trivial, com Jonathan Hultén{% endblock%}
+</title>
+<!-- style para os H1 e H2 -->
+<style type="text/css">
+	.titulo{padding: 0;margin: 0;font-family: Times New Roman;}
+	.subtitulo{padding: 9px;margin: 0;font-family: Times New Roman;font-size: 30px;color: gray;}
+	.breadcrumb-item{font-family: Times New Roman;font-size: 15px;margin: 0px;padding: 10px;color: gray;list-style: none;}
+	.cores{color: black;font-weight: bold;}
+	.relacionados{font-family: Times New Roman;font-size: 17px;font-weight: bold;color: #03262C;}
+	.image-relacionados{width: 23%;height: 60px;border-radius: 5px;padding: 0px;}
+	.texto-relacionados{font-family: Times New Roman;font-size: 14px;float: right;margin-top: -15px;margin: 0;color: gray;}
+	.Texto{font-family: Times New Roman;font-size: 16px;text-align: justify;color: gray;padding: 0;margin: 0;}
+	.img-principal{width: 100%;height: 400px;border-radius: 3px;}
+</style>
+<div class="container-fluid">
+	<!-- CONTAINER PARA PROPAGANDAS -->
+	<br><br>
+	<div class="row">
+		<div class="col s12 m6 l3"></div>
+		<div class="col s12 m12 l6">
+			
+		</div>
+		<div class="col s12 m6 l3"></div>
+	</div>
+</div><br>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col s12 m4 l3">
+			<p class="relacionados">Relacionados</p>
+			<a href="{% url 'power-metal-bandas' %}"><img src="{% static 'img/powermetal/gammaray.jpg'%}" alt="5 Bandas de Power Metal" class="image-relacionados">
+			</a>
+			<a href="{% url 'indicacao' %}" style="color: black;">
+				<p class="texto-relacionados">
+					5 Bandas de Power Metal
+				</p>
+			</a><br><br>
+			<a href="{% url 'breve-historia' %}"><img src="{% static 'img/thin.jpg'%}" alt="Banda Thin Lizzy" class="image-relacionados">
+			</a>
+			<a href="{% url 'breve-historia' %}" style="color: black;">
+				<p class="texto-relacionados">
+					Thin Lizzy, uma breve história
+				</p>
+			</a><br><br>
+		</div>
+		<div class="col s12 m4 l6">
+			<p class="breadcrumb-item">
+				<a href="/" class="cores"><i class="fa fa-reply"></i>&nbsp;Página Inicial</a>:
+				<i class="fas fa-angle-right"></i>
+				Jonathan Hultén, a história e o álbum chamado, "Chants From Another Place"
+			</p>
+			<img class="img-principal" src="{% static 'img/nadatrivial/jonathan_hunten.jpg' %}" alt="Cantor Jonathan Hulten">
+			<p style="color: #A9A9A9;margin: 0;font-size: 15px;font-family: Times New Roman;">
+				Créditos / Facebook 
+			</p>
+			<br><br>
+			<h1 class="titulo">Jonathan Hultén, a história e o álbum chamado, "Chants From Another Place"</h1>
+			<h2 class="subtitulo">Chants From Another Place</h2> 
+			<p class="Texto">
+				"<b>Na sessão “NADA TRIVIAL” damos dica de artistas que não são muito conhecidos."</b>
+				<br><br> 
+				&nbsp;ForAll | Redação
+				<br><br>
+				De fato, quando se monta uma banda de rock os integrantes o fazem pelo amor à música, certo? blz, e também isso é uma maneira de mostrar para o mundo que são capazes de emocionar as pessoas com sua música. Aspectos primordiais como o talento nato às vezes não são de imediato preenchidos, quero dizer NÃO todas as vezes, uns podem ser ungidos por natureza a ter esta aptidão outros não. Ao longo do tempo essas bandas seguem o padrão um tanto cíclico que é  gravar álbum, turnê, gravar álbum, turnê, gravar …. UFA ! Só em relatar isso dá um cansaço, será que isso é um dos motivos de algumas bandas acabarem? Não sei, mas de fato é uma variável reconhecida,  e em algumas situações decretam um “hiato” com uma volta indeterminada.
+				<br><br>
+				Quando isso acontece, membros que desejavam expor suas composições guardadas a sete chaves às apresentada ao mundo em forma de um álbum,  um exemplo de um artista com estas características é o guitarrista suéco <b>Jonathan Hultén</b>.
+				<br><br>
+				Jonathan Hultén nascido na nórdica Suécia cantor e compositor foi um dos fundadores da banda Tribulation de death metal isso lá no longínquo ano de 2000. Ele estreou seus dotes de compositor no EP <b>The Dark Night of the Soul</b>, e seguido pelo álbum misterioso e contemplativo chamado <b>Chants From Another Place</b>, ao qual falaremos um pouco dele.
+				<br><br>
+				Neste álbum Jonathan traz a torna um aspecto obscuro transfigurado nas letras e nas melodias, onde ele expõe nessas características todas as sua influências musicais de artistas do calibre de <b>Fleet Foxes</b> , <b>John Martyn</b>, <b>Nick Drake</b>, <b>Sufjan Stevens</b> e <b>Bert Jansch</b>. Além dessas inspirações Hultén buscou trazer neste álbum elementos de coro, cantados em igrejas, dando assim um ar mais folclórico e gospel para as canções. Sendo o álbum rótulo por alguns sites por aí de um trabalho com característica de um <i>folk dark</i>, que na minha opinião está além disto, mas deixemos isso de lado, pois rótulos só servem para colocar certas coisas dentro de um caixa, e isso acho desvalioso. 
+				<br><br>
+				O álbum é constituído de 12 canções gravadas exclusivamente no estúdio caseiro de Jonathan, e sendo mixado no <b>Cuervo Recording Service</b> na Espanha, tendo como produtor <b>Ola Ersfjord</b>, que fez trabalhos anteriores como o Tribulation.  Vale salientar, uma característica visual que é a capa, onde nela está retratada toda a atmosfera passada nas canções, por assim dizer melancolia e obscura. Para vocês terem a experiência de ouvir esta obra de Hultén, abaixo tem a playlist do álbum.
+				<br><br>
+				Playlist :
+				<br>
+				<br>
+				<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/20nt6IhiB459SCOdow8R8p?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+			</p>
+		</div>
+		<div class="col s12 m4 l3">
+			<p class="relacionados">Destaque</p>
+			<a href="{% url 'Artistas-brasileiros' %}"><img src="{% static 'img/ArtistasBrasileiros/FloraPurimEairtonMoreira.jpg'%}" alt="Cantores Flora Puin e Airton Moreira" class="image-relacionados">
+			</a>
+			<a href="{% url 'Artistas-brasileiros' %}" style="color: black;">
+				<p class="texto-relacionados">
+					Músicos Brasileiros
+				</p>
+			</a><br><br>
+			<a href="{% url 'southern-rock' %}"><img src="{% static 'img/souternRock/johnnycash.jpg' %}" alt="Bandas de Southern rock" class="image-relacionados">
+			</a>
+			<a href="{% url 'southern-rock' %}" style="color: black;">
+				<p class="texto-relacionados">
+					Pérolas do Southern rock.
+				</p>
+			</a>
+		</div>
+	</div>
+</div>
+{%endblock%}

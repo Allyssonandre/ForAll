@@ -1,0 +1,89 @@
+{% extends "./Base/BasePerfil.html" %}
+{% block content %}
+{% load static %}
+{% load crispy_forms_tags %}
+<div class="horizontal-menu-wrapper">
+    <div class="col-12">
+       {% if messages %}
+       <div class="alert alert-success" role="alert">
+        {% for message in messages %}
+        <p {% if message.tags %} class="alert alert-success{{message.tags}}" {% endif %} style="color:white;font-size: 20px;font-family: Times New Roman;text-align: center;">&nbsp;<i class="fa fa-bell-o"></i>&nbsp;{{message}}
+        </p>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div> 
+<div class="header-navbar navbar-expand-sm navbar navbar-horizontal floating-nav navbar-light navbar-without-dd-arrow navbar-shadow menu-border" role="navigation" data-menu="menu-wrapper">
+    <div class="navbar-header">
+        <ul class="nav navbar-nav flex-row">
+            <li class="nav-item mr-auto">
+                <div class="brand-logo"></div>
+                <img class="" src="{% static 'img/forall.png'%}" alt="avatar" height="45" width="45">                </a></li>
+                <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i class="fa fa-times d-block d-xl-none font-medium-4 primary toggle-icon"></i><i class="toggle-icon feather icon-disc font-medium-4 d-none d-xl-block collapse-toggle-icon primary" data-ticon="icon-disc"></i></a></li>
+            </ul>
+        </div>
+        <!-- Horizontal menu content-->
+        <div class="navbar-container main-menu-content" data-menu="menu-container">
+            <!-- include ../../../includes/mixins-->
+            <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
+                <li>
+                    {% if user.is_authenticated %}
+                    <a class="dropdown-item" href="/accounts/logout" style="color: white;"><i class="fa fa-unlock"></i>Sair</a>
+                    {% endif %}
+                </li>
+                <li>
+                    {% if user.is_authenticated %}
+                    <a class="dropdown-item" href="{% url 'perfil' %}" style="color: white;"><i class="fa fa-user"></i>Perfil</a>
+                    {% endif %}
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'criaranuncio' %}" style="color: white;"><i class="fa fa-cart-plus"></i>Criar anúncio</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'videos' %}" style="color: white;"><i class="fa fa-video-camera"></i>Posta vídeo</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'momentos' %}" style="color: white;"><i class="fa fa-pencil-square"></i>Criar Stories</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</div>
+</div>
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper">
+        <div class="content-body">
+            <section id="floating-label-layouts">
+                <div class="row match-height">
+                    <div class="col-md-2 col-12"></div>
+                    <div class="col-md-8 col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h6 class="card-title">Inscrição Premium&nbsp;<i class="fa fa-star" style="color: yellow;"></i><i class="fa fa-star" style="color: yellow;"></i><i class="fa fa-star" style="color: yellow;"></i><i class="fa fa-star" style="color: yellow;"></i><i class="fa fa-star" style="color: yellow;"></i></h6>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-body">
+                                    <form method="POST" enctype="multipart/form-data">    
+                                       {% csrf_token %}<br> 
+                                       {{incricaopremium|crispy}}
+                                       <div class="col-12">
+                                        <button type="submit" class="btn btn-primary mr-1 mb-1 fa fa-sign-in" style="font-size: 20px;">&nbsp;Cadastra</button>
+                                        <button type="reset" class="btn btn-outline-warning mr-1 mb-1 fa fa-times-circle-o" style="font-size: 20px;">Errei</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-12"></div>
+            </div>
+        </section>
+    </div>
+</div>
+</div>
+<div class="sidenav-overlay"></div>
+<div class="drag-target"></div>
+{%endblock%}

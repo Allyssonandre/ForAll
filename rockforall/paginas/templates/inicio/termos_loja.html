@@ -1,0 +1,108 @@
+{% extends "./Base/BasePerfil.html" %}
+{% block content %}
+{% load static %}    
+<div class="horizontal-menu-wrapper">
+    <div class="header-navbar navbar-expand-sm navbar navbar-horizontal floating-nav navbar-light navbar-without-dd-arrow navbar-shadow menu-border" role="navigation" data-menu="menu-wrapper">
+        <div class="navbar-header">
+            <ul class="nav navbar-nav flex-row">
+                <li class="nav-item mr-auto">
+                    <div class="brand-logo"></div>
+                    <img class="" src="{% static 'img/forall.png'%}" alt="avatar" height="45" width="45">                </a></li>
+                    <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i class="fa fa-times d-block d-xl-none font-medium-4 primary toggle-icon"></i><i class="toggle-icon feather icon-disc font-medium-4 d-none d-xl-block collapse-toggle-icon primary" data-ticon="icon-disc"></i></a></li>
+                </ul>
+            </div>
+            <!-- Horizontal menu content-->
+            <div class="navbar-container main-menu-content" data-menu="menu-container">
+                <!-- include ../../../includes/mixins-->
+                <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
+                    <li>
+                        {% if user.is_authenticated %}
+                        <a class="dropdown-item" href="/accounts/logout" style="color: white;"><i class="fa fa-unlock"></i>Sair</a>
+                        {% endif %}
+                    </li>
+                    <li>
+                        {% if user.is_authenticated %}
+                        <a class="dropdown-item" href="{% url 'perfil' %}" style="color: white;"><i class="fa fa-user"></i>Perfil</a>
+                        {% endif %}
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/forall.letsgo/" target="_blank" title="Facebook" style="color:white"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/forall2020_/" target="_blank" title="Instagram" style="color:white"><i class="fa fa-instagram"></i></a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper">
+        <div class="content-header row">
+            <div class="content-header-left col-md-9 col-12 mb-2">
+                <div class="row breadcrumbs-top">
+                    <div class="col-12">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-body">
+            <!-- Wishlist Starts -->
+            <section id="wishlist" class="grid-view wishlist-items">
+                <div class="row search-content-info">
+                    <div class="col-12">
+                        <p style="text-align: left;color: white;">
+                            Termo de Uso e Política de privacidade<br><br>
+                            Termo de Uso <br><br>
+                            <b>Da plataforma</b> <br>
+                            O ForAll é uma plataforma de entretenimento, onde temos notícias sobre vários temas, concretizado através de matérias, tutoriais, opiniões entre outros. O intuito do ForAll é disponibiliza um ambiente para exposição de ideias distintas, além disso, difundi cultura para seu público. <br> 
+                            ⦁   Na plataforma existe dois níveis são eles: <br> 
+                            Externo : Neste nível o usuário terá a sua disposição as páginas com            conteúdos do site, sem esta diretamente logado. <br>     
+                            Interno :Já neste nível o usuário da plataforma poderá se torna membro do ForAll, e melhor totalmente de graça. Sendo isso possível através do cadastro que esta, localizado no menu do site, feito o cadastro o novo será direcionado para fazer o login. Pronto agora o novo membro pode desfrutar de todos os serviços do ForAll.
+                            <br><br>
+
+                            <b>Do membro (logado)</b><br>
+                            1-Estes Termos e Condições são um contrato aceito pelo usuário(membro) no momento em que Você faz uso da plataforma ForAll, no websites e aplicativo, independentemente de qualquer outra forma de aceitação. <br>
+                            2-No uso de nossas plataformas, você deve obedecer à legislação vigente, a moral, a ordem pública, Termos e Condições aplicáveis, não podendo praticar nenhuma conduta, que sejam contrários a eles. <br>
+                            3 - O usuário(membro) do ForAll deve aceitar o Termo de Uso e Política de Privacidade no momento da criação do perfil. <br>
+                            4 - As postagens de conteúdos com imagem vinculada a post de um usuário(membro) é de responsabilidade do gerador do material, no caso o usuário(membro). <br>
+                            5 - O ForAll não se responsabiliza pelas postagens dos usuários(membro). <br>
+                            6 - Se por ventura ouve a detecção de algum post que viole a moral de outrem a plataforma excluirá sumariamente o post. <br>
+                            7 - Os comentários devem seguir as diretrizes do site tais como: ser construtivo e expor ideais. Se porventura for constatado algum comentário que possa denegrir alguns dos nossos usuários(membro) o comentário será automaticamente excluído. Além disso, o comentário não pode ter palavras chulas ou ofessas de qualquer natureza. O intuito do ForAll é irmandade de todos, através da troca de ideais construtivas. <br>
+                            8 - Se for constatado um post ou comentário que possa denegrir a moral de outrem e moral civil a conta do usuário(membro) se excluída automaticamente. <br>
+                            9 - A conta do usuário(membro) é unica, que através dela será possível usa todo os serviços da plataforma. <br>
+                            10 - A utilização desta plataforma é vedada a pessoas menores de 18 anos. <br>
+                            11 - Uma conta usuário(membro) que não estive sendo ultilizada será excluída em um prazo de 4 meses de inabilidade. <br><br>
+
+                            <b>Do Marketplace ForAll</b><br>
+                            O  Marketplace ForAll é um ambiente para usuário(membro) fazer sua venda ou troca de produtos novos, ou usados. <br>
+                            1 - Para realizar o anúncio, o usuário(membro) deverá preencher as informações pedidas em um formulário, ao qual o link esta na primeira página perfil.html. <br> 
+                            2 - Os anúncios devem está compromissada com a exatidão das informações e licitude dos produtos. É proibido propagandas de conteúdo ofensivo, obsceno, pornográfia,  promoção de terrorismo ou qualquer tipo de discriminação ou que fira a moral de outrem e de outros grupos especificos. O usuário(membro) não pode colocar a disposição publicidade de terceiros como: link de sites, propagandas de empresas de outrem ou mesmo publicidade de banner e publicidade ilicita. <br>
+                            3 - Os usuários(membro) que usem o serviço Marketplace ForAll são responsáveis pelos produtos anunciados. Tanto na entrega do produto quanto no estado físico do objeto. <br>
+                            4 - O ForAll NÃO se responsabiliza pelos produtos anunciados e também de transações entre os usuários(membro) e os possíveis compradores. <br>
+                            5 - Use este serviço Marketplace ForAll com consciência, pois a violação das regras pode acarretar na exclusão da sua conta, sem aviso prévio. <br>
+                            6 - O usuário(membro) é o único responsável pelo seu anúncio, e também nas condições do produto. <br>
+                            7 - O ForAll é só uma ponte para os usuários(membro), disponibilizando uma plataforma para os anúncios serem compatilhados, Não se envolvemos com nenhum processo de negociação entre os usuários(membro). <br>
+                            8 - O serviço Marketplace ForAll é totalmente gratuito. <br>
+                            9 - O número de anúncio por usuário(membro) é de 1(UM) anúncio, podendo o usuário(membro) EXCLUIR o anterior, no caso de ter a necessidade de anúnciar novamente. Isto é através do seu perfil no tópico MINHAS ATIVIDADES.
+                            <hr>
+                        </p>
+                        <p style="text-align: left;color: white;">
+                            <b>Política de privacidade</b> <br>
+                            1-Todas as suas informações pessoais recolhidas, serão usadas para ajudar a tornar a sua visita no nosso site o mais produtiva e agradável possível. <br>
+                            2 - O uso do ForAll pressupõe a aceitação deste Acordo de privacidade. A equipe do ForAll reserva-se ao direito de alterar este acordo sem aviso prévio. Deste modo, recomendamos que consulte a nossa política de privacidade com regularidade de forma a estar sempre atualizado. <br>
+                            3 - O ForAll avisa aos seus usuários que em nossa plataforma conterá links para sites de parceiros comerciais. Em caso de algum usuário acessá-los, será levado a outras páginas web, e consequentemente estará fora do ForAll, e com isso fora de nosso controle. A partir disto o usuário terá que ler os termos de uso e política de privacidade do site que está visitando. <br>
+                            4 - 10-O Usuário ao inseri os seus dados no nosso banco de dado poderá a qualquer momento pedi a exclusão, através dos nossos meios de comunicação. <br> 
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<div class="sidenav-overlay"></div>
+<div class="drag-target"></div>
+{%endblock%}

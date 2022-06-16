@@ -1,0 +1,86 @@
+{% extends "./Base/base.html" %}
+{% load static %}
+{% block content %}
+<!-- style para os H1 e H2 -->
+<style type="text/css">
+	.titulo{padding: 0;margin: 0;font-family: Times New Roman;}
+	.subtitulo{padding: 9px;margin: 0;font-family: Times New Roman;font-size: 30px;color: gray;}
+	.breadcrumb-item{font-family: Times New Roman;font-size: 15px;margin: 0px;padding: 10px;color: gray;list-style: none;}
+	.cores{color: black;font-weight: bold;}
+</style>
+<div id="index-banner" class="parallax-container">
+	<div class="section no-pad-bot">
+		<div class="container">
+			<div class="row center">
+				<br>
+				<a href="#" id="download-button" class="btn-large waves-effect" style="background-color: #03262C;">Alicerces do Blues
+				</a>
+			</div>
+			<br><br>
+		</div>
+	</div>
+	<div class="parallax"><img src="{% static 'admin/img/logo.jpg' %}" alt="Logo Marca do ForAll"></div>
+</div>
+<div class="container"></div>
+</div>
+<div class="container-fluid">	
+	<div class="row">
+		<div class="row">
+			<div class="col s12"><br></div>
+			<div class="col s12 m4 l2"></div>
+			<div class="col s12 m4 l8">
+				<p class="breadcrumb-item">
+					<a href="/" class="cores"><i class="fa fa-reply"></i>&nbsp;Página Inicial</a>:
+					<i class="fas fa-angle-right"></i>
+					Rosetta Tharpe, Uma mulher a frente de seu tempo
+				</p>
+				<img src="{% static 'admin/img/rosseta.jpg' %}" alt="Cantora Rosetta Tharpe" style="width: 100%;height: 400px;border-radius: 5px;">
+				Créditos / Facebook
+				<br>
+				<h1 class="titulo">Rosetta Tharpe</h1>
+				<h1 class="subtitulo">Uma mulher a frente de seu tempo</h1> 
+				<p style="font-family: Times New Roman;font-size: 16px;text-align: justify;color: gray">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Você sabe quem foi <b>Rosetta Tharpe</b> ?  Provavelmente não, mas uma coisa lhe digo, esta dama foi uma das pessoas que com o seu talento ajudou a criar um dos gêneros musicais mais legais de todos os tempos o Rock n' Roll. Rosetta Tharpe foi cantora, compositora e guitarrista de música gospel, sendo muito conhecida na década de 40. Ela teve a genialidade de mistura a música gospel com um ritmo que não tinha seu nome ainda criado, mas que futuramente seria conhecido como o bom e velho Rock n' Roll.  <br>
+
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sister Rosetta Tharpe como era chamada nasceu em Cotton Plant, Arkansas. Aos quatro anos começou a se apresenta na igreja Deus em Cristo, acompanhada da sua mãe (Katie Bell Nubin), onde excursionou pelo sul dos Estados. Ao decorrer de sua carreira Rosetta foi apresentada ao Blues e Country Music, bebendo destas fontes ela lapidou seu estilo musical. <br>
+
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Em 1934, após seu casamento com o pastor Thomas Thorpe eles se mudaram para Nova Iorque, onde lá no mês de outubro do ano de 1940 ela fez sua primeira gravação através da gravadora Decca Records, com o auxílio da orquestra de Lucky Millinder. Nesta junção foram gravadas quatro faixas, causando um frenesi na cena musical, e também causando controvérsias no mundo da música sacra, pois ela fez o misto da música santa com outros ritmos. <br> 
+
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Apesar de viver em um ambiente sacra Rosetta conquistou uma grande notoriedade no mundo da música americana com as Canções como “This Train” e “Rock Me”. Através da mistura do gospel e os ritmos velozes ela mostrou hits alucinantes levando para o público a música gospel. Com o reconhecimento e notoriedade Sister Rosetta não parou de grava durante a Segunda Guerra, deleitando seu talento para as tropas americanas. Em 1944,  Rosetta gravou a música “Stranger Things Happening Every Day” junto com o pianista de boogie woogie, onde mostrou todo seu talento como guitarristas, sendo a música “Stranger Things Happening Every Day” considerada a primeira gravação do Rock n´ Roll.  <br>
+
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rosetta influenciou muitos músicos famosos dentre eles estão Elvis Presley, Johnny Cash, Jerry Lee Lewis entre outros, ela com seu estilo inovador foi espelho para estes músicos. Durante a entrega do prêmio no Rock and Roll Hall of Fame  Johnny Cash fala sobre sua admiração por Rosetta Tharpe, por essa e por outras coisas que a Sister Rosetta foi um dos alicerces do Rock n´ Roll.  Embora todo este legado Sister Rosetta nunca foi reconhecida como um dos alicerces do Rock, apesar disto é incontestável a sua contribuição para a música negra americana como o Blues, Country Music, gospel enfim toda as raízes da música Rock. <br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No ano de 1970 Sister Rosetta sofreu um derrame, que lhe impossibilitou de subir aos palcos, ela também foi diagnostica com diabetes tendo que em decorrência das complicações desta doença ter de ser amputado uma das pernas. Em 1973 ela morreu devido a outro derrame, sendo enterrada no “Northwood Cemetery"  na Philadelphia, Pennsylvania. Seu nome nunca será esquecido no mundo da música, pois ela foi e sempre será a The Godmother of Rock & Roll. <br>
+					<br><br>
+					Por Redação <i class="material-icons">person_pin</i>
+				</p>						
+				<iframe width="100%" height="315" src="https://www.youtube.com/embed/Y9a49oFalZE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+			<div class="col s12 m4 l2"></div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<!-- RECOMENDAÇÕES -->
+		<div>
+			<p style="padding: 0px;margin: 0px;font-size: 25px;font-family: Times New Roman;">Recomendados
+				<hr>
+			</p>
+			<br>
+		</div>
+		<div class="col s12 m6 l3">
+			<a href="{% url 'son-house'%}"><img src="{% static 'admin/img/son-house.png'%}" alt="Cantor Son House" style="width: 100%;border-radius: 5px;height: 185px;"></a>
+		</div>
+		<div class="col s12 m6 l3">
+			<a href="{% url 'tutorial'%}"><img src="{% static 'admin/img/modd.jpg' %}" alt="Banda The Moody Blues" style="width: 100%;border-radius: 5px;height: 185px"></a>
+		</div>
+		<div class="col s12 m6 l3">
+			<a href="{% url 'dicas'%}"><img src="{% static 'admin/img/kingC.png' %}" alt="Banda King Crimson" style="width: 100%;border-radius: 5px;height: 185px"></a>
+		</div>
+		<div class="col s12 m6 l3">
+			<a href="{% url 'destaque'%}"><img src="{% static 'admin/img/jeff.png'%}" alt="Cantor Jeff Buckley" style="width: 100%;border-radius: 5px;height: 185px;"></a>
+		</div>
+		<!-- FIM -->
+	</div>
+</div>
+{%endblock%}

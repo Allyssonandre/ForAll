@@ -1,0 +1,137 @@
+{% extends "./Base/base.html" %}
+{% load static %}
+{% block content %}
+<style type="text/css">
+	#ajuste{font-family: Times New Roman;margin: 0;color: gray;font-size: 19px;}
+	.estilo {font-family: Times New Roman;font-size: 17px;text-align: justify;color: gray;margin: 0;padding: 19px;}
+	.relacionados{font-family: Times New Roman;font-size: 17px;font-weight: bold;color: #03262C;}
+	.image-relacionados{width: 23%;height: 60px;border-radius: 5px;padding: 0px;}
+	.texto-relacionados{font-family: Times New Roman;font-size: 14px;float: right;margin-top: -15px;margin: 0;color: gray;}
+	.descricao{font-family: Times New Roman;font-size: 16px;margin: 0px;padding: 0px;color: gray;text-align: justify;}
+	.descricao2{font-family: Times New Roman;font-size: 16px;margin: 0px;padding: 0px;color: gray;text-align: center;margin-top: 0px;}
+	#corIcon{color: rgb(129,183,26);}
+</style>
+</style>
+<div class="container">
+	<div class="row">
+		<br>
+	</div>
+</div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col s12 m2 l3">
+			<p class="relacionados">Relacionados</p>
+			<a href="{% url 'redacao:dicas-filmes' %}"><img src="{% static 'img/cinema/matrix.jpg'%}" class="image-relacionados" alt="Cantor Son House">
+			</a>
+			<a href="{% url 'redacao:dicas-filmes'%}" style="color: black;">
+				<p class="texto-relacionados">
+					4 Filmes para explodir sua mente.
+				</p>
+			</a><br><br><br>
+			<a href="{% url 'Quadrinhos'%}"><img src="{% static 'img/Quadrinhos/quadrinho.png'%}" class="image-relacionados" alt="Quadrinhos">
+			</a>
+			<a href="{% url 'Quadrinhos'%}" style="color: black;">
+				<p class="texto-relacionados">
+					3 Revistas em quadrinhos que você tem <br>que conhecer.
+				</p>
+			</a><br><br><br>
+		</div>
+		<div class="col s12 m6 l6"><br>
+			<span id="ajuste"><i class="fas fa-microphone-alt"></i>&nbsp;Rádio ForAll</span>&nbsp;&nbsp;
+			<a class="tooltipped" data-position="right" data-tooltip="Compatilhe esta página" id="ajuste"><i class="fa fa-share-alt"></i></a>
+			<p class="estilo">
+				" Olá, o ForAll tem várias playlists categorizadas por subgenêros, tudo para lhe dar melhor experiência. Não se preocupe que estamos atualizando a cada mês no que a de melhor na música. Se divirtam-se. "<br>
+				Redação | ForAll 
+			</p>
+		</div>
+		<div class="col s12 m4 l3">
+			<p class="relacionados">Destaque</p>
+			<a href="{% url 'Nada-trivial-jonathan-hulten' %}"><img src="{% static 'img/nadatrivial/jonathan_hunten.jpg'%}" class="image-relacionados" alt="Jonathan Hultén">
+			</a>
+			<a href="{% url 'Nada-trivial-jonathan-hulten' %}" style="color: black;">
+				<p class="texto-relacionados">
+					Nada Trivial, Jonathan Hultén
+				</p>
+			</a><br><br><br>
+			<a href="{% url 'power-metal-bandas' %}"><img src="{% static 'img/powermetal/helloween.jpg'%}" class="image-relacionados" alt="Banda de Power Metal">
+			</a>
+			<a href="{% url 'power-metal-bandas' %}" style="color: black;">
+				<p class="texto-relacionados">
+					5 bandas de Power Metal alemão que <br>você tem que conhecer.
+				</p>
+			</a>
+		</div>
+	</div>
+</div>
+<br><br>
+<div class="container">
+	<div class="row">
+		<div class="col s12 m4 l3">
+			<a href="https://open.spotify.com/playlist/3ZUKcdZxqdiQyUkAjjJ2pP?si=d9acdfc865534465" target="_blank">
+				<div class="chip">
+					<img src="{% static 'img/spotify/blues.png'%}" alt="Blues">
+					Blues
+				</div>
+			</a><br>
+			<p class="descricao">Esta playlist traz os mestres do blues, em uma compilação matadora.</p><br>
+			<p class="descricao2">
+				Nos siga no <a href="https://open.spotify.com/user/y8hjumvlozhk6rvb5g1zft0nt" target="_blank"><i class="fab fa-spotify" id="corIcon"></i></a> 
+			</p>
+		</div>	
+		<div class="col s12 m4 l3">
+			<a href="https://open.spotify.com/playlist/6RbyCcjH7eTDnrTHk9lCVR?si=c2df480195744656" target="_blank">
+				<div class="chip">
+					<img src="{% static 'img/spotify/classicos.png'%}" alt="Clássicos">
+					Clássicos
+				</div>
+			</a><br>
+			<p class="descricao">As bandas mais poderosas do mundo em uma playlist do ForAll.</p><br>
+			<p class="descricao2">
+				Nos siga no <a href="https://open.spotify.com/user/y8hjumvlozhk6rvb5g1zft0nt" target="_blank"><i class="fab fa-spotify" id="corIcon"></i></a> 
+			</p>
+		</div>
+		<div class="col s12 m4 l3">
+			<a href="https://open.spotify.com/playlist/5EPN8wlPDnZ1ooRsSmJ1lp?si=7856bc4d351e4c54" target="_blank">
+				<div class="chip">
+					<img src="{% static 'img/spotify/deathmetal.png'%}" alt="Death Metal">
+					Death Metal
+				</div>
+			</a><br>
+			<p class="descricao">O melhor do Death Metal desde o Krisium até o Obituary.</p><br>
+			<p class="descricao2">
+				Nos siga no <a href="https://open.spotify.com/user/y8hjumvlozhk6rvb5g1zft0nt" target="_blank"><i class="fab fa-spotify" id="corIcon"></i></a> 
+			</p>
+		</div>
+		<div class="col s12 m4 l3">
+			<a href="https://open.spotify.com/playlist/58gympaG88KiSauKbp8F6g?si=5658233fca50494d" target="_blank">
+				<div class="chip">
+					<img src="{% static 'img/spotify/hardcoreskatepunk.png'%}" alt="Hardcore Skate Punk">
+					Hardcore Skate Punk
+				</div>
+			</a><br>
+			<p class="descricao">50 Bandas de Hardcore que vão pirar sua cabeça, só a nata do estilo.</p><br>
+			<p class="descricao2">
+				Nos siga no <a href="https://open.spotify.com/user/y8hjumvlozhk6rvb5g1zft0nt" target="_blank"><i class="fab fa-spotify" id="corIcon"></i></a> 
+			</p>
+		</div>		
+	</div>	
+</div>
+<br>
+<div class="container">
+	<div class="row">
+		<div class="col s12 m4 l3">
+			<a href="https://open.spotify.com/playlist/7hPAW7j0D4LVsvYmFwyifu?si=cf8d2212484c49f3" target="_blank">
+				<div class="chip">
+					<img src="{% static 'img/spotify/grunge.png'%}" alt="Grunge">
+					Grunge
+				</div>
+			</a><br>
+			<p class="descricao">O melhor do gênero que sacudiu os anos 90, com as bandas mais icônicas da cena de Seattle.</p><br>
+			<p class="descricao2">
+				Nos siga no <a href="https://open.spotify.com/user/y8hjumvlozhk6rvb5g1zft0nt" target="_blank"><i class="fab fa-spotify" id="corIcon"></i></a> 
+			</p>
+		</div>		
+	</div>	
+</div>
+{%endblock%}
+

@@ -1,0 +1,150 @@
+{% extends "./Base/BasePerfil.html" %}
+{% load embed_video_tags %}
+{% block content %}
+{% load static %}
+<style type="text/css">
+    a{
+        text-decoration: none;
+        color: white;
+    }
+</style>
+<div class="horizontal-menu-wrapper">
+    <div class="header-navbar navbar-expand-sm navbar navbar-horizontal floating-nav navbar-light navbar-without-dd-arrow navbar-shadow menu-border" role="navigation" data-menu="menu-wrapper">
+        <div class="navbar-header">
+            <ul class="nav navbar-nav flex-row">
+                <li class="nav-item mr-auto">
+                    <div class="brand-logo"></div>
+                    <img class="" src="{% static 'img/forall.png'%}" alt="avatar" height="45" width="45">                </a></li>
+                    <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i class="fa fa-times d-block d-xl-none font-medium-4 primary toggle-icon"></i><i class="toggle-icon feather icon-disc font-medium-4 d-none d-xl-block collapse-toggle-icon primary" data-ticon="icon-disc"></i></a></li>
+                </ul>
+            </div>
+            <!-- Horizontal menu content-->
+            <div class="navbar-container main-menu-content" data-menu="menu-container">
+                <!-- include ../../../includes/mixins-->
+                <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
+                    <li>
+                        {% if user.is_authenticated %}
+                        <a class="dropdown-item" href="/accounts/logout" style="color: white;"><i class="fa fa-unlock"></i>Sair</a>
+                        {% endif %}
+                    </li>
+                    <li>
+                        {% if user.is_authenticated %}
+                        <a class="dropdown-item" href="{% url 'perfil' %}" style="color: white;"><i class="fa fa-user"></i>Perfil</a>
+                        {% endif %}
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/forall.letsgo/" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/forall2020_/" target="_blank" title="Instagram"><i class="fa fa-instagram"></i></a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper">
+        <div class="content-header row">
+            <div class="content-header-left col-md-9 col-12 mb-2">
+                <div class="row breadcrumbs-top">
+                    <div class="col-12">
+                        <h2 class="content-header-title float-left mb-0">Produtos</h2>
+                        <div class="breadcrumb-wrapper col-12">
+                            <ol class="breadcrumb">
+                                <li style="font-size: 17px;"><a href="{% url 'perfil'%}" style="color: white;" class="fa fa-user">&nbsp;Perfil</a>
+                                </li>&nbsp;&nbsp;
+                                <li style="font-size: 17px;"><a href="{% url 'criaranuncio'%}" class="fa fa-cart-plus" style="color: white;">&nbsp;Criar anúncio</a>
+                                </li>&nbsp;&nbsp;
+                                <li style="font-size: 17px;"><a href="{% url 'meusProdutos'%}" class="fa fa-money" style="color: white;">&nbsp;Meus anúncios</a>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <form method="GET">
+                  <div class="form-group">
+                    <fieldset class="form-label-group form-group position-relative has-icon-left input-divider-left">
+                        <input name="busca" type="text" class="form-control"  placeholder="CD, Camisa, Bottons, Vinil, Tênis, Livro, DVD, Moleton, Canecas, Boné, Chaveiro e Outros.">
+                        <div class="form-control-position">
+                            <i class="fa fa-search"></i>
+                        </div>
+                    </fieldset>
+                    <small id="emailHelp" class="form-text text-muted"></small>
+                    <button type="submit" class="btn btn-primary fa fa-search" style="border-style: hidden;">&nbsp;Pesquisar</button>&nbsp;<button type="reset" class="btn btn-danger fa fa-times" style="border-style: hidden;">&nbsp;Limpa</button>
+                </div>
+            </form>
+            <i class="fa fa fa-tags" style="color: white;font-size: 17px;">&nbsp;Pesquise por categoria:&nbsp;
+            CD, Camisa, Bottons, Vinil, Tênis, Livro, DVD, Moleton, Canecas, Boné, Chaveiro e Outros  </i>
+        </div>
+    </div> 
+    <div class="content-body">
+        <!-- Wishlist Starts -->
+        <section id="wishlist" class="grid-view wishlist-items">
+            <div class="row search-content-info">
+                {% if verprodutos %}
+                {% for p in verprodutos%}
+                <div class="col-md-2 col-sm-6 col-12 search-content">
+                   <div class="card ecommerce-card">
+                    <div class="card-content">
+                        <div class="item-img text-center">
+                         {% if user.perfil.image%}
+                         <img class="img-fluid" src="{{p.user.perfil.image.url}}" alt="avtar img holder" style="position: absolute;left: 2px;
+                         top: 46%;border-radius: 50%;height: 36px;width: 40px;margin: 0;" data-toggle="tooltip" data-placement="top" title="{{p.user}}">
+                         {% endif%}
+                         <a href="/detalheproduto/{{p.id}}">
+                            <img src="{{p.image_produto.url}}" class="img-fluid" alt="img-placeholder" style="height: 200px;width: 100%;">
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <div class="item-wrapper">
+                            <div class="item-rating">
+                                <div class="badge badge-primary badge-md">
+                                    {{p.view_produto}} <i class="fa fa-thumbs-up ml-20"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <br>
+                                {%if p.preco_produto%}
+                                <p style="font-family: Times New Roman;font-size: 13px;margin: 0;color: white;margin: 0;">
+                                    R$&nbsp;{{p.preco_produto}}
+                                </p>
+                                {%endif%}
+                            </div>
+                        </div>
+                        <div class="item-name">
+                            <p style="color: white;font-family: Times New Roman;font-size: 12px;margin: 0;">
+                                <a href="/detalheproduto/{{p.id}}" style="color: white;font-family: Times New Roman;font-size: 14px;margin: 0;">
+                                    {{p.titulo_produto}}
+                                </a><br>
+                                <i class="fa fa-tags"></i>&nbsp;{{p.categori_produto}}<br>
+                                <i class="fa fa-money"></i>&nbsp;Tipo | <b style="color: red;">{{p.tipo_transacao}}</b><br>
+                                <a href="/detalheproduto/{{p.id}}" style="margin: 0;font-size: 15px;color: white;" data-toggle="tooltip" data-placement="top" title="Detalhe do produto"><i class="fa fa-eye"></i></a>
+                            </p>
+                        </div>
+                        <div>      
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}    
+        {% else %}
+        <div class="alert alert-success col-12" role="alert">
+            <p class="mb-0" style="color: white;">
+                Não tem produto com esta categoria, pesquise novamente.
+            </p>
+        </div>
+        {% endif %}
+    </div>
+</section>
+</div>
+</div>
+</div>
+<div class="sidenav-overlay"></div>
+<div class="drag-target"></div>
+{%endblock%}

@@ -1,0 +1,126 @@
+{% extends "./Base/base.html" %}
+{% load static %}
+{% block content %}
+<!-- style para os H1 e H2 -->
+<style type="text/css">
+	.titulo{padding: 0;margin: 0;font-family: Times New Roman;}
+	.subtitulo{padding: 9px;margin: 0;font-family: Times New Roman;font-size: 30px;color: gray;}
+	.breadcrumb-item{font-family: Times New Roman;font-size: 15px;margin: 0px;padding: 10px;color: gray;list-style: none;}
+	.cores{color: black;font-weight: bold;}
+</style>
+<div id="index-banner" class="parallax-container">
+	<div class="section no-pad-bot">
+		<div class="container">
+			<div class="row center">
+				<br>
+				<a href="#" id="download-button" class="btn-large waves-effect" style="background-color: #03262C;">
+					Redação
+				</a>
+			</div>
+			<br><br>
+		</div>
+	</div>
+	<div class="parallax"><img src="{% static 'admin/img/logo.jpg' %}"  alt="Logo Marca do ForAll"></div>
+</div>
+<div class="container"></div>
+</div><br>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col s12"></div>
+		<div class="col s12 m4 l2">
+			<p style="font-family: Times New Roman;font-size: 17px;font-weight: bold;color: #03262C;">Mais+
+				<hr style="background-color: #559C9E;height: 0.3px;">
+			</p>
+			<a href="{% url 'destaque'%}"><img src="{% static 'admin/img/jeff.png'%}" alt="Cantor Jeff Buckley" style="width: 100%;height: 195px;border-radius: 5px;"></a><br><hr>
+			<a href="{% url 'Redacao_reportagem' %}"><img src="{% static 'admin/img/bandas.jpg'%}" alt="Cantor Robert Johnson" style="width: 100%;border-radius: 5px;height: 195px" title="Robert Johnson"></a><br><hr>
+		</div>
+		<!-- CONTEÚDO -->
+		<div class="col s12 m4 l8">
+			<p class="breadcrumb-item">
+				<a href="/" class="cores"><i class="fa fa-reply"></i>&nbsp;Página Inicial</a>:
+				<i class="fas fa-angle-right"></i>
+				Artistas brasileiros que se destacaram internacionalmente
+				<br>
+				<h1 class="titulo">Artistas brasileiros que se destacaram internacionalmente.</h1>
+				<h2 class="subtitulo">Você conhecia ?</h2>
+				<h5>Eumir Deodato</h5>
+				<p style="font-family: Times New Roman;font-size: 16px;text-align: justify;color: gray;margin: 0;">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 2rem;font-weight: bold;
+					color: gray;font-family: Times New Roman;">N</span>ascido como Eumir Deodato de Almeida no Rio de janeiro em 1943, Eumir é um pianista, arranjador e produtor. Sendo um personagem chave do movimento Bossa nova e do "bum" do samba jazz na década de 60, sendo um dos arranjadores mais requisitados na época junto com nomes como <b>Radamés Gnattalli e Moacir Santos</b>. Após uma breve carreira com grupos musicais no Brasil, foi para os Estados Unidos, onde lá juntou-se a <b>gravadora CTI Records</b>, e em consequência trabalhando com nomes importantes da música Americana como <b>Aretha Franklin, Wes Montgomery e Frank Sinatra</b>. Na década de 70 Eumir gravou alguns discos solos, tendo um sucesso como intérprete ao fazer uma versão para o poema sinfônico <b>"Also sprach Zarathustra"</b>, de <b>Richard Strauss</b>.<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Eumir também escreveu vários trabalhos para trilhas sonoras de filmes, por isso ganhou vários prêmios, sendo <b>16 discos de platina e um Grammy</b>. Deodato foi arranjador de vários artistas de renome como <b>Tom Jobim, Walter Wanderley, Paul Desmond, Aretha Franklin, Frank Sinatra, Tony Bennett, Roberta Flack (escrevendo o arranjo de "Killing Me Softly with His Song"), Wes Montgomery e Ray Bryant</b>. Na década de 80 ele ainda trabalhou como arranjador em grandes produções hollywoodianas com trilhas para Being There e Os Caça-fantasmas II. Já em 1990 fez trabalhos junto com a cantora Islandesa <b>Björk</b> nos álbuns Post, Telegram e Homogenic.
+					<div class="row">
+						<div class="col s12"></div>
+						<div class="col s12 m4 l1"></div>
+						<div class="col s12 m4 l10">
+							<img src="{% static 'admin/img/ArtistasBrasileiros/EumirDeodato.jpg' %}" alt="Eumir Deodato" style="width: 100%;height: 390px;" class="materialboxed responsive-img">
+							<p style="color: #A9A9A9;margin: 0;font-size: 14px;font-family: Times New Roman;">Divulgação : Facebook</p>
+						</div>
+						<div class="col s12 m4 l1"></div>
+					</div>
+				</p>
+				<h5>Flora Purim</h5>
+				<p style="font-family: Times New Roman;font-size: 16px;text-align: justify;color: gray;margin: 0;">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 2rem;font-weight: bold;
+					color: gray;font-family: Times New Roman;">F</span>lora Purim, nasceu na cidade do Rio de Janeiro em 6 de março de 1942 é uma cantora brasileira de jazz. A cantora desde criança gostava de música, dado também que em sua casa a música corria solta por todos os cômodos, já que sua mãe era pianista e seu pai tocava violino. Flora ao longo de sua infância foi influenciada por vários artistas de sua época como Billie Holiday, Dinah Washington, Ella Fitzgerald e Sarah Vaughan, pronto, ai esta, montado todo ambiente favorável para ela galgar uma carreira como cantora. <br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Não deu outra, no ano de 1967 Flora foi para os Estados unidos, para estudar música, no estado da Califórnia. Após cinco anos de sua ida para os EUA ela casou com o percussionista brasileiro <b>Airton Moreira</b>. Trabalhando com artista de renome como Stan Getz e Gil Evans, ela também fez parte do conjunto Return to Forever nos anos 70. No ano de 1973 Flora decidiu entra na carreira (solo) com o disco de estreia Butterfly Dreams e também gravando outros de igual sucesso. <br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E não para por aí, em consequência das várias críticas favoráveis aos discos, <b>ela foi considerada uma das melhores cantoras de jazz nos EUA de 1974 e 1977</b> muito pelo seu enorme talento. Na década de 70 gravou com músicos como Carlos Santana, Hermeto Pascoal e Chick Corea.
+				</p>
+				<br>
+				<div class="row">
+					<div class="col s12"></div>
+					<div class="col s12 m4 l1"></div>
+					<div class="col s12 m4 l10">
+						<img src="{% static 'admin/img/ArtistasBrasileiros/FloraPurimEairtonMoreira.jpg' %}" alt="FloraPurim e Airton Moreira" style="width: 100%;height: 390px;" class="materialboxed responsive-img">
+						<p style="color: #A9A9A9;margin: 0;font-size: 14px;font-family: Times New Roman;">Divulgação : Facebook, Flora Purim e seu marido Airton Moreira</p>
+					</div>
+					<div class="col s12 m4 l1"></div>
+				</div>
+				<br>
+				<h5>Airton Moreira</h5>
+				<p style="font-family: Times New Roman;font-size: 16px;text-align: justify;color: gray;margin: 0;">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 2rem;font-weight: bold;
+					color: gray;font-family: Times New Roman;">N</span>ascido como Airto Guimorvan Moreira em Itaiópolis em 5 de agosto de 1941, mais conhecido pelo nome artístico Airto Moreira é um percussionista, baterista e compositor. No ano de 1962 fez parte da banda chamada Sambalanço Trio, junto César Camargo Mariano e Humberto Cláiber. Um tempo depois Cesár Camargo Mariano saiu da banda, com isso os outros integrantes convidaram nada mais nada menos do quer Hermeto Pascoal. <br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Em consequência Airto, Humberto Cláiber e  Hermeto Pascoal deram vida ao conjunto Sambrasa Trio, que só teve um álbum intitulado "Em Som Maior" em 1965. Airton também fez parte da banda Quarteto Novo, juntamente com Theo de Barros, Heraldo do Monte e Hermeto Pascoal entre os anos de 1966 até 1969. No ano de 1960, Airton foi morar nos Estados Unidos, estando lá participou das gravações do álbum de Miles Davis intitulado Bitches Brew na faixa "Feio", com isso o sucesso foi inevitável sendo colocado definitivamente na cena artística internacional. Airton gravou vários discos com a sua esposa, é cantora Flora Purim, sendo ela considerada uma das melhores cantoras de jazz nos EUA de 1974 e 1977.
+				</p><br>	
+				<div class="row">
+					<div class="col s12"></div>
+					<div class="col s12 m4 l1"></div>
+					<div class="col s12 m4 l10">
+						<img src="{% static 'admin/img/ArtistasBrasileiros/airtonMoreiraEmilesDavis.jpg' %}" alt="Airton Moreira com Miles Davis" style="width: 100%;height: 390px;" class="materialboxed responsive-img">
+						<p style="color: #A9A9A9;margin: 0;font-size: 14px;font-family: Times New Roman;">Divulgação : Facebook, Ao centro Miles Davis e do lado direito Airton Moreira no Live at the Isle of Wight Festival, UK - August 1970.</p>
+					</div>
+					<div class="col s12 m4 l1"></div>
+				</div>
+				<br>
+				<h5>Paulinho da Costa</h5>
+				<p style="font-family: Times New Roman;font-size: 16px;text-align: justify;color: gray;margin: 0;">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 2rem;
+					color: gray;font-family: Times New Roman;">P</span>aulo Roberto da Costa, conhecido como Paulinho da Costa (Rio de Janeiro, 31 de maio de 1948), é um músico de sessão e percussionista brasileiro que se tornou um dos músicos mais requisitados nos estúdios de gravações em Los Angeles, no estado da Califórnia.Sendo um dos músicos que mais gravou e participou de discos nos tempos modernos, foi considerado pela revista Down Beat "um dos percussionistas mais talentosos do nosso tempo". Participou de vários álbuns premiados pelo <b>Grammy Award</b>, entre eles <b>Thriller</b>, de <b>Michael Jackson</b>, True Blue, de <b>Madonna e Let's Talk About Love, de Celine Dion</b>. Participou também de músicas e trilhas sonoras de filmes de grande sucesso, entre eles <b>Os embalos de sábado à noite, Dirty Dance, Purple Rain e Jurassic Park</b>. O músico, que toca mais de 200 instrumentos, também tocou com Diana Krall. Da Costa, como também é conhecido, recebeu da <b>National Academy of Recording Arts and Sciences o seu “Most Valuable Player Award” </b> por três anos consecutivos. <br> 
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nascido no Rio de Janeiro, no bairro do Irajá, Paulinho começou a tocar pandeiro ainda na infância. Mais tarde, integrou a ala jovem da bateria da escola de samba Portela. Ainda adolescente, aos 15 anos, viajou para a Rússia numa trupe organizada pelo empresário Carlos Machado e liderada pelos cantores Jorge Goulart e Nora Ney. Ao voltar para o Brasil, Paulinho começou a estudar e a desenvolver técnicas para diversos instrumentos de percussão. Em 1972, a convite do pianista Sérgio Mendes, viajou pela primeira vez para Los Angeles, Estados Unidos, onde vive há mais de 40 anos. A sua primeira gravação foi em 1976: "Love Machine", do grupo The Miracles, com a lenda do soul Smokey Robinson. <br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Na mesma época, o trompetista e jazzista Dizzy Gillespie apresentou Paulinho da Costa ao fundador dos selos Verve e Pablo, Norman Granz, o qual o apadrinhou e possibilitou que ele ficasse de vez nos Estados Unidos. Desde então, Paulinho da Costa colaborou com Michael Jackson e centenas de artistas. <br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Famoso entre os músicos de todo o mundo, Paulinho da Costa colaborou na gravação de mais de <b>900 músicos diferentes</b>, como <b>Michael Jackson, Madonna, Lionel Ritchie, Aretha Franklin, Ella Fitzgerald, Elton John, Eric Clapton e Bob Dylan</b>.
+				</p>
+				<br>
+				<div class="row">
+					<div class="col s12"></div>
+					<div class="col s12 m4 l1"></div>
+					<div class="col s12 m4 l10">
+						<img src="{% static 'admin/img/ArtistasBrasileiros/paulo.jpg' %}" alt="Paulinho da costa" style="width: 100%;height: 390px;" class="materialboxed responsive-img">
+						<p style="color: #A9A9A9;margin: 0;font-size: 14px;font-family: Times New Roman;">Divulgação : Facebook, Paulinho da Costa.</p>
+					</div>
+					<div class="col s12 m4 l1"></div>
+				</div>
+				<br>
+			</div>
+			<!-- FIM -->
+			<div class="col s12 m4 l2">
+				<p style="font-family: Times New Roman;font-size: 17px;font-weight: bold;color: #03262C;">Outros destaques
+					<hr style="background-color: #559C9E;height: 0.3px;">
+				</p>
+				<a href="{% url  m6 l4">
+					<a href="{% url 'Bob_Mould' %}"><img src="{% static 'admin/img/Tutorial/BobMould/bob.jpg'%}" alt="Cantor Bob Mould" style="width: 100%;height: 195px;border-radius: 5px;"></a><br><hr>
+					<a href="{% url 'Primeira-resenha' %}"><img src="{% static 'admin/img/rosseta.jpg'%}" alt="Cantora Rosetta Tharpe" style="width: 100%;border-radius: 5px;height: 195px;" title="Sister Rosetta Tharpe"></a><br><hr>
+				</div>
+			</div>
+		</div>
+		{%endblock%}

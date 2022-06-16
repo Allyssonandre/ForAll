@@ -1,0 +1,265 @@
+{% extends "./Base/base.html" %}
+{% load static %}
+{% block content %}
+<!-- style para os H1 e H2 -->
+<style type="text/css">
+	.titulo{padding: 0;margin: 0;font-family: Times New Roman;}
+	.subtitulo{padding: 9px;margin: 0;font-family: Times New Roman;font-size: 30px;color: gray;}
+	.breadcrumb-item{font-family: Times New Roman;font-size: 15px;margin: 0px;padding: 10px;color: gray;list-style: none;}
+	.cores{color: black;font-weight: bold;}
+</style>
+<div id="index-banner" class="parallax-container">
+	<div class="section no-pad-bot">
+		<div class="container">
+			<div class="row center">
+				<br>
+				<a href="#" id="download-button" class="btn-large waves-effect" style="background-color: #03262C;">
+					Redação
+				</a>
+			</div>
+			<br><br>
+		</div>
+	</div>
+	<div class="parallax"><img src="{% static 'admin/img/logo.jpg' %}" alt="Logo Marca do ForAll"></div>
+</div>
+<div class="container"></div>
+</div><br>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col s12"></div>
+		<div class="col s12 m4 l2">
+			<p style="font-family: Times New Roman;font-size: 22px;font-weight: bold;color: #03262C;">Mais+
+				<hr style="background-color: #559C9E;height: 1px;">
+			</p>
+			<a href="{% url 'destaque'%}"><img src="{% static 'admin/img/jeff.png'%}" alt="Cantor Jeff Buckley" style="width: 100%;height: 195px;border-radius: 5px;"></a><br><hr>
+			<a href="{% url 'Redacao_reportagem' %}"><img src="{% static 'admin/img/bandas.jpg'%}" alt=" Cantor Robert Johnson" style="width: 100%;border-radius: 5px;height: 195px" title="Robert Johnson"></a><br><hr>
+			<a href="{% url 'breve-historia'%}"><img src="{% static 'admin/img/thin.jpg'%}" alt="Banda Thin Lizzy" style="width: 100%;border-radius: 5px;height: 195px;"></a>
+		</div>
+		<!-- CONTEÚDO -->
+		<div class="col s12 m4 l8">
+			<p class="breadcrumb-item">
+				<a href="/" class="cores"><i class="fa fa-reply"></i>&nbsp;Página Inicial</a>:
+				<i class="fas fa-angle-right"></i>
+				Conheça 5 Bandas da Islandesas
+			</p>
+			<br>
+			<h1 class="titulo">Conheça 5 Bandas da Islandesas</h1>
+			<p style="color: #A9A9A9;margin: 0;font-size: 14px;font-family: Times New Roman;">Redação ForAll</p>
+			<br>
+			<h5>Agent fresco</h5>
+			<p style="font-family: Times New Roman;font-size: 16px;text-align: justify;color: gray;margin: 0;">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 2rem;font-weight: bold;
+				color: gray;font-family: Times New Roman;">É</span> uma banda islandesa que combina pop, alternativo, art e metal. A banda se formou no ano de 2008, em meio uma competição entre banda, ao qual eles venceram. Seu primeiro trabalho foi o EP Lighbuld Universe que foi vencedor do prêmio Kraumur Awards. No ano de 2010, eles lançaram o primeiro álbum chamado <b>A Long Time Listening</b> e o segundo <b>Destrier</b> no ano de 2015.
+				<div class="row">
+					<div class="col s12"></div>
+					<div class="col s12 m4 l1"></div>
+					<div class="col s12 m4 l10">
+						<img src="{% static 'admin/img/Bandas_Islandia/AgentFresco.jpg' %}" alt="Banda Agent Fresco" style="width: 100%;height: 390px;" class="materialboxed responsive-img">
+						<p style="color: #A9A9A9;margin: 0;font-size: 14px;font-family: Times New Roman;">Divulgação : Facebook</p>
+					</div>
+					<div class="col s12 m4 l1"></div>
+				</div>
+			</p>
+			<ul class="tabs tabs-fixed-width tab-demo z-depth-1">
+				<li class="tab"><a href="#test0" style="font-family: Times New Roman;color: gray;"><i class="fa fa-users"></i>&nbsp;Membros</a></li>
+				<li class="tab"><a href="#test1" style="font-family: Times New Roman;color: gray;"><i class="fa fa-record-vinyl"></i>&nbsp;Discografia</a></li>
+				<li class="tab"><a href="#test2" style="font-family: Times New Roman;color: gray;"><i class="fa fa-record-vinyl"></i>&nbsp;Canais</a></li>
+			</ul>
+			<div id="test0" class="col s12">
+				<p style="font-family: Times New Roman;color: gray;">
+					<i class="fa fa-microphone-alt"></i>&nbsp;Arnór Dan Arnarson - vocais, teclados | 
+					<i class="fa fa-drum"></i>&nbsp;Hrafnkell Örn Guðjónsson - bateria, percussão <br>
+					<i class="fa fa-guitar"></i>&nbsp;Vignir Rafn Hilmarsson - contrabaixo |
+					<i class="fa fa-guitar"></i>&nbsp;Þórarinn Guðnason - Violão, piano, programação
+				</p>
+				<br>
+			</div>
+			<div id="test1" class="col s12">
+				<p style="font-family: Times New Roman;color: gray;">
+					<img src="{% static 'admin/img/Bandas_Islandia/AgentFrescoAlongTimeListening.jpg' %}" alt="Álbum Time Listening" style="width: 50px;height: 50px;border-radius: 30px" class="materialboxed">
+					<a href="https://open.spotify.com/album/39yNTzzCdHKzEP1dDN2pkn?si=L2n-1N2RQ5mKfp0nv1oj0A" style="font-family: Times New Roman;color: gray" target="_blank"><i class="fab fa-spotify" style="color: #1DB954;"></i>&nbsp;A long time listening - 2010 </a><br>
+					<img src="{% static 'admin/img/Bandas_Islandia/AgenteFrescoDestrier.jpg' %}" alt="Álbum Destrier" style="width: 50px;height: 50px;border-radius: 30px" class="materialboxed">
+					<a href="https://open.spotify.com/album/1syoohGc0fQAoJWy57XZUF?si=BZn6GSYtRbGAoY41uev6GQ" style="font-family: Times New Roman;color: gray" target="_blank"><i class="fab fa-spotify" style="color: #1DB954;"></i>&nbsp;Destrier - 2015</a>
+					<br>
+					<img src="{% static 'admin/img/Bandas_Islandia/AgentFrescoDestrier.jpg' %}" alt="Álbum Agent Fresco Destrier" style="width: 50px;height: 50px;border-radius: 30px" class="materialboxed">Destrier - Live in Reykjavík - 2018
+				</p>
+			</div>
+			<div id="test2" class="col s12">
+				<p style="font-family: Times New Roman;">
+					<a href="https://www.youtube.com/user/agentfresco/featured" target="_blank" style="color: gray;"><i class="fab fa-youtube" style="color: red"></i>&nbsp;YouTube</a><br>
+					<a href="https://www.facebook.com/agentfresco" target="_blank" style="color: gray;"><i class="fab fa-facebook" style="color: #4CAFF7;"></i>&nbsp;Facebook</a>
+				</p>
+			</div>
+			<h5>Changer</h5>
+			<p style="font-family: Times New Roman;font-size: 16px;text-align: justify;color: gray;margin: 0;">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 2rem;font-weight: bold;
+				color: gray;font-family: Times New Roman;">É</span> uma banda deThrash Metal e Death Metal. banda se formou em outubro de 1999 na cidade de Akureyri na islãndia, pela batuta do baterista Kristján B. Heiðarsson como um projeto de um homem só. Kristján gravou seu álbum de estréia chamado "Janeiro 109" no ano 2000. O responsavél pela produção foi seu amigo Aðalsteinn Már Björnssson que infelizmente sofreu um acidente de carro, mas o álbum foi lançado em 29 de fevereiro de 2000. <br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No ano de 2000, o baterista Kristján decidiu monta uma banda completa, e assim fazendo shows na Islândia no ano 2001, com isso a banda voltou para a cidade de Akureyri para gravar um EP Inconsistency que contava com duas músicas do trabalho de álbum "Janeiro 109", e assim lançado em 2001.
+				<div class="row">
+					<div class="col s12"></div>
+					<div class="col s12 m4 l1"></div>
+					<div class="col s12 m4 l10">
+						<img src="{% static 'admin/img/Bandas_Islandia/changerBand.jpg' %}" alt="Banda Changer" style="width: 100%;height: 390px;" class="materialboxed responsive-img">
+						<p style="color: #A9A9A9;margin: 0;font-size: 14px;font-family: Times New Roman;">Divulgação : Facebook</p>
+					</div>
+					<div class="col s12 m4 l1"></div>
+				</div>
+			</p>
+			<ul class="tabs tabs-fixed-width tab-demo z-depth-1">
+				<li class="tab"><a href="#test3" style="font-family: Times New Roman;color: gray;"><i class="fa fa-users"></i>&nbsp;Membros em 2020</a></li>
+				<li class="tab"><a href="#test4" style="font-family: Times New Roman;color: gray;"><i class="fa fa-record-vinyl"></i>&nbsp;Discografia</a></li>
+			</ul>
+			<div id="test3" class="col s12">
+				<p style="font-family: Times New Roman;color: gray;">
+					<i class="fa fa-drum"></i>&nbsp;Kristján B. Heiðarsson - Bateria<br>
+					<i class="fa fa-guitar"></i>&nbsp;Hörður "Hudson" Halldórsson - Guitarra
+				</p>
+				<br><br>
+			</div>
+			<div id="test4" class="col s12">
+				<p style="font-family: Times New Roman;color: gray;">
+					<img src="{% static 'admin/img/Bandas_Islandia/ChangerInconsistencyAlbum.jpg' %}" alt="Álbum Inconsistency" style="width: 50px;height: 50px;border-radius: 30px" class="materialboxed">
+					<a href="https://open.spotify.com/album/3H4HXJblyWvRWYXR0WHRSu?si=VnGzhSzbRqyoz-01z4weMw" style="font-family: Times New Roman;color: gray" target="_blank"><i class="fab fa-spotify" style="color: #1DB954;"></i>&nbsp;Inconsistency EP - 2001</a>
+					<img src="{% static 'admin/img/Bandas_Islandia/changersept2001demo.jpg' %}" alt="Álbum demo Sept" style="width: 50px;height: 50px;border-radius: 30px" class="materialboxed">
+					Sept 2001 Demo - 2001
+					<img src="{% static 'admin/img/Bandas_Islandia/changerRehearsalDemo.png' %}" alt="Álbum Rehearsal demo" style="width: 50px;height: 50px;border-radius: 30px" class="materialboxed">
+					Rehearsal Demo - 2002 <br>
+					<img src="{% static 'admin/img/Bandas_Islandia/changerScenes.jpg' %}" alt="Álbum Scenes" style="width: 50px;height: 50px;border-radius: 30px" class="materialboxed">
+					Scenes - 2004<br>
+					<img src="{% static 'admin/img/Bandas_Islandia/changerDemo.png' %}" alt="Álbum Demo" style="width: 50px;height: 50px;border-radius: 30px" class="materialboxed">
+					Demo - 2005<br>
+					<img src="{% static 'admin/img/Bandas_Islandia/changerBreedTheLies.jpg' %}" alt="Álbum changer Breed TheLies" style="width: 50px;height: 50px;border-radius: 30px" class="materialboxed">
+					<a href="https://open.spotify.com/album/5x2iQia9ZeHGPEkELEi80P?si=l9xK4ntXRl6WmjlZdPtG5g" style="font-family: Times New Roman;color: gray" target="_blank"><i class="fab fa-spotify" style="color: #1DB954;"></i>&nbsp;Breed the lies EP - 2006</a>
+					<img src="{% static 'admin/img/Bandas_Islandia/changerDarkling.jpg' %}" alt="Álbum Darkling" style="width: 50px;height: 50px;border-radius: 30px" class="materialboxed">
+					<a href="https://open.spotify.com/album/5x2iQia9ZeHGPEkELEi80P?si=o3Cv4CifQdalHgFF-e0esQ" style="font-family: Times New Roman;color: gray" target="_blank"><i class="fab fa-spotify" style="color: #1DB954;"></i>&nbsp;Darkling - 2010</a><br>
+				</p>
+			</div>
+			<h5>Rökkurró</h5>
+			<p style="font-family: Times New Roman;font-size: 16px;text-align: justify;color: gray;margin: 0;">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 2rem;font-weight: bold;
+				color: gray;font-family: Times New Roman;">R</span>ökkurró é uma banda fundada em 2006 em Reykjavík . Depois de um EP de 4 faixas, eles assinaram com o selo 12 Tónar .  Seu álbum de estreia foi <b>Það kólnar í kvöld</b> .. (que significa "It's Getting Colder Tonight" em islandês). Foi lançado em 2007 na Islândia, Europa e Japão com grande aclamação da crítica, seguido por uma turnê local na Islândia e uma turnê internacional que incluiu Alemanha, Holanda e Suíça, apoiando Ólafur Arnalds . O álbum seguinte <b>Í Annan Heim(que significa In Another World)</b> foi lançado em 2010. Foi produzido por Alex Somers. Rökkurró começou a trabalhar em seu terceiro álbum de estúdio, Innra, em 2013, lançado em 27 de outubro de 2014.
+				<div class="row">
+					<div class="col s12"></div>
+					<div class="col s12 m4 l1"></div>
+					<div class="col s12 m4 l10">
+						<img src="{% static 'admin/img/Bandas_Islandia/rokkurro.png' %}" alt="Banda Rökkurró" style="width: 100%;height: 390px;" class="materialboxed responsive-img">
+						<p style="color: #A9A9A9;margin: 0;font-size: 14px;font-family: Times New Roman;">Divulgação : Facebook</p>
+					</div>
+					<div class="col s12 m4 l1"></div>
+				</div>
+			</p>
+			<ul class="tabs tabs-fixed-width tab-demo z-depth-1">
+				<li class="tab"><a href="#test5" style="font-family: Times New Roman;color: gray;"><i class="fa fa-users"></i>&nbsp;Membros</a></li>
+				<li class="tab"><a href="#test6" style="font-family: Times New Roman;color: gray;"><i class="fa fa-record-vinyl"></i>&nbsp;Discografia</a></li>
+			</ul>
+			<div id="test5" class="col s12">
+				<p style="font-family: Times New Roman;color: gray;">
+					<i class="fa fa-drum"></i>&nbsp;Axel Ingi Jónsson - Bateria e guitarra |
+					<i class="fa fa-guitar"></i>&nbsp;Árni Þór Árnason - Guitarra e sintetizador <br>
+					<i class="fa fa-drum-steelpan"></i>&nbsp;Björn 'Bibbi' Pálmi Pálmason - Bateria e piano |
+					<i class="fa fa-microphone-alt"></i>&nbsp;Helga Ragnarsdóttir - Teclado e backing vocal<br>
+					<i class="fa fa-microphone"></i>&nbsp;Hildur Kristín Stefánsdóttir - Voz e sintetizador |
+					<i class="fa fa-guitar"></i>&nbsp;Skúli Agnarr Einarsson - Baixo
+				</p>
+				<br><br>
+			</div>
+			<div id="test6" class="col s12">
+				<br>
+				<img src="{% static 'admin/img/Bandas_Islandia/rokkurroAlbumTwo.png' %}" alt="Álbum Two" style="width: 50px;height: 50px;border-radius: 30px" class="materialboxed">
+				<a href="https://open.spotify.com/album/3osqphpPyG7HOcB4R7sLOS?si=8JXJDuDFThCOtGuYot6e1Q" style="font-family: Times New Roman;color: gray" target="_blank"><i class="fab fa-spotify" style="color: #1DB954;"></i>&nbsp;Það kólnar í kvöld.. - 2007</a><br>
+				<img src="{% static 'admin/img/Bandas_Islandia/rokkurroAlbumThree.png' %}" alt="Álbum Three" style="width: 50px;height: 50px;border-radius: 30px" class="materialboxed">
+				<a href="https://open.spotify.com/album/22L306NmL2I7XM3jhW9KB4?si=B888v75jQdywzzX0qN45Fw" style="font-family: Times New Roman;color: gray" target="_blank"><i class="fab fa-spotify" style="color: #1DB954;"></i>&nbsp;Í Annan Heim - 2010</a><br>
+				<img src="{% static 'admin/img/Bandas_Islandia/rokkurroInra.jpg' %}" alt="Álbum Inra" style="width: 50px;height: 50px;border-radius: 30px" class="materialboxed">
+				<a href="https://open.spotify.com/album/0v3e5aTm7KXiiKiQEuhEGj?si=2emwqN3BSkuKg_xZ61U1Zg" style="font-family: Times New Roman;color: gray" target="_blank"><i class="fab fa-spotify" style="color: #1DB954;"></i>&nbsp;Innra - 2014</a><br>
+			</div>
+			<h5>The Vintage Caravan</h5>
+			<p style="font-family: Times New Roman;font-size: 16px;text-align: justify;color: gray;margin: 0;">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 2rem;font-weight: bold;
+				color: gray;font-family: Times New Roman;">É</span> uma banda de rock de Álftanes , Islândia de clássico rock, proto metal e rock progressivo . A banda foi formada em 2006 por Óskar Logi Ágústsson e Guðjón Reynisson antes do baixista Alexander Örn Númason se juntar após o primeiro álbum de estúdio . Houve apenas uma mudança de formação desde a fundação da banda, quando Stefán Ari Stefánsson substituiu Guðjón Reynisson na bateria em 2015. A banda lançou três álbuns de estúdio. <br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Em 2006, os amigos de escola Óskar Logi Ágústsson (guitarra e voz) e Guðjón Reynisson (bateria) formaram a banda. O trabalho sério só começou em 2009 e em dois anos a banda publicou seu primeiro álbum chamado "The Vintage Caravan". <br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Em 2012, o The Vintage Caravan assinou um contrato com a gravadora islandesa Sena antes de trabalhar para seu segundo álbum. Alexander Örn Númason entrou logo depois no baixo . Um segundo intitulado Voyage foi lançado em 2012. Depois eles  assinaram com a Nuclear Blast depois do lançamento de Voyage . Isso levou a um videoclipe Expand Your Mind produzido e lançado pela gravadora alemã. Em julho de 2015, o vídeo atingiu 400.000 acessos no YouTube tornando-se a música online mais vista pela banda. 
+				<div class="row">
+					<div class="col s12"></div>
+					<div class="col s12 m4 l1"></div>
+					<div class="col s12 m4 l10">
+						<img src="{% static 'admin/img/Bandas_Islandia/TheVintageCaravan.jpg' %}" alt="Banda The Vintage Caravan" style="width: 100%;height: 390px;" class="materialboxed responsive-img">
+						<p style="color: #A9A9A9;margin: 0;font-size: 14px;font-family: Times New Roman;">Divulgação : Facebook</p>
+					</div>
+					<div class="col s12 m4 l1"></div>
+				</div>
+			</p>
+			<ul class="tabs tabs-fixed-width tab-demo z-depth-1">
+				<li class="tab"><a href="#test7" style="font-family: Times New Roman;color: gray;"><i class="fa fa-users"></i>&nbsp;Membros</a></li>
+				<li class="tab"><a href="#test8" style="font-family: Times New Roman;color: gray;"><i class="fa fa-record-vinyl"></i>&nbsp;Discografia</a></li>
+			</ul>
+			<div id="test7" class="col s12">
+				<p style="font-family: Times New Roman;color: gray;">
+					<i class="fa fa-microphone"></i>&nbsp;Óskar Logi Ágústsson - Guitarras e vocal principal |
+					<i class="fa fa-guitar"></i>&nbsp;Alexander Örn Númason - baixo e backing vocal <br>
+					<i class="fa fa-drum"></i>&nbsp;Stefán Ari Stefánsson - bateria 
+				</p>
+				<br><br>
+			</div>
+			<div id="test8" class="col s12">
+				<br>
+				<img src="{% static 'admin/img/Bandas_Islandia/TheVintageCaravanVoyage.png' %}" alt="Álbum The Vintage Caravan" style="width: 50px;height: 50px;border-radius: 30px" class="materialboxed">
+				<a href="https://open.spotify.com/album/1E2rfQOOf3qBd5GiNwjqbQ?si=pkWqYqyPTrmvN8PfmZjiMQ" style="font-family: Times New Roman;color: gray" target="_blank"><i class="fab fa-spotify" style="color: #1DB954;"></i>&nbsp;Voyage - 2014</a><br>
+				<img src="{% static 'admin/img/Bandas_Islandia/TheVintageCaravanArrival.png' %}" alt="Álbum Arrival" style="width: 50px;height: 50px;border-radius: 30px" class="materialboxed">
+				<a href="https://open.spotify.com/album/4BAgxG4avS5n9wF5nABrXa?si=nJfG1LzeSrSZ5_v2OF_VIQ" style="font-family: Times New Roman;color: gray" target="_blank"><i class="fab fa-spotify" style="color: #1DB954;"></i>&nbsp;Arrival - 2015</a><br>
+				<img src="{% static 'admin/img/Bandas_Islandia/TheVintageCaravanGateways.png' %}" alt="Álbum Gateways" style="width: 50px;height: 50px;border-radius: 30px" class="materialboxed">
+				<a href="https://open.spotify.com/album/72K8CeluOPr2cTaNTYR4TQ?si=U557lD6HSXivW7TvscybwA" style="font-family: Times New Roman;color: gray" target="_blank"><i class="fab fa-spotify" style="color: #1DB954;"></i>&nbsp;Gateways - 2018</a><br>
+				<img src="{% static 'admin/img/Bandas_Islandia/TheVintageCaravanFirst.png' %}" alt="Álbum First" style="width: 50px;height: 50px;border-radius: 30px" class="materialboxed">
+				<a href="https://open.spotify.com/album/44t7XreOOodPMUEW33tb8w?si=9MLzL7oxQBi6pTrND4u9VA" style="font-family: Times New Roman;color: gray" target="_blank"><i class="fab fa-spotify" style="color: #1DB954;"></i>&nbsp;The Vintage Caravan - 2018</a><br>
+				<img src="{% static 'admin/img/Bandas_Islandia/TheVintageCaravanMonuments.jpg' %}" alt="Álbum Monuments" style="width: 50px;height: 50px;border-radius: 30px" class="materialboxed">
+				<a href="https://open.spotify.com/album/3ESChQNgOwrjZpnrUROmCv?si=bqN7fuJCTjOwosNAPI6Ndg" style="font-family: Times New Roman;color: gray" target="_blank"><i class="fab fa-spotify" style="color: #1DB954;"></i>&nbsp;Monuments - 2021</a>
+			</div>
+			<h5>JFDR</h5>
+			<p style="font-family: Times New Roman;font-size: 16px;text-align: justify;color: gray;margin: 0;">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 2rem;font-weight: bold;
+				color: gray;font-family: Times New Roman;">J</span>ófríður Ákadóttir nascida em 4 de agosto de 1994 é uma cantora, compositora e multi-instrumentista islandesa conhecida por seu projeto solo <b>JFDR</b> de eletrônico e folk. Ela fez  trabalhos no <b>Samaris</b>, <b>Pascal Pinon</b> e <b>Gangly</b>. Seu pai é o compositor e músico islandês Áki Ásgeirsson. <br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No Samaris <b>Jófríður</b>, Áslaug Rún Magnúsdóttir e Þórður Kári Steinþórsson formaram a Samaris em 2011. O grupo venceu a competição de Músíktilraunir islandês em 2011 e seguiu este sucesso com o lançamento automático do EP <b>Hljóma Þú</b>, que então ganhou o prêmio Kraumur islandês em 2011 . Um outro EP auto-lançado, Stofnar falla , veio em 2012. O grupo assinou com a One Little Indian Records e seu álbum de estreia autointitulado foi lançado em julho de 2013 com críticas geralmente favoráveis. O álbum combinou suas composições com letras tiradas de poemas islandeses do século 19. Samaris lançou <b>Silkidrangar</b> em 2014, Silkidrangar Sessions em 2015 e Black Lights em 2016. <br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				Já no <b>Pascal pinon</b>, em 2009, quando eles tinham 14 anos, <b>Jófríður</b> e sua irmã gêmea Ásthildur (junto com Halla Kristjánsdóttir e Kristín Ylfa Hólmgrímsdóttir) formaram o grupo. Eles lançaram seu primeiro álbum de produção própria, Pascal Pinon, em 2009, que foi relançado pelo selo Morr Music em 2010. Foi descrito por Allmusic como "um álbum verdadeiramente adorável". Em 2013 o grupo, agora uma dupla, lançou seu segundo álbum <b>Twosomeness</b> . Um terceiro álbum, <b>Sundur</b> , foi lançado em 2016. E no <b>Gangly</b>, em 2014, Jófríður se juntou no projeto conceitual Gangly com Sindri Már Sigfússon ( Sin Fang ) e Úlfur Alexander Einarsson (da banda islandesa Oyama) lançando inicialmente a faixa Fuck With Someone Else . 
+				<div class="row">
+					<div class="col s12"></div>
+					<div class="col s12 m4 l1"></div>
+					<div class="col s12 m4 l10">
+						<img src="{% static 'admin/img/Bandas_Islandia/JFDR_Two.jpg' %}" alt="Banda JFDR" style="width: 100%;height: 390px;" class="materialboxed responsive-img">
+						<p style="color: #A9A9A9;margin: 0;font-size: 14px;font-family: Times New Roman;">Divulgação : Facebook</p>
+					</div>
+					<div class="col s12 m4 l1"></div>
+				</div>
+			</p>
+			<ul class="tabs tabs-fixed-width tab-demo z-depth-1">
+				<li class="tab"><a href="#test9" style="font-family: Times New Roman;color: gray;"><i class="fa fa-users"></i>&nbsp;Membros</a></li>
+				<li class="tab"><a href="#test10" style="font-family: Times New Roman;color: gray;"><i class="fa fa-record-vinyl"></i>&nbsp;Discografia</a></li>
+			</ul>
+			<div id="test9" class="col s12">
+				<p style="font-family: Times New Roman;color: gray;">
+					<i class="fa fa-microphone"></i>&nbsp;Jófríður Ákadóttir - Vocal principal 
+				</p>
+			</div>
+			<div id="test10" class="col s12">
+				<br>
+				<img src="{% static 'admin/img/Bandas_Islandia/jfdrBrazil.png' %}" alt="Álbum Brazil" style="width: 50px;height: 50px;border-radius: 30px" class="materialboxed">
+				<a href="https://open.spotify.com/album/5xVsJu0AcLyBxsGRg0EUbV?si=bk9jDJskQ4i2xsO3UH8rcw" style="font-family: Times New Roman;color: gray" target="_blank"><i class="fab fa-spotify" style="color: #1DB954;"></i>&nbsp;Brazil - 2017
+				</a>
+				<img src="{% static 'admin/img/Bandas_Islandia/jfdrDreams.png' %}" alt="Álbum Dreams" style="width: 50px;height: 50px;border-radius: 30px" class="materialboxed">
+				<a href="https://open.spotify.com/album/0Ujzw1BOqIfrARwP4IX5ce?si=ajK_UpYCS12uE7IkZR0zCg" style="font-family: Times New Roman;color: gray" target="_blank"><i class="fab fa-spotify" style="color: #1DB954;"></i>&nbsp;New Dreams - 2020
+				</a>
+			</div>
+			<br>
+		</div>
+		<!-- FIM -->
+		<div class="col s12 m4 l2">
+			<p style="font-family: Times New Roman;font-size: 22px;font-weight: bold;color: #03262C;">Outros destaques
+				<hr style="background-color: #559C9E;height: 1px;">
+			</p>
+			<a href="{% url  m6 l4">
+				<a href="{% url 'Bob_Mould' %}"><img src="{% static 'admin/img/Tutorial/BobMould/bob.jpg'%}" alt="Cantor Bob Mould" style="width: 100%;height: 195px;border-radius: 5px;"></a><br><hr>
+				<a href="{% url 'Artistas-brasileiros' %}"><img src="{% static 'admin/img/ArtistasBrasileiros/FloraPurimEairtonMoreira.jpg'%}" alt="FloraPurim e AirtonMoreira" style="width: 100%;border-radius: 5px;height: 195px;"></a><br><hr>
+				<a href="{% url 'tutorial'%}"><img src="{% static 'admin/img/modd.jpg' %}" alt="Banda Moody Blues" style="width: 100%;border-radius: 5px;height: 195px;"></a>
+			</div>
+		</div>
+	</div>
+	{%endblock%}

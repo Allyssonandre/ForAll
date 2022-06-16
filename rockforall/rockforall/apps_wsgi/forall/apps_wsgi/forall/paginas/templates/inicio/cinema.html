@@ -1,0 +1,121 @@
+{% extends "./Base/base.html" %}
+{% load static %}
+{% block content %}
+<div id="index-banner" class="parallax-container">
+	<div class="section no-pad-bot">
+		<div class="container">
+			<div class="row center">
+				<br>
+				<a href="#" id="download-button" class="btn-large waves-effect" style="background-color: #03262C;">Cinema</a>
+			</div>
+			<br><br>
+		</div>
+	</div>
+	<div class="parallax"><img src="{% static 'img/logo.jpg' %}" alt="Unsplashed background img 1"></div>
+</div>
+<div class="container"></div>
+</div><br>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col s12"></div>
+		<div class="col s12 m4 l2">
+			<!-- PARA FUTUROS CONTEÚDOS -->
+		</div>
+		<div class="col s12 m4 l8">
+			<br>
+			<div class="chip">
+				<img src="{% static 'img/cinema/cinema.jpg' %}" alt="Contact Person">
+				<b style="font-size: 13px;font-family: Times New Roman;">Cinema</b>
+			</div><br>
+			<p style="font-family: Times New Roman;font-size: 17px;text-align: justify;color: gray;margin: 0;">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>"<span style="font-size: 2rem;font-weight: bold;
+				color: gray;font-family: Times New Roman;">H</span>oje os redatores do ForAll vão indicar 4 filmes que você tem que assisti antes de bate as botas(morre) kkk, divirta-se !!!"
+			</p>
+			<!-- CONTEÚDO -->
+
+			<div class="col s12 m6">
+				<div class="card">
+					<div class="card-image waves-effect waves-block waves-light">
+						<img class="activator" src="{% static 'img/cinema/matrix.jpg'%}" height="300px">
+					</div>
+					<div class="card-content">
+						<span class="card-title activator grey-text text-darken-4" style="font-family: Times New Roman;font-size: 14.5px;">Matrix, Ficha Técnica<i class="material-icons right">more_vert</i></span>
+					</div>
+					<div class="card-reveal">
+						<span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+						<p style="font-family: Times New Roman;font-size: 15px;">
+							&nbsp;<i class="far fa-calendar-alt"></i>&nbsp;Data de lançamento: 21 de maio de 1999 <br>
+							&nbsp;<i class="fas fa-film"></i>&nbsp;Diretoras: Lana Wachowski, Lilly Wachowski<br>
+							&nbsp;<i class="far fa-money-bill-alt"></i>&nbsp;Orçamento: US$ 63 milhões<br>
+							<i class="material-icons" style="width: 26px;">movie_creation</i>&nbsp;Produção: Joel Silver <br>
+							Atores principais: <br>
+							Keanu Reeves(Neo), Carrie-Anne Moss(Trinity) e Laurence Fishburne(Morpheus)
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col s12 m6">
+				<div class="card">
+					<div class="card-image waves-effect waves-block waves-light">
+						<img class="activator" src="{% static 'img/cinema/LaranjaMecanica.jpg'%}" height="300px">
+					</div>
+					<div class="card-content">
+						<span class="card-title activator grey-text text-darken-4" style="font-family: Times New Roman;font-size: 14.5px;">Laranja Mecânica, Ficha Técnica<i class="material-icons right">more_vert</i></span>
+					</div>
+					<div class="card-reveal">
+						<span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+						<p style="font-family: Times New Roman;font-size: 15px;">
+							&nbsp;<i class="far fa-calendar-alt"></i>&nbsp;Data de lançamento: 26 de abril de 1972 <br>
+							&nbsp;<i class="fas fa-film"></i>&nbsp;Diretor: Stanley Kubrick<br>
+							<i class="material-icons" style="width: 26px;">movie_creation</i>&nbsp;Autor: Anthony Burgess<br>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col s12 m6">
+				<div class="card">
+					<div class="card-image waves-effect waves-block waves-light">
+						<img class="activator" src="{% static 'img/cinema/OsetimoSelo.jpg'%}" height="300px">
+					</div>
+					<div class="card-content">
+						<span class="card-title activator grey-text text-darken-4" style="font-family: Times New Roman;font-size: 14.5px;">O Sétimo selo, Ficha Técnica&nbsp;&nbsp;
+							<a href="https://www.facebook.com/PsicologiaClinicaSaudeMental/videos/1243215445856754/" target="_blank"><i class="fas fa-video" title="Assista Aqui"></i></a>
+							<i class="material-icons right">more_vert</i>
+						</span>
+					</div>
+					<div class="card-reveal">
+						<span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+						<p style="font-family: Times New Roman;font-size: 15px;">
+							&nbsp;<i class="far fa-calendar-alt"></i>&nbsp;Data de lançamento: 27 de julho de 1959<br>
+							&nbsp;<i class="fas fa-film"></i>&nbsp;Diretor: Ingmar Bergman<br>
+							<i class="material-icons" style="width: 26px;">movie_creation</i>&nbsp;Adaptação de: Wood painting<br>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col s12 m6">
+				<div class="card">
+					<div class="card-image waves-effect waves-block waves-light">
+						<img class="activator" src="{% static 'img/cinema/2011ASpaceOdyssey.jpg'%}" height="300px">
+					</div>
+					<div class="card-content">
+						<span class="card-title activator grey-text text-darken-4" style="font-family: Times New Roman;font-size: 14.5px;">2001 - Uma Odisseia no Espaço, Ficha Técnica<i class="material-icons right">more_vert</i></span>
+					</div>
+					<div class="card-reveal">
+						<span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+						<p style="font-family: Times New Roman;font-size: 15px;">
+							&nbsp;<i class="far fa-calendar-alt"></i>&nbsp;Data de lançamento: 29 de abril de 1968<br>
+							&nbsp;<i class="fas fa-film"></i>&nbsp;Diretor: Stanley Kubrick<br>
+							<i class="material-icons" style="width: 26px;">movie_creation</i>&nbsp;Adaptação de: The Sentinel<br>
+						</p>
+					</div>
+				</div>
+			</div>
+			<!-- FIM -->
+		</div>
+		<div class="col s12 m4 l2">
+			<!-- PARA FUTUROS CONTEÚDOS -->
+		</div>
+	</div>
+</div>
+{%endblock%}

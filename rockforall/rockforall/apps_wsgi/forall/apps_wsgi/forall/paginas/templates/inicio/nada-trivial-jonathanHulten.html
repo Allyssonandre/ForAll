@@ -1,0 +1,76 @@
+{% extends "./Base/base.html" %}
+{% load static %}
+{% block content %}
+<!-- style para os H1 e H2 -->
+<style type="text/css">
+	.titulo{padding: 0;margin: 0;font-family: Times New Roman;}
+	.subtitulo{padding: 9px;margin: 0;font-family: Times New Roman;font-size: 30px;color: gray;}
+	.breadcrumb-item{font-family: Times New Roman;font-size: 15px;margin: 0px;padding: 10px;color: gray;list-style: none;}
+	.cores{color: black;font-weight: bold;}
+</style>
+<div id="index-banner" class="parallax-container">
+	<div class="section no-pad-bot">
+		<div class="container">
+			<div class="row center">
+				<br>
+				<a href="#" id="download-button" class="btn-large waves-effect" style="background-color: #03262C;">Nada Trivial</a>
+			</div>
+			<br><br>
+
+		</div>
+	</div>
+	<div class="parallax"><img src="{% static 'admin/img/logo.jpg' %}" alt="Logo Marca do ForAll"></div>
+</div>
+<div class="container"></div>
+</div><br>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col s12"></div>
+		<div class="col s12 m4 l2">
+			<p style="font-family: Times New Roman;font-size: 22px;font-weight: bold;color: #03262C;margin: 0px;padding: 2px">Mais+</p>
+			<a href="{% url 'power-metal-bandas'%}"><img src="{% static 'admin/img/powermetal/gammaray.jpg'%}" style="width: 100%;height: 195px;border-radius: 5px;" class="tooltipped" data-position="top" data-tooltip="5 bandas de Power Metal alemão que você tem que conhecer" alt="5 Bandas de Power Metal">
+			</a><br>
+			<a href="{% url 'Terceira-resenha'%}">
+				<img src="{% static 'admin/img/robert.jpg' %}" alt="Cantor Robert Johnson" style="width: 100%;border-radius: 5px;height: 195px" class="tooltipped" data-position="bottom" data-tooltip="Robert Johnson">
+			</a><br>
+		</div>
+		<div class="col s12 m4 l8">
+			<p class="breadcrumb-item">
+				<a href="/" class="cores"><i class="fa fa-reply"></i>&nbsp;Página Inicial</a>:
+				<i class="fas fa-angle-right"></i>
+				Jonathan Hultén, a história e o álbum chamado
+			</p>
+			<img src="{% static 'admin/img/nadatrivial/jonathan_hunten.jpg' %}" alt="Cantor Jonathan Hulten" style="width: 100%;height: 400px;">
+			<p style="color: #A9A9A9;margin: 0;font-size: 15px;font-family: Times New Roman;">
+				Créditos / Facebook 
+			</p>
+			<br><br>
+			<h1 class="titulo">Jonathan Hultén, a história e o álbum chamado Chants from Another Place</h1>
+			<h2 class="subtitulo">Jonathan Hultén</h2> 
+			<p style="font-family: Times New Roman;font-size: 17px;text-align: justify;color: gray;">
+				"<b>Na sessão “NADA TRIVIAL” damos dica de artistas que não são muito conhecidos."</b>
+				<br> 
+				<i class="fa fa-pencil-alt"></i>&nbsp;Redação ForAll
+				<br><br>
+				&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.youtube.com/channel/UCco2UUDAORyseDeww7-DE1w" target="_blank">Jonathan Hultén</a> é um cantor/compositor e guitarrista nascido na fria Suécia. Jonathan foi o co-fundador da banda de death metal <a href="https://www.youtube.com/channel/UCzjqh2PzqiBdK11xSh0N2kA" target="_blank">Tribulation</a> no ano de 2000, junto com o vocalista/baixista  Johannes Andersson, do guitarrista Adam Zaars e do baterista Jakob Johasson. <br>
+				&nbsp;&nbsp;&nbsp;&nbsp;O álbum de estréia da banda foi o <i><b>The Horror</b></i> no ano de 2009, seguido do The <i><b>Formulas of Death(2013)</b></i>,<i><b>The Children of Night(2015)</b></i>, <i><b>Down Below(2018)</b></i> e o <i><b>Where the Gloom Becomes Sound(2021)</b></i>. 
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;Simultaneamente Jonathan estava lançando seu próprio material, flertando com o folk dark,  muito na linha obscura e no naturalismo espectral, às vezes se assemelhando ao cantor Irlandes <a href="https://www.youtube.com/channel/UCiryJZISyBldwm9ocAE-QfQ" target="_blank">Nick Drake</a>. Em 2017, Hultén lança o EP , <i><b>The Dark Night of the Soul</b></i>, seguido em 2020 pelo misterioso e contemplativo <i><b>Chants from Another Place</b></i> que falaremos um pouco. <br>
+
+				&nbsp;&nbsp;&nbsp;Para compor o álbum <b><i>Chants from Another Place</b></i> Jonathan buscou muitas fontes de inspiração, desde composições folclóricas até coros de igreja e canções cantadas a capela. E também a influência de alguns artistas como <a href="https://www.youtube.com/channel/UCna-InS-5L5qv82diztOT7A" target="_blank">Fleet Foxes</a>, <a href="https://www.youtube.com/channel/UCscbbbQG8fbOH7bs4R-y8Vw" target="_blank">John Martyn</a>, Nick Drake, <a href="https://www.youtube.com/channel/UCMi8tQF_L7rd6YcmSt7MXrQ" target="_blank">Sufjan Steves</a>, <a href="https://www.youtube.com/channel/UC6xUwdmOnnBYiEG410Nj0GQ" target="_blank">Bert Jansch</a>, e também os novos compositores como <a href="https://www.youtube.com/channel/UCjunnZq5ArgycpGBkOVLUMA" target="_blank">Chelsea Wolfe</a>, <a href="https://www.youtube.com/channel/UCXJCa21bD_BLtVLgfuvIOsw" target="_blank">Anna Ternheim</a> e <a href="https://www.youtube.com/channel/UC_Sai0r0FELTHfMiWbiFsQQ" target="_blank">Hexvessel</a>.<br>
+				&nbsp;&nbsp;&nbsp;As 12 canções que compõem o <b>Chants from Another Place</b> foram exclusivamente gravadas no estúdio caseiro de Jonathan em sua casa na Suécia, e posteriormente mixado no <b>Cuervo Recording Service</b> na Espanha comandado pelo produtor <a href="https://olaersfjord.persona.co/" target="_blank">Ola Ersfjord</a>, que também trabalhou com o <i>Tribulation</i>. Além disso, o álbum traz na capa uma imagem de um ser que na concepção de Jonathan retrata toda melancolia das letras, onde Hultén descreve esta imagem como uma visão dele com relação a sua personalidade. Escute o álbum abaixo:
+				<br>
+				<br>
+				<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/20nt6IhiB459SCOdow8R8p?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+			</p>
+		</div>
+		<div class="col s12 m4 l2">
+			<p style="font-family: Times New Roman;font-size: 22px;font-weight: bold;color: #03262C;margin: 0px;padding: 2px;">Outros destaques</p>
+			<a href="{% url 'son-house'%}"><img src="{% static 'admin/img/son-house.png'%}" alt="Cantor Son House" style="width: 100%;height: 195px;border-radius: 5px;" class="tooltipped" data-position="top" data-tooltip="Son House">
+			</a><br>
+			<a href="{% url 'Primeira-resenha' %}"><img src="{% static 'admin/img/rosseta.jpg'%}" alt="Cantora Rosetta Tharpe" style="width: 100%;border-radius: 5px;height: 195px;" class="tooltipped" data-position="bottom" data-tooltip="Rosetta Tharpe">
+			</a><br>
+		</div>
+	</div>
+</div>
+{%endblock%}

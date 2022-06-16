@@ -1,0 +1,98 @@
+{% extends "./Base/BasePerfil.html" %}
+{% block content %}
+{% load embed_video_tags %}
+{% load static %}
+<div class="horizontal-menu-wrapper">
+    <div class="header-navbar navbar-expand-sm navbar navbar-horizontal floating-nav navbar-light navbar-without-dd-arrow navbar-shadow menu-border" role="navigation" data-menu="menu-wrapper">
+        <div class="navbar-header">
+            <ul class="nav navbar-nav flex-row">
+                <li class="nav-item mr-auto">
+                    <div class="brand-logo"></div>
+                    <img class="" src="{% static 'img/forall.png'%}" alt="avatar" height="45" width="45">                </a></li>
+                    <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i class="fa fa-times d-block d-xl-none font-medium-4 primary toggle-icon"></i><i class="toggle-icon feather icon-disc font-medium-4 d-none d-xl-block collapse-toggle-icon primary" data-ticon="icon-disc"></i></a></li>
+                </ul>
+            </div>
+            <!-- Horizontal menu content-->
+            <div class="navbar-container main-menu-content" data-menu="menu-container">
+                <!-- include ../../../includes/mixins-->
+                <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
+                    <li>
+                        {% if user.is_authenticated %}
+                        <a class="dropdown-item" href="/accounts/logout" style="color: white;"><i class="fa fa-unlock"></i>Sair</a>
+                        {% endif %}
+                    </li>
+                    <li>
+                        {% if user.is_authenticated %}
+                        <a class="dropdown-item" href="{% url 'perfil' %}" style="color: white;"><i class="fa fa-user"></i>Perfil</a>
+                        {% endif %}
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="{% url 'verpostagens' %}" style="color: white;"><i class="fa fa-clipboard"></i>Últimos posts</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="{% url 'todosvideos' %}" style="color: white;"><i class="fa fa-youtube-play"></i>Post de vídeos</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="{% url 'comentados' %}" style="color: white;"><i class="fa fa-clipboard"></i>Posts comentados</a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/forall.letsgo/" target="_blank" title="Facebook" style="color:white"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/forall2020_/" target="_blank" title="Instagram" style="color:white"><i class="fa fa-instagram"></i></a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper">
+        <div class="content-body">
+            <section id="knowledge-base-content">
+                <div class="row search-content-info">
+                    {% if momentos %}
+                    {% for m in momentos%}
+                    <div class="col-md-2 col-sm-6 col-12 search-content">
+                        <div class="card">
+                            <div class="card-header mx-auto">
+                                <div class="avatar avatar-xl">
+                                    {% if user.perfil.image%}
+                                    <img class="img-fluid" src="{{m.user.perfil.image.url}}" alt="img placeholder">
+                                    {% endif%}
+                                </div>
+                            </div>
+                            <div class="card-body text-center">
+                                <h4><i class="fa fa-user-circle-o"></i>&nbsp;{{m.user}}</h4>
+                                <p class="" style="font-family: Times New Roman;font-size: 16px;margin: 0;">{{m.momento}}</p>
+                                <div class="d-flex justify-content-between">
+                                    <div class="float-left">
+                                        <a href="/detalhestories/{{m.id}}" data-toggle="tooltip" data-placement="top" title="Ver detalhe do storie" style="color: white;font-size: 16px;margin: 0;"><i class="fa fa-eye"></i></a>&nbsp;
+                                        <i class="fa fa-thumbs-up mr-50"></i><b style="color: red;">{{m.visto}}&nbsp;</b>
+                                    </div>
+                                    <div class="float-right">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {%else%}
+                    <div class="alert alert-success col-12" role="alert">
+                        <p class="mb-0" style="color: white;">
+                            Não tem Stories &nbsp;<a href="{% url 'momentos' %}"><button type="button" class="btn btn-success" style="padding: 10px;"><i class="fa fa-pencil-square"></i>&nbsp;Post stories</button>
+                            </a>&nbsp;</a>
+                        </p>
+                    </div>
+                    {% endif %}
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<div class="sidenav-overlay"></div>
+<div class="drag-target"></div>
+{%endblock%}

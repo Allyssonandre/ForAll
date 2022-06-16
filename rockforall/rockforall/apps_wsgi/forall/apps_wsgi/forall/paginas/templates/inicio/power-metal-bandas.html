@@ -1,0 +1,140 @@
+{% extends "./Base/base.html" %}
+{% load static %}
+{% block content %}
+<!-- style para os H1 e H2 -->
+<style type="text/css">
+	.titulo{padding: 0;margin: 0;font-family: Times New Roman;}
+	.subtitulo{padding: 9px;margin: 0;font-family: Times New Roman;font-size: 30px;color: gray;}
+	.breadcrumb-item{font-family: Times New Roman;font-size: 15px;margin: 0px;padding: 10px;color: gray;list-style: none;}
+	.cores{color: black;font-weight: bold;}
+</style>
+<div id="index-banner" class="parallax-container">
+	<div class="section no-pad-bot">
+		<div class="container">
+			<div class="row center"> 
+				<br>
+				<a href="#" id="download-button" class="btn-large waves-effect" style="background-color: #03262C;">Redação</a>
+			</div>
+			<br><br>
+
+		</div>
+	</div>
+	<div class="parallax"><img src="{% static 'admin/img/logo.jpg' %}" alt="Logo ForAll"></div>
+</div>
+<div class="container"></div>
+</div><br>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col s12"></div>
+		<div class="col s12 m4 l2">
+			<p style="font-family: Times New Roman;font-size: 17px;font-weight: bold;color: #03262C;">Mais+
+				<hr style="background-color: #559C9E;height:0.2px;">
+			</p>
+			<a href="{% url 'indicacao'%}"><img src="{% static 'admin/img/stone2.jpg'%}" alt="10 Álbuns essencias de Stone Rock" style="width: 100%;height: 195px;border-radius: 5px;" class="tooltipped" data-position="right" data-tooltip="10 Álbuns essencias de Stone Rock">
+			</a>
+			<a href="{% url 'Terceira-resenha'%}"><img src="{% static 'admin/img/robert.jpg' %}" alt="Cantor Robert Johnson" style="width: 100%;border-radius: 5px;height: 195px" class="tooltipped" data-position="right" data-tooltip="Robert Johnson">
+			</a>
+		</div>
+		<div class="col s12 m4 l8">
+			<p class="breadcrumb-item">
+				<a href="/" class="cores"><i class="fa fa-reply"></i>&nbsp;Página Inicial</a>:
+				<i class="fas fa-angle-right"></i>
+				Power Metal, andas de Power Metal alemão que você tem que conhecer
+			</p>
+			<h1 class="titulo">Power Metal</h1>
+			<h2 class="subtitulo">Bandas de Power Metal alemão que você tem que conhecer</h2> 
+			<p style="font-family: Times New Roman;font-size: 17px;font-weight: bold;color: #03262C;">Axxis</p>
+			<img src="{% static 'admin/img/powermetal/axxis.png' %}" alt="Banda Axxis" style="width: 100%;height: 400px;">
+			<p style="margin: 0px;color: gray;font-family: Times New Roman;">Crédito: Reprodução/Facebook</p> 
+			<p style="font-family: Times New Roman;font-size: 15px;text-align: justify;color: gray;">
+				<a href="https://en.wikipedia.org/wiki/Axxis" target="_blank">Axxis</a> É uma banda alemã de heavy metal que foi fundada no ano de 1988. Seu álbun de estreia foi o King of the Night, e tornou-se o álbum de estreia mais vendido no ano de 1989 na alemanha.<br>
+				<i class="fa fa-globe"></i>&nbsp;Origem : Dortmund, Alemanha<br>
+				<i class="fa fa-users"></i>&nbsp;Todos os integrantes: <br>
+				<b>Formação</b><br>
+				Bernhard Weiß
+				Harry Oellers
+				Rob Schomaker
+				Dirk Brand
+				Matthias Degener
+				<br>
+			</p><br>
+			<p style="font-family: Times New Roman;font-size: 17px;font-weight: bold;color: #03262C;">Brainstorm</p>
+			<img src="{% static 'admin/img/powermetal/Brainstorm3.jpg' %}" alt="Banda Brainstorm" style="width: 100%;height: 400px;">
+			<p style="margin: 0px;color: gray;font-family: Times New Roman;">Crédito: Reprodução/Facebook</p>  
+			<p style="font-family: Times New Roman;font-size: 15px;text-align: justify;color: gray;">
+				A banda <a href="https://en.wikipedia.org/wiki/Brainstorm_(German_band)" target="_blank">Brainstorm</a> foi formada em 1989 pelo guitarrista orsten Ihlenfeld, Milan Loncaric, e o baterista Dieter Bernert. Eles são conhecidos por toca um estilo mais sombrio comparado a outras bandas de power metal.<br>
+				<i class="fa fa-globe"></i>&nbsp;Origem : Heidenheim, Alemanha<br>
+				<i class="fa fa-users"></i>&nbsp;Todos os integrantes:<br>
+				<b>Formação atual.</b><br>
+				Torsten Ihlenfeld – Guitarista<br>
+				Milan Loncaric – Guitarista<br>
+				Dieter Bernert – Bateria<br>
+				Andy B. Franck – vocalista<br>
+				Antonio Ieva – Baixista
+			</p><br>
+			<p style="font-family: Times New Roman;font-size: 17px;font-weight: bold;color: #03262C;">Demons & wizards</p>
+			<img src="{% static 'admin/img/powermetal/demons&wizards.jpg' %}" alt="Banda Demons & wizards" style="width: 100%;height: 400px;">
+			<p style="margin: 0px;color: gray;font-family: Times New Roman;">Crédito: Reprodução/Facebook</p>  
+			<p style="font-family: Times New Roman;font-size: 15px;text-align: left;color: gray;">
+				<a href="https://en.wikipedia.org/wiki/Demons_%26_Wizards_(band)" target="_blank">Demons & wizards</a> é uma banda concebida como um projeto paralelo entre o vocalista Hansi Kürsch e o guitarista Jon Schafer do Iced Earth.<br>
+				<i class="fa fa-globe"></i>&nbsp;Origem : Alemanha, Estados Unidos<br>
+				<i class="fa fa-users"></i>&nbsp;Todos os integrantes: <br>
+				<b>Formação atual.</b><br>
+				Hansi Kürsch, Jon Schafer
+				<p style="font-family: Times New Roman;font-size: 17px;font-weight: bold;color: #03262C;">Gamma Ray</p>
+				<img src="{% static 'admin/img/powermetal/gammaray.jpg' %}" alt="Banda Gamma Ray" style="width: 100%;height: 400px;">
+				<p style="margin: 0px;color: gray;font-family: Times New Roman;">Crédito: Reprodução/Facebook</p> 
+				<p style="font-family: Times New Roman;font-size: 15px;text-align: left;color: gray;">
+					O <a href="https://en.wikipedia.org/wiki/Gamma_Ray_(band)" target="_blank">Gamma Ray</a> é uma banda alemã fundada pelo antigo frontman do Helloween Kai Hansen, sendo o principal letrista da banda.<br>
+					<i class="fa fa-globe"></i>&nbsp;Origem : Hamburg, Alemanha <br>
+					<i class="fa fa-users"></i>&nbsp;Todos os integrantes: <br>
+					<b>Formação atual.</b><br>
+					Kai Hansen – Vocalista<br>
+					Dirk Schlächter – Guitarista, teclado, baixista<br>
+					Henjo Richter – Guitarista<br>
+					Michael Ehré – Baterista<br>
+					Frank Beck –  backing vocal
+				</p><br>
+				<p style="font-family: Times New Roman;font-size: 17px;font-weight: bold;color: #03262C;">Helloween</p>
+				<img src="{% static 'admin/img/powermetal/helloween.jpg' %}" alt="Banda Helloween" style="width: 100%;height: 400px;">
+				<p style="margin: 0px;color: gray;font-family: Times New Roman;">Crédito: Reprodução/Facebook</p> 
+				<p style="font-family: Times New Roman;font-size: 15px;text-align: left;color: gray;">
+					<a href="https://en.wikipedia.org/wiki/Helloween" target="_blank">Helloween</a> é uma banda de power metal fundada no ano 1984 na cidade de Hamburg pelos membros das bandas Iron Fist, Gentry, Second Hell e Powerfool.<br>
+					<i class="fa fa-globe"></i>&nbsp;Origem : Hamburg, Alemanha<br>
+					<i class="fa fa-users"></i>&nbsp;Todos os integrantes: <br>
+					Michael Weikath – guitarista<br>
+					Markus Grosskopf – baixista<br>
+					Kai Hansen – guitarista, vocalista<br>
+					Michael Kiske – vocalista<br>
+					Andi Deris – vocalista<br>
+					Sascha Gerstner – guitarista<br>
+					Daniel Löble – Baterista
+				</p><br>
+				<p style="font-family: Times New Roman;font-size: 17px;font-weight: bold;color: #03262C;">Masterplan</p>
+				<img src="{% static 'admin/img/powermetal/masterplan.jpg' %}" alt="Banda Masterplan" style="width: 100%;height: 400px;">
+				<p style="margin: 0px;color: gray;font-family: Times New Roman;">Crédito: Reprodução/Facebook</p>  
+				<p style="font-family: Times New Roman;font-size: 15px;text-align: left;color: gray;">
+					<a href="https://en.wikipedia.org/wiki/Masterplan_(band)" target="_blank">Masterplan</a> é uma banda formada pelos guitaristas Roland Grapow e o baterista Uli Kusch depois que sairão do Helloween em 2001.<br>
+					<i class="fa fa-globe"></i>&nbsp;Origem : Hamburg, Alemanha<br>
+					<i class="fa fa-users"></i>&nbsp;Todos os integrantes: <br>
+					Roland Grapow - Guitarra,vocal, bass, Teclado<br>
+					Axel Mackenrott - Teclado<br> 
+					Rick Altzi - vocal<br>
+					Jari Kainulainen - baixista<br>
+					Kevin Kott - Baterista				
+				</p>
+			</div>
+			<div class="col s12 m4 l2">
+				<p style="font-family: Times New Roman;font-size: 17px;font-weight: bold;color: #03262C;">Outros destaques
+					<hr style="background-color: #559C9E;height: 0.3px;">
+				</p>
+				<a href="{% url 'son-house'%}">
+					<img src="{% static 'admin/img/son-house.png'%}" alt="Cantor Son House" style="width: 100%;height: 195px;border-radius: 5px;" class="tooltipped" data-position="left" data-tooltip="Son House">
+				</a>
+				<a href="{% url 'Primeira-resenha' %}">
+					<img src="{% static 'admin/img/rosseta.jpg'%}" alt="Cantora Rosetta Tharpe" style="width: 100%;border-radius: 5px;height: 195px;" class="tooltipped" data-position="left" data-tooltip="Rosetta Tharpe">
+				</a>
+			</div>
+		</div>
+	</div>
+	{%endblock%}

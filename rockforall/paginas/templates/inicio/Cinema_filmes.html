@@ -1,0 +1,174 @@
+{% extends "./Base/base.html" %}
+{% load static %}
+{% block content %}
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G1CGT7ENYC"></script>
+{%block google%}{{block.super}}{%endblock%}
+<title>
+{% block title %}ForAll - Dica de cinema{% endblock%}
+<!-- style para os H1 e H2 -->
+<style type="text/css">
+	.titulo{padding: 0;margin: 0;font-family: Times New Roman;}
+	.subtitulo{padding: 9px;margin: 0;font-family: Times New Roman;font-size: 30px;color: gray;}
+	.breadcrumb-item{font-family: Times New Roman;font-size: 15px;margin: 0px;padding: 10px;color: gray;list-style: none;}
+	.cores{color: black;font-weight: bold;}
+	.Texto{font-family: Times New Roman;font-size: 16px;text-align: justify;color: gray;padding: 0;margin: 0;}
+	.relacionados{font-family: Times New Roman;font-size: 17px;font-weight: bold;color: #03262C;}
+	.image-relacionados{width: 23%;height: 60px;border-radius: 5px;padding: 0px;}
+	.texto-relacionados{font-family: Times New Roman;font-size: 14px;float: right;margin-top: -15px;margin: 0;color: gray;}
+	.img-principal{width: 100%;height: 400px;border-radius: 3px;}
+	#tamanho{width: 100%;height: 300px;}
+	.subFicha{font-family: Times New Roman;ba;font-size: 15px;text-align: left;color: gray;margin: 0;}
+</style>
+
+
+<div class="container-fluid">
+	<!-- CONTAINER PARA PROPAGANDAS -->
+	<br><br>
+	<div class="row">
+		<div class="col s12 m6 l3"></div>
+		<div class="col s12 m12 l6">
+			
+		</div>
+		<div class="col s12 m6 l3">
+			
+		</div>
+	</div>
+</div><br>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col s12 m4 l3">
+			<p class="relacionados">Relacionados</p>
+			<a href="{% url 'Quadrinhos' %}"><img src="{% static 'img/Quadrinhos/quadrinho.png'%}" alt="Quadrinhos" class="image-relacionados">
+			</a>
+			<a href="{% url 'Quadrinhos' %}" style="color: black;">
+				<p class="texto-relacionados">
+					Quadrinhos que você tem que conhecer
+				</p>
+			</a>
+			<p class="relacionados">Redação</p>
+			<a href="{% url 'banda-irlandesa' %}"><img src="{% static 'img/Bandas_Islandia/JFDR_Two.jpg'%}" class="image-relacionados" alt="Bandas da Islândia">
+			</a>
+			<a href="{% url 'banda-irlandesa'%}" style="color: black;">
+				<p class="texto-relacionados">
+					5 bandas islandesas
+				</p>
+			</a><br><br>
+		</div>
+		<div class="col s12 m4 l6">
+			<p class="breadcrumb-item">
+				<a href="/" class="cores"><i class="fa fa-reply"></i>&nbsp;Página Inicial</a>:
+				<i class="fas fa-angle-right"></i>
+				4 Filmes que vão explodir sua mente.
+			</p>
+			<img class="img-principal" src="{% static 'img/cinema/cinema2.jpg' %}" alt="Cinema">
+			<h1 class="titulo">Cinema&nbsp;<i class="material-icons">local_movies</i></h1>
+			<h2 class="subtitulo">4 Filmes que vão explodir sua mente.</h2>
+			<br>
+			<p class="Texto">
+				ForAll | Redação<br><br>
+				Sem sombra de dúvida o cinema é a mais fascinante invenção da humanidade, alguns divergem, mas deixemos de lado as divergências. Criado pelos irmãos Lumiére no ano de 1895 na França, os dois principais elementos desta arte são os registros de imagens e o movimento, sendo o filme o seu principal produto. <br><br>
+
+				A sétima arte, assim como é chamado o cinema, dispõe ao espectador sensações das mais variadas possíveis. Diante disto, com uso desta arte e de seu poder, filmes foram criados com os mais variados temas, desde a comédia até o horror. Sendo assim, a redação sugere 4 filmes que são e foram os mais assistidos de todos os tempos, são verdadeiros clássicos, de diferentes vertentes, onde ao assisti-los a sua percepção de mundo irá se expandir vertiginosamente. Divirta-se, e siga-nos nas nossas redes sociais.
+
+			</p>
+			<br>
+			<div class="col s12 m4 l6">
+				<div class="card">
+					<div class="card-image">
+						<img src="{% static 'img/cinema/2011ASpaceOdyssey.jpg' %}" alt="A Space Odyssey" id="tamanho">
+					</div>
+					<div class="card-content">
+						<p class="subFicha">
+							<b>Filme</b>:
+							A Space Odyssey 
+							<br> 
+							<b>Criador(a)</b>:  Stanley Kubrick<br>
+							<b>Lançamento</b>: 1968<br>
+							<b>Sinopse, sem spoiler</b><br>
+							A peça central do filme é um objeto mistérioso que é encontrado
+							na África chamado monólito. Ele tem um poder de conecta o passo e o futuro.  
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col s12 m4 l6">
+				<div class="card">
+					<div class="card-image">
+						<img src="{% static 'img/cinema/LaranjaMecanica.jpg' %}" alt="Laranja Mecânica" id="tamanho">
+					</div>
+					<div class="card-content">
+						<p class="subFicha">
+							<b>Filme</b>:
+							Laranja mecânica<br> 
+							<b>Criador(a)</b>:  Stanley Kubrick<br>
+							<b>Lançamento</b>: 1972<br>
+							<b>Sinopse, sem spoiler</b><br>
+							Esta história se passa em uma distópica Grâ-Bretanha, onde o jovem Alex com sua
+							gangue perambulam pelas ruas arrumando confusão. Um belo dia o Alex é preso e submetido a uma técnica comportamental chamada lobotomia.  
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col s12 m4 l6">
+				<div class="card">
+					<div class="card-image">
+						<img src="{% static 'img/cinema/matrix.jpg' %}" alt="Matrix" id="tamanho">
+					</div>
+					<div class="card-content">
+						<p class="subFicha">
+							<b>Filme</b>:
+							Matrix 
+							<br> 
+							<b>Criador(a)</b>: Lilly e Lana Wachowski<br>
+							<b>Lançamento</b>: 1999<br>
+							<b>Sinopse, sem spoiler</b><br>
+							Neo é um programador dominado por pesadelos futuristas, onde nestes "pesadelos" ele sempre esta conectado a um sistema de computador envolto a cabos em seu corpo. Ele se pergunta, isto é real ou não ? .
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col s12 m4 l6">
+				<div class="card">
+					<div class="card-image">
+						<img src="{% static 'img/cinema/OsetimoSelo.jpg' %}" alt="O sétimo selo" id="tamanho">
+					</div>
+					<div class="card-content">
+						<p class="subFicha">
+							<b>Filme</b>:
+							O Sétimo selo<br> 
+							<b>Criador(a)</b>: Ingmar Bergman<br>
+							<b>Lançamento</b>: 1959<br>
+							<b>Sinopse, sem sploiler</b><br>
+							Em um ambiente apocalíptico dois personagens, um cavaleiro e seu escudeiro, uma alusão a dom quixote não é uma mera coincidência, cavalgam calmamente, e em uma breve parada para descansa encontram um homem de aspecto estranho quem será? Assim, Após dez anos de uma cruzada avistam sua terra culminada pela peste negra, onde seus dogmas religiosos são levados a prova.
+
+						</p>
+					</div>
+				</div>
+				<br><br><br>
+			</div>
+			<h2 class="subtitulo">" Dica dada, agora é com você escolha seu stream preferido, e assita todos eles! ".</h2>
+		</div>
+		<div class="col s12 m2 l3">
+			<p class="relacionados">Destaque</p>
+			<a href="{% url 'dicas' %}"><img src="{% static 'img/kingC.png'%}" alt="Banda king Crimson" class="image-relacionados">
+			</a>
+			<a href="{% url 'dicas' %}" style="color: black;">
+				<p class="texto-relacionados">
+					King Crimson
+				</p>
+			</a><br><br>
+			<a href="{% url 'Bob_Mould' %}"><img src="{% static 'img/Tutorial/BobMould/Bob.jpg'%}" alt="Cantor Bob Mould" class="image-relacionados">
+			</a>
+			<a href="{% url 'Bob_Mould' %}" style="color: black;">
+				<p class="texto-relacionados">
+					Matéria especial.
+				</p>
+			</a><br><br>
+		</div>
+	</div>
+</div>
+{%endblock%}

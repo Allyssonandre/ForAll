@@ -1,0 +1,451 @@
+{% extends "./Base/base.html" %}
+{% load static %}
+{% block content %}
+<style type="text/css">
+  a{color: #15353B;}
+  @font-face{
+    font-family: 'MedievalSharp';
+    src:url("{% static 'admin/fonts/MedievalSharp-Regular.ttf' %}")
+  }
+  @font-face{
+    font-family: 'New Rocker';
+    src:url("{% static 'admin/fonts/NewRocker-Regular.ttf'%}");
+  }
+  .titulo{
+    font-family: MedievalSharp;
+    font-weight: bold;
+  }
+  .titulo2{
+    font-family: New Rocker;
+    font-weight: bold;
+  }
+</style>
+<div id="index-banner" class="parallax-container">
+  <div class="section no-pad-bot">
+    <div class="container">
+      <div class="row center">
+        <button class="btn waves-effect pulse waves-light" style="font-family: Times New Roman;background-color: #010D0F;margin-top: 10%;">Seja Bem vindo ao</button>
+        <h1 class="header center" style="font-family: Times New Roman;color: white;font-weight: bold;">ForAll</h1>
+      </div>
+    </div>
+  </div>
+  <div class="parallax"><img src="{% static 'admin/img/logo.jpg' %}" alt="Logo Marca do ForAll"></div>
+</div>
+<br>
+<!-- TOPO -->
+<div class="container">
+  <div class="row">
+   <div class="col s12 m6 l2"></div>
+   <div class="col s12 m6 l8">
+    <br>
+    <p style="font-family: Times new Roman;font-size: 16px;color: #03262C;margin: 0;padding: 0px;text-align: center;">
+      <i class="fa fa-hand-paper"></i>&nbsp;
+      Seja nosso parceiro.
+      <a href="http://api.whatsapp.com/send?1=pt_BR&phone=5584992230505,%20%20ForAll(André)" style="color: black;" target="_blank" title="Clique Aqui"><i class="fab fa-whatsapp"></i>
+      </a><br>
+      <i class="fab fa-google-plus-g"></i>forallrock@gmail.com
+      <a href="https://www.facebook.com/forall.letsgo/" target="_blank">
+        <i class="fab fa-facebook-square" style="font-size: 27px;color: #03262C;"></i>
+      </a>
+      <a href="https://www.instagram.com/forall2020_" target="_blank">
+        <i class="fab fa-instagram" style="font-size: 27px;color: #03262C;"></i>
+      </a> 
+    </p>
+  </div>
+  <div class="col s12 m6 l2"></div>
+</div>
+</div>
+{%if comentados%}
+<div class="container-fluid">
+  <div class="row">
+    <div class="row center">
+      {%for c in comentados %}
+      <div class="col s12 m4">
+       <ul class="collection z-depth-5" style="border-radius: 5px;">
+        <li class="collection-item avatar">
+          <img src="{{ c.postagem.user.perfil.image.url }}" alt="Imagem do Produto da Loja ForAll" class="circle" title="{{c.postagem.user}}">
+          <p style="font-family: Times New Roman;font-size: 16px"><i class="material-icons" style="color: gray;font-size: 16px;">format_size</i>{{c.postagem.titulo}}</p>
+          <p style="font-family: Times New Roman;font-size: 16px;"><i class="material-icons" style="color: gray;font-size: 16px;">record_voice_over</i>"{{c.comentarios|truncatewords:4}}"<br>Comentado por <b>{{c.user}}</b></p>
+          <a href="/accounts/login" class="secondary-content btn-floating pulse" title="Veja Mais"><i class="material-icons">notifications_active
+          </i></a>
+        </li>
+      </ul>
+    </div>
+    {%endfor%}
+    {%else%}
+    {%endif%}
+  </div>
+</div>
+</div>
+<br>
+<!-- CAROUSEL -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col s12 m2 l2"></div>
+    <div class="col s12 m8 l8">
+     <div class="slider">
+      <ul class="slides">
+        <li>
+          <a href="{% url 'power-metal-bandas' %}">
+            <img src="{% static 'admin/img/powermetal/helloween.jpg'%}" width="100%"> 
+            <div class="caption center-align">
+              <h3 class="titulo">Power Metal</h3>
+              <h5 class="light grey-text text-lighten-3 titulo">5 bandas de Power Metal alemão que você tem que conhecer</h5>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'Nada-trivial-jonathan-hulten' %}">
+          <img src="{% static 'admin/img/nadatrivial/jonathan_hunten.jpg'%}" width="100%"> 
+          <div class="caption left-align">
+            <h3 class="titulo2">Nada Trivial</h3>
+            <h5 class="light grey-text text-lighten-3 titulo2">Jonathan Hulten, a história e o álbum chamado <b style="color: #051012;">"Chants from Another Place"</b></h5>
+          </div>
+         </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col s12 m2 l2"></div>
+</div>
+</div>
+<!-- FIM -->
+<!-- CONTAINER PARA O DROPS -->
+<div class="container">
+  <div class="row">
+    <div class="col s12 m4"></div>
+    <div class="col s12 m4">
+      <p style="font-family: Times New Roman;font-size: 19px;font-weight: bold;color: #021B1F;margin: 0px;text-align: center;">Nosso Drops
+        <hr style="background-color: #021B1F;height: 0.3px;">
+      </p>
+    </div>
+    <div class="col s12 m4"></div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col s12 m4">
+     <!-- CONTEÚDO DO DROPS -->
+     <div class="chip" style="margin: 0px;padding: 0px;margin-left: 15%;background-color: #26A69A;">
+      <img src="{% static 'admin/img/aperfectcircle.jpg' %}" alt="Banda A Perfect Circle">
+      <a class="modal-trigger" href="#modalM" style="font-size: 13px;font-family: Times New Roman;color: white;margin: 0px;padding: 1px;">"O que a redação está escutando"</a>
+    </div>
+    <!-- Modal Structure -->
+    <div id="modalM" class="modal">
+      <div class="modal-content">
+        <p style="font-family: Times New Roman;font-size: 18px;padding: 0px;text-align: justify;margin: 0px;">
+          <b>Nosso Drops</b>
+        </p>
+        <img src="{% static 'admin/img/aperfectcircle.jpg' %}" alt="Banda A Perfect Circle" style="width: 60px;height: 60px;" class="materialboxed">
+        <div class="chip" style="margin: 0px;padding: 0px;">
+          <a class="modal-trigger" style="font-size: 18px;font-family: Times New Roman;color: gray;padding: 0px;">A Perfect Circle</a>
+        </div>
+        <p style="font-family: Times New Roman;font-size: 14px;padding: 0px;text-align: justify;margin: 0px">
+          <b>A Perfect Circle</b> é uma banda, formada por Billy Howerdel, guitarrista, e o vocalista da banda Tool, Maynard James Keenan. Durante a gravação do álbum Ænima do Tool, Billy mostrou suas canções para o vocalista da banda, Maynard James Keenan, que logo se ofereceu como vocalista caso Howerdel viesse a formar uma banda, e assim surgiu o banda, mas histórias a parte hoje vamos indicar um álbum em específico o Mer de Noms. <br><br>
+          <iframe src="https://open.spotify.com/embed/album/0GeWd0yUKXHbCXVag1mJvO?theme=0" width="100%" height="230px" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        </p>  
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-light btn-small">Gostei!!</a>
+      </div>
+    </div>
+    <!-- FIM -->
+  </div>
+  <div class="col s12 m4">
+    <div class="chip" style="margin: 0px;padding: 0px;margin-left: 15%;background-color: #26A69A;">
+      <img src="{% static 'admin/img/Drops/buffalo.jpg' %}" alt="Banda Buffalo">
+      <a href="{% url 'Drops-buffalo'%}" style="font-size: 13px;font-family: Times New Roman;color: white;">Você conhece o Bufallo ?&nbsp;</a>
+    </div>
+  </div>
+  <div class="col s12 m4">
+    <!-- CONTEÚDO DO DROPS -->
+    <div class="chip" style="margin: 0px;padding: 0px;margin-left: 15%;background-color: #26A69A;">
+      <img src="{% static 'admin/img/forall.png' %}" alt="Logo marca ForAll">
+      <a class="modal-trigger" href="#modalN" style="font-size: 13px;font-family: Times New Roman;color: white;margin: 0px;padding: 1px;">"A cores na escuridão ? "</a>
+    </div>
+    <!-- Modal Structure -->
+    <div id="modalN" class="modal">
+      <div class="modal-content">
+        <p style="font-family: Times New Roman;font-size: 18px;padding: 0px;text-align: justify;margin: 0px;">
+          <b>Nosso Drops </b>
+          <br>
+          Death metal melódico
+        </p>
+        <p style="font-family: Times New Roman;font-size: 14px;padding: 0px;text-align: justify;">
+          Como é do conhecimento do apreciador do bom e velho rock and roll, que este gênero musical transcende as fronteiras do conceito inicial, e se transforma em vários outros gêneros. E um desses é o Death metal que também tem outros subgêneros, um deles em específico é o Death metal melódico que aqui vamos listar duas bandas importantes deste chamado Death metal melódico. <br>
+          <blockquote style="color: gray;font-family: Times New Roman;font-size: 14px;padding: 3px;text-align: justify;">“There are many many more shades and colors to darkness than just black." <br>
+            "Existem muito mais tons e cores na escuridão do que apenas preto”. <br>
+            &nbsp;&nbsp;Martin Eric Ain.
+            Baixista , Hellhammer/Celtic Frost, <a href="https://www.youtube.com/watch?v=MoHOgfEoTlc&list=PLBub_IHNCfBjm8zhy-RiT3UUPTjPX4YI5&index=1&t=624s" target="_blank">Metal Evolution</a>
+          </blockquote><br>
+        </p>
+        <div style="margin: 0px;">
+          <p style="font-family: Times New Roman;font-size: 14px;padding: 0px;text-align: justify;">
+            <b>Dark Tranquillity</b> é uma das bandas pioneiras de death metal melódico de Gotemburgo, Suécia. <a href="https://www.darktranquillity.com/" target="_blank">Saiba mais</a><br>
+            Álbum essencial: <br>
+            <iframe src="https://open.spotify.com/embed/album/7cLSmdYZAdbDYsuPlHWVIG?theme=0" width="100%" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe><br>
+            <br>
+            <b>Omnium Gatherum</b> é uma banda de death metal melódico da Finlândia, fundada no outono de 1996. Embora a banda siga principalmente o caminho do gênero death metal melódico, muitos de seus trabalhos mostram fortes influências do metal progressivo, especialmente seus álbuns posteriores. <a href="https://www.omniumgatherum.org/" target="_blank">Saiba mais</a><br>
+            Álbum essencial: <br>
+            <iframe src="https://open.spotify.com/embed/album/0fJ0NGaPLRXNqhGP6E8kTl" width="100%" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+          </p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-light btn-small">Gostei!!</a>
+      </div>
+    </div>
+    <!-- FIM -->
+  </div>
+</div>
+</div>
+
+<!-- FIM DO CONTAINER -->
+<!-- CONTEÚDO -->
+<br>
+<div class="container">
+  <div class="row">
+    <p style="font-family: Times New Roman;font-size: 19px;font-weight: bold;color: #263238;margin: 0px;">Destaque
+      <hr style="background-color: #263238;height: 0.3px;">
+    </p>
+    <div class="col s12 m6 l6">
+      <a href="{% url 'dicas' %}"><img src="{% static 'admin/img/kingC.png'%}" alt="Banda king Crimson" style="width: 100%;border-radius: 5px;height: 190px;" title="King Crimson"></a>
+      <a href="{% url 'dicas' %}" style="color: black;"><p style="font-family: Times New Roman;font-size: 14px;color: gray;">The King Crimson | In the court of the crimson king
+      </p>
+    </a>
+  </div>
+  <div class="col s12 m6 l6">
+    <a href="{% url 'breve-historia' %}">
+      <img src="{% static 'admin/img/thin.jpg'%}" alt="Banda Thin Lizzy" style="width: 100%;border-radius: 5px;height: 190px;" title="Thin Lizzy">
+    </a>
+    <a href="{% url 'breve-historia' %}" style="color: black;">
+      <p style="font-family: Times New Roman;font-size: 14px;color: gray;">Thin Lizzy, uma breve história
+      </p>
+    </div>
+    <div class="col s12 m6 l6">
+      <a href="{% url 'son-house' %}"><img src="{% static 'admin/img/son-house.png'%}" alt="Cantor Son House" style="width: 100%;border-radius: 5px;height: 190px;" title="Son House"></a>
+      <a href="{% url 'son-house' %}" style="color: black;"><p style="font-family: Times New Roman;font-size: 14px;color: gray;">
+        Son House | O grandfather do Blues
+      </p>
+    </div>
+    <div class="col s12 m6 l6">
+      <a href="{% url 'destaque' %}"><img src="{% static 'admin/img/jeff.png'%}" alt="Cantor Jeff Buckley" style="width: 100%;border-radius: 5px;height: 190px;" title="Jeff Buckley"></a>
+      <a href="{% url 'destaque' %}" style="color: black;"><p style="font-family: Times New Roman;font-size: 14px;color: gray;">Jeff Buckley, o legado
+      </p>
+    </div>
+  </div>
+</div>
+<!-- FIM -->
+<!-- CONTEÚDO -->
+<div class="container">
+  <div class="row">
+    <p style="font-family: Times New Roman;font-size: 19px;font-weight: bold;color: #e65100;margin: 0px;">Redação
+      <hr style="background-color: #e65100;height: 0.3px;">
+    </p>
+    <div class="col s12 m6 l3">
+      <a href="{% url 'redacao' %}"><img src="{% static 'admin/img/fontainesDC.jpg'%}" alt="Banda Fontaines DC" style="width: 100%;border-radius: 5px;height: 140px;" title="Fontaines D.C"></a>
+      <a href="{% url 'redacao' %}"><p style="font-family: Times New Roman;font-size: 14px;color: gray;"><b>Fontaines D.C.</b><br>A Poesia irlandesa
+      </p>
+    </a>
+  </div>
+  <div class="col s12 m6 l3">
+    <a href="{% url 'Redacao_reportagem' %}"><img src="{% static 'admin/img/bandas.jpg'%}" alt="Banda de Punk Rock Hardcore" style="width: 100%;border-radius: 5px;height: 140px;" title="Punk rock"></a>
+    <a href="{% url 'redacao' %}">
+      <p style="font-family: Times New Roman;font-size: 14px;color: gray;"><b>Punk Rock Hardcore</b><br>
+        Bandas que você tem que conhecer.
+      </p>
+    </div>
+    <div class="col s12 m6 l3">
+      <a href="{% url 'Bob_Mould' %}"><img src="{% static 'admin/img/Tutorial/BobMould/bob.jpg'%}" alt="Cantor Bob Mould" style="width: 100%;border-radius: 5px;height: 140px;" title="Bob Mould"></a>
+      <a href="{% url 'Bob_Mould' %}"><p style="font-family: Times New Roman;font-size: 14px;color: gray;"><b>Bob Mould</b><br> Matéria especial.
+      </p>
+    </div>
+    <div class="col s12 m6 l3">
+      <a href="{% url 'Artistas-brasileiros' %}"><img src="{% static 'admin/img/ArtistasBrasileiros/FloraPurimEairtonMoreira.jpg'%}" alt="Cantores Flora Puin e Airton Moreira" style="width: 100%;border-radius: 5px;height: 140px;" title="Artistas Brasileiros"></a>
+      <a href="{% url 'Artistas-brasileiros' %}"><p style="font-family: Times New Roman;font-size: 14px;color: gray;"><b>Artistas brasileiros que se destacaram internacionalmente.</b>
+      </p>
+    </div>
+  </div>
+</div>
+<!-- FIM -->
+<div class="container">
+  <div class="row">
+    <div class="col s12 m6 l3">
+      <a href="{% url 'banda-irlandesa' %}"><img src="{% static 'admin/img/Bandas_Islandia/JFDR_Two.jpg'%}" alt="Bandas Islandesas" style="width: 100%;border-radius: 5px;height: 140px;" title="Dica"></a>
+      <a href="{% url 'banda-irlandesa' %}">
+        <p style="font-family: Times New Roman;font-size: 14px;color: gray;"><b>Dica</b><br>
+          5 bandas islandesas
+        </p>
+      </a>
+    </div>
+    <div class="col s12 m6 l3">
+      <a href="{% url 'indicacao' %}"><img src="{% static 'admin/img/stone2.jpg'%}" alt="Bandas de Stone Rock" style="width: 100%;border-radius: 5px;height: 140px;" title="Bandas de Stone Rock"></a>
+      <a href="{% url 'indicacao' %}">
+        <p style="font-family: Times New Roman;font-size: 14px;color: gray;">
+          <b>10 Álbuns essencias de Stone Rock</b>
+        </p>
+      </a>
+    </div>
+    <div class="col s12 m6 l3">
+      <a href="{% url 'tutorial' %}"><img src="{% static 'admin/img/modd.jpg' %}" alt="Banda The Moody Blues" style="width: 100%;border-radius: 5px;height: 140px;" title="Bandas The Moody Blues"></a>
+      <a href="{% url 'tutorial' %}">
+        <p style="font-family: Times New Roman;font-size: 14px;color: gray;">
+          <b>The Moody Blues</b><br>
+          Uma banda clássica
+        </p>
+      </a>
+    </div>
+    <div class="col s12 m6 l3">
+       <a href="{% url 'southern-rock' %}"><img src="{% static 'admin/img/souternRock/johnnycash.jpg' %}" alt="Bandas de Southern rock" style="width: 100%;border-radius: 5px;height: 140px;" title="Bandas de Southern rock"></a>
+       <a href="{% url 'southern-rock' %}">
+         <p style="font-family: Times New Roman;font-size: 14px;color: gray;">
+           <b>10 Bandas de Southern rock para curtir</b><br>
+         </p>
+       </a>
+    </div>
+  </div>
+</div>
+
+<!-- LOJA -->
+<div class="container">
+  {%if loja%}
+  <p style="font-family: Times New Roman;font-size: 20px;font-weight: bold;color: #03262C;margin: 0;">Loja ForAll</p>* Obs: A loja <b>ForAll</b> só esta em operação no Estado do RN, especificamente nas áreas metropolitanas de <b>Natal-RN</b>.
+  <p style="font-family: Times New Roman;font-size: 30px;font-weight: bold;margin: 0;padding: 2px;"><b style="color: rgb(255, 129, 0);">Produtos em destaque</b>
+    <hr style="background-color: rgb(255, 129, 0);height: 1px;">
+  </p>
+  <div class="row">
+    {% for l in loja%}
+    <div class="col s12 m3">
+      <div class="card">
+        <div class="card-image">
+          <a href="{% url 'loja'%}"><img src="{{l.produto_image.url}}" alt="Produto da Loja" height="130px"></a>
+          <p class="card-title" style="color: rgb(255, 129, 0);font-family: Times New Roman;font-weight: bold;font-size: 20px;">{{l.produto_nome}}&nbsp;R${{l.preco_produto}}</p>
+          <a href="{% url 'loja'%}" class="btn-floating halfway-fab waves-effect" style="background-color:  #03262C";><i class="material-icons">local_grocery_store</i></a>
+        </div> 
+        <div class="card-content">
+          <p style="font-family: Times New Roman;margin: 0px;">
+            <i class="material-icons">person_pin</i>{{l.dono}}<br>
+            <i class="material-icons">format_size</i>
+            {{l.descricao|truncatewords:4}}...
+          </p>
+          <a href="{% url 'loja'%}"><button class="btn waves-effect waves-light" type="submit" name="action" style="background-color:  #03262C">Detalhe
+            <i class="material-icons right">remove_red_eye</i>
+          </button></a>
+        </div>
+      </div>
+    </div>
+    {% endfor%}
+  </div>
+  <hr style="background-color: rgb(255, 129, 0);height: 1px;">
+  {%else%}
+  {%endif%}
+</div>
+<!-- FIM DA LOJA -->
+<!-- CONTAINER DE REPORTAGEMS -->
+<br>
+<br>
+<div class="container">
+  <div class="row">
+    <p style="font-family: Times New Roman;font-size: 20px;font-weight: bold;color: #3e2723;padding: 0px;">
+      <i class="material-icons">album</i>Especial - Alicerces do Blues 
+    </p>
+  </div>
+</div>    
+<div class="container">
+  <div class="row" style="font-size: 15px;font-family: Times New Roman;">
+    <div class="col s12 m6 l3">
+      <a href="{% url 'Segunda-resenha'%}"><img src="{% static 'admin/img/jimmiPreston.jpg' %}" alt="Cantor Jimmy Preston" style="width: 100%;border-radius: 5px;height: 195px" title="Jimmy Preston"></a>
+      <a href="{% url 'playlist-forall' %}" style="color: #3e2723;">Jimmy Preston</a>
+    </div>
+    <div class="col s12 m6 l3">
+      <a href="{% url 'Terceira-resenha'%}"><img src="{% static 'admin/img/robert.jpg' %}" alt="Cantor Robert Johnson" style="width: 100%;border-radius: 5px;height: 195px" title="Robert Johnson"></a>
+      <a href="{% url 'playlist-forall' %}" style="color: #3e2723;">Robert Johnson</a>
+    </div>
+    <div class="col s12 m6 l3">
+      <a href="{% url 'Quarta-resenha'%}"><img src="{% static 'admin/img/WillieBrown.jpg'%}" alt="Cantor Willie Brown" style="width: 100%;border-radius: 5px;height: 195px;" title="Willie Brown"></a><br>
+      <a href="{% url 'playlist-forall' %}" style="color: #3e2723;">Willie Brown</a>
+    </div>
+    <div class="col s12 m6 l3">
+      <a href="{% url 'Quinta-resenha'%}"><img src="{% static 'admin/img/charlie.jpg'%}" alt="Cantor Charley Patton" style="width: 100%;border-radius: 5px;height: 195px;" title="Charley Patton"></a>
+      <a href="{% url 'playlist-forall' %}" style="color: #3e2723;">Charley Patton</a>
+    </div>
+  </div>
+</div>
+<!-- FIM -->
+<div class="container">
+  <div class="row">
+
+  </div>
+</div>
+<div class="container">
+  <br><br> 
+  <div class="row" style="font-size: 15px;font-family: Times New Roman;">
+    <p style="font-family: Times New Roman;font-size: 20px;font-weight: bold;color: #03262C;margin: 0;">Matérias
+      <hr style="background-color: #559C9E;height: 0.2px;margin: 0px;">
+    </p>
+    <div class="col s6">
+      <div class="card-image">
+        <img src="{% static 'admin/img/rush.png' %}" alt="Banda Rush" style="width: 100%;height: 260px;border-radius: 5px;">
+      </div>
+      <p style="color: gray;font-family: Times New Roman;margin: 0;">Créditos / Facebook</p><br>
+      <b>Rush – Fly By Night</b>
+
+      <p style="font-family: Times New Roman;font-size: 15px;text-align: justify;padding: 0px;margin: 0px;"> 
+        Se algum amante do Rush alguma vez falou “Ei quem é esse baterista?” à escuta o álbum recém lançado no ano de 1975, intitulado Fly By Night .....
+      </p>
+      <!-- Modal Trigger -->
+      <a class="waves-effect waves-light btn modal-trigger" style="background-color: #03262C;" href="#modal1">Saiba
+        <i class="material-icons">add</i></a>
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal modal-fixed-footer">
+          <div class="modal-content">
+            <h4 style="font-family: Times New Roman;font-size: 18px;">Rush - Fly by Night</h4>
+            <p style="font-family: Times New Roman;font-size: 15px;text-align: justify;color: gray;padding: 0px;margin: 0px;">
+              &nbsp;&nbsp;&nbsp;&nbsp;Se algum amante do Rush alguma vez falou “Ei quem é esse baterista?” à escuta o álbum recém lançado no ano de 1975, intitulado Fly By Night, alguém deve tê-lo dito “É um tal de Neil Peart”, que em 1974, entrou para a banda no lugar de John Rutsey,  saído devido a problemas de saúde. Isso deve ter sido em um dado momento um espanto aceitável, pois o Rush carregava em seu álbum de estreia chamado de Rush, um estilo completamente diferente, com pitadas de Hard Rock e Blues, muito pelas referências de bandas como Led Zepellin e The who, e que no Fly By Night a banda mostrou um novo rumo musical, trazendo um Rock progressivo, com letras totalmente filosóficas. <br> 
+
+              &nbsp;&nbsp;&nbsp;&nbsp;O Fly By Ligth foi um divisor de águas para o Rush, e também foi a estreia de Neil Peart. A banda com a saída John Rutsey, teve que preenche esta lacuna na bateria, e urgentemente fazer audições para a vaga. Foi convocado cinco bateras, só que nem todos poderiam mostra sua habilidade, pois o quarto a se apresenta foi nada mais nada menos que o Sr Neil Peart. Assim Peart entrou no Rush em 29 de julho de 1974. Em duas semanas seguintes Neil estava encarando a sua primeira turnê nos Estados Unidos. <br> 
+
+              &nbsp;&nbsp;&nbsp;&nbsp;Em 1975 a banda gravou seu segundo álbum de estúdio, e o primeiro com Neil Peart nas baquetas, sendo intitulado Fly By Night, depois deste trabalho o Rush entrou no rol das maiores bandas de todos os tempos, muito pelo talento da nova aquisição na bateria<strong>(Neil Peart)</strong>, que era um leitor voraz, ao qual foi essencial nas letras da banda, trazendo um ar filosófico nas músicas da banda. <br>
+
+              &nbsp;&nbsp;&nbsp;&nbsp;O álbum contém as seguintes faixas: Anthem, Best I can, Beneath, Between & Behind, By-Tor And The Snow Dog, Fly By Night, Making Memories, Rivendell e In The End. Esse trabalho pode ser considerado um dos alicerces do Rock Progressivo.  
+            </p>
+          </div>
+          <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat" style="font-family: Times New Roman;">Fecha</a>
+          </div>
+        </div>
+      </div>
+      <div class="col s6">
+        <div class="card-image">
+          <a href="{% url 'Primeira-resenha' %}"><img src="{% static 'admin/img/rosseta.jpg'%}" alt="Cantora Rosetta Tharpe" style="width: 100%;height: 260px;border-radius: 5px;"></a>
+        </div>
+        <p style="color: gray;font-family: Times New Roman;margin: 0;">Créditos / Facebook</p><br>
+        <b>Rosetta Tharpe, Uma mulher a frente de seu tempo</b>
+        <p style="font-family: Times New Roman;font-size: 15px;text-align: justify;padding: 0px;margin: 0px;">
+          Você sabe quem foi Rosetta Tharpe ? Provavelmente não, mas uma coisa lhe digo, esta dama foi uma das pessoas que com o seu talento ajudou a criar um.....
+        </p>
+        <a href="{% url 'Primeira-resenha'%}"><button class="btn waves-effect" style="background-color: #03262C;" type="submit" name="action">Saiba
+          <i class="material-icons right">add</i>
+        </button></a>
+      </div>
+    </div>
+  </div>
+  <div class="fixed-action-btn">
+    <a href="/accounts/register" class="btn-floating btn-large" style="background-color: #03262C;">
+      <i class="large material-icons">mode_edit</i>
+    </a>
+    <ul>
+      <li><a href="{% url 'postados'%}" class="btn-floating" style="color: gray;"><i class="material-icons">insert_comment</i></a></li>
+      <li><a href="{% url 'videospublicados'%}" class="btn-floating yellow black"><i class="material-icons">videocam</i></a></li>
+      <li><a href="/accounts/login" class="btn-floating #263238 blue-grey darken-4"><i class="material-icons">input</i></a></li>
+    </ul>
+  </div>
+</div>
+<!-- FIM --> 
+</div>
+</div>
+</div>
+</div>
+
+{% endblock%}
+	

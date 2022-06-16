@@ -1,0 +1,120 @@
+{% extends "./Base/base.html" %}
+{% load static %}
+{% block content %}
+<!-- style para os H1 e H2 -->
+<style type="text/css">
+  .titulo{padding: 0;margin: 0;font-family: Times New Roman;}
+</style>
+<div id="index-banner" class="parallax-container">
+  <div class="section no-pad-bot">
+    <div class="container">
+      <br><br>
+      <h1 class="titulo center" style="font-family: Roboto;font-weight: bold;">PARCEIROS</h1>
+    </div>
+  </div>
+  <div class="parallax"><img src="{% static 'img/Loja/loja2.png'%}" alt="Unsplashed background img 1" style="opacity: 2.9;"></div>
+</div>
+<br>
+<!-- TOPO -->
+<div class="container">
+  <div class="row">
+   <div class="col s12 m6 l2"></div>
+   <div class="col s12 m6 l8">
+     <p style="font-family: Times new Roman;font-size: 21px;color: #03262C;margin: 0;text-align: center;"><i class="fa fa-hand-paper"></i>&nbsp;Seja nosso parceiro.
+      <a href="http://api.whatsapp.com/send?1=pt_BR&phone=5584992230505,%20%20ForAll(André)" style="color: black;" target="_blank" title="Clique Aqui"><i class="fab fa-whatsapp"></i></a><br><i class="fab fa-google-plus-g"></i>forallrock@gmail.com
+      <hr>
+    </p>
+  </div>
+  <div class="col s12 m6 l2"></div>
+</div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col s12 m6 l1"></div>
+    <div class="col s12 m6 l10" style="background-color: #F9FAFB;">
+      <p style="font-family: Times New Roman;font-size: 18px;padding: 2px;">Seja nosso parceiro e alavanque seu negócio. Através do nosso engajamento nas nossas mídias sociais, você terá um ambiente propenso para vender mais e próspera em seu empreendimento. <b>ANÚNCIE no ForAll</b>.
+      </p>
+    </div>
+    <div class="col s12 m6 l1">
+    </div>
+  </div>
+</div>
+<!-- PESQUISA -->
+<div class="container">
+  <div class="row"><br>
+    <div class="input-field col s12">
+      <form method="GET"> 
+        <input placeholder="Ramo de atuação como Lazer, hotelaria ......" type="text" class="validate" name="busca">
+        <label for="first_name"><i class="material-icons">search</i>&nbsp;RAMO DE ATUAÇÃO</label>
+      </div>
+      <button class="btn waves-effect waves-light" type="submit" style="background-color: #03262C">PESQUISA
+        <i class="material-icons right">search</i>
+      </button>
+    </div>
+  </form>
+  {% if parceiros%}
+  {%else%}
+  <div style="background-color: #006064;border-radius: 10px;">
+    <p style="font-family: Times New Roman;font-size: 20px;margin: 0;padding: 5px;color: white;">Ops..Ainda não existe este ramo de atuação. Pesquise novamente.!!</p>
+  </div>
+  {%endif%}
+</div>
+<!-- FIM -->
+<!-- PARCEIROS -->
+<div class="container-fluid">
+  <div class="row">
+    {%for p in parceiros%}
+    <div class="col s12 m4">
+      <div class="card">
+        <div class="card-image">
+          <a href="/Espaco_parceiro/{{p.id}}"><img src="{{p.image1.url}}" style="width: 100%;height: 280px;"></a>
+          <span class="card-title" style="font-family: Times New Roman;">{{p.nomeLoja|upper}}</span>
+          <a href="/Espaco_parceiro/{{p.id}}" class="btn-floating halfway-fab waves-effect #004d40 teal darken-4"><i class="material-icons">add</i></a>
+        </div>
+        <div class="card-content">
+          <p style="font-family: Times New Roman;color:gray;font-weight: bold;margin: 0;">{{p.ramo|upper}}</p>
+          <hr>
+          <p style="font-family: Times New Roman;font-size: 25px;margin: 0;">{{p.nomeLoja}}</p>
+          <p style="font-family: Times New Roman;font-size: 18px;margin: 0;color: gray;">
+            {{p.sobre|truncatechars:20}}
+            <br>
+            <i class="fa fa-map-marked-alt"></i>&nbsp;{{p.cidade}}, {{p.estado_uf}} | <i class="fa fa-user-tie"></i>&nbsp;{{p.dono}}<br> 
+            <i class="fas fa-star" style="color: #F2C832;"></i><i class="fas fa-star" style="color: #F2C832;"></i><i class="fas fa-star" style="color: #F2C832;"></i><i class="fas fa-star" style="color: #F2C832;"></i><i class="fas fa-star" style="color: #F2C832;"></i><br>
+            <i class="fa fa-users"></i>&nbsp;Membros visualizaram sua empresa (<b>{{p.view_parceiro}}</b>) 
+          </p>
+        </div>
+      </div>
+    </div>
+    {%endfor%}
+  </div>
+</div>
+<!-- FIM -->
+<!-- PAGINAÇÃO -->
+<div class="container">
+  <div class="row">
+    <div class="col s12 m4"></div>
+    <div class="col s12 m4" style="margin: 0;margin: auto;text-align: center;">
+      <ul class="pagination">
+        <li class="active">
+          {% if parceiros.has_previous %}
+          <a class="page-link #004d40 teal darken-4" href="?page={{ parceiros.previous_page_number }}" aria-label="Previous">
+            <i class="fa fa-chevron-left"></i>
+          </a>
+          {%endif%}
+        </li>
+        {% if parceiros.paginator.num_pages%}
+        <li class="active #004d40 teal darken-4"><a class="page-link" href="#">{{ parceiros.number }} Até {{ parceiros.paginator.num_pages }}</a></li>   
+        {% endif %}
+        {% if parceiros.has_next %}
+        <li class="active #004d40 teal darken-4">
+          <a class="page-link" href="?page={{ parceiros.next_page_number }}" aria-label="Next">
+            <i class="fa fa-chevron-right"></i>
+          </a>
+          {% endif %}
+        </li>
+      </ul>
+    </div>
+    <div class="col s12 m4"></div>
+  </div>
+</div>
+{%endblock%}

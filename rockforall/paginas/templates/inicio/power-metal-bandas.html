@@ -1,0 +1,156 @@
+{% extends "./Base/base.html" %}
+{% load static %}
+{% block content %}
+{%block google%}{{block.super}}{%endblock%}
+<title>
+	{% block title %}ForAll - Bandas de Power Metal{% endblock%}
+</title>
+<!-- style para os H1 e H2 -->
+<style type="text/css">
+	.titulo{padding: 0;margin: 0;font-family: Times New Roman;}
+	.subtitulo{padding: 9px;margin: 0;font-family: Times New Roman;font-size: 30px;color: gray;}
+	.breadcrumb-item{font-family: Times New Roman;font-size: 15px;margin: 0px;padding: 10px;color: gray;list-style: none;}
+	.cores{color: black;font-weight: bold;}
+	.textos{font-family: Times New Roman;font-size: 16px;text-align: justify;color: gray;}
+	.subFicha{
+		font-family: Times New Roman;ba;font-size: 15px;text-align: left;color: gray;margin: 0;
+	}
+	#tamanho{
+		width: 100%;height: 200px;
+	}
+	#tamanho2{
+		width: 100%;height: 230px;
+	}
+	.relacionados{font-family: Times New Roman;font-size: 17px;font-weight: bold;color: #03262C;}
+	.image-relacionados{width: 23%;height: 60px;border-radius: 5px;padding: 0px;}
+	.texto-relacionados{font-family: Times New Roman;font-size: 14px;float: right;margin-top: -15px;margin: 0;color: gray;}
+</style>
+<div class="container-fluid">
+	<!-- CONTAINER PARA PROPAGANDAS -->
+	<br><br>
+	<div class="row">
+		<div class="col s12 m6 l3"></div>
+		<div class="col s12 m12 l6">
+			
+		</div>
+		<div class="col s12 m6 l3"></div>
+	</div>
+</div><br>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col s12 m4 l3">
+			<p class="relacionados">Relacionados</p>
+			<a href="{% url 'indicacao' %}"><img src="{% static 'img/stone2.jpg'%}" alt="10 Álbuns essencias de Stone Rock" class="image-relacionados">
+			</a>
+			<a href="{% url 'indicacao' %}" style="color: black;">
+				<p class="texto-relacionados">
+					10 Álbuns essencias de Stone Rock
+				</p>
+			</a><br><br>
+			<a href="{% url 'breve-historia' %}"><img src="{% static 'img/thin.jpg'%}" alt="Banda Thin Lizzy" class="image-relacionados">
+			</a>
+			<a href="{% url 'breve-historia' %}" style="color: black;">
+				<p class="texto-relacionados">
+					Thin Lizzy, uma breve história
+				</p>
+			</a><br><br>
+		</div>
+		<div class="col s12 m4 l6">
+			<p class="breadcrumb-item">
+				<a href="/" class="cores"><i class="fa fa-reply"></i>&nbsp;Página Inicial</a>:
+				<i class="fas fa-angle-right"></i>
+				Power Metal, bandas de Power Metal alemão que você tem que conhecer.
+			</p>
+			<h1 class="titulo">Power Metal</h1>
+			<h2 class="subtitulo">Bandas de Power Metal alemão que você tem que conhecer.</h2>
+			<p class="textos" style="font-size: 15px;">ForAll | Redação</p>
+			<p class="textos">
+				A <b>Alemanha</b> é um país com uma paisagem deslumbrante onde temos florestas, rios, cordilheiras e muitas praias no mar do norte, isto situado no ocidente europeu, com uma demografia de aproximadamente 82,8 milhões de habitantes, Epa! Esqueci do principal os <b>castelos</b>, como o <b>Lichtenstein Schloss</b>, conhecido <i>"Castelo do Conto de Fadas"</i> encrustado em um penhasco na cidade Baden-Württemberg. E agora vêm o melhor a <b>culinária</b> onde variedades de carnes são consumidas, em especial a carne de porco, e as vezes saboreadas em forma de salsinha, hum deu fome. <br><br>
+				Outro aspecto primordial que não devemos deixa de lado é a música gêrmanica, onde se destaca a <b>clássica</b>, tendo como seus maiores representantes artistas como por exemplo <b>Ludwig van Beethoven</b>, <b>Robert Schumann</b>, <b>Clara Schumann</b> e.. <i>Opa perai!</i>, A lista é longa e fenomenal, então vamos fica nestes. <br><br>
+				Dito isto, vimos que este país é especial tanto nas belezas naturais quanto na culinária, povo, música e em ... kkk também são bons na fina arte da degustação de uma boa <b>brêja</b>, deveras, então outro atributo não menos importante foi o título de <i>"país do power metal"</i>, onde as melhores bandas deste estilo são de lá, e eu concordo com esta alcunha, será que isto é por causa da influência do passado medieval da alemanha? E isso é uma constante na poesia introduzida nas letras das bandas deste estilo, e que em vezes é oriunda deste ar medieval. não sei, ou também pode ser que seja da influência da banda <b>Rainbow</b>, e de seu principal compositor, o fabuloso <b>Ronnie James Dio</b>, será?. Mas sem sombra de dúvida músicos de heavy metal alemães bebem e beberam desta fonte. Em suma, aqui está uma dica escolhida a dedo com 5 bandas que vão lhe dar uma boa ideia de como este gênero musical é fabuloso. Divirta-se!.
+				<br><br>  
+			</p>
+			<div class="col s12 m6 l4">
+				<div class="card">
+					<div class="card-image">
+						<img src="{% static 'img/powermetal/axxis.png' %}" alt="Axxis" id="tamanho">
+					</div>
+					<div class="card-content">
+						<p class="subFicha">
+							<b>AXXIS</b>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col s12 m6 l4">
+				<div class="card">
+					<div class="card-image">
+						<img src="{% static 'img/powermetal/Brainstorm3.jpg' %}" alt="Banda Brainstorm" id="tamanho">
+					</div>
+					<div class="card-content">
+						<p class="subFicha">
+							<b>Brainstorm</b>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col s12 m6 l4">
+				<div class="card">
+					<div class="card-image">
+						<img src="{% static 'img/powermetal/demons&wizards.jpg' %}" alt="Banda Demons & wizards" id="tamanho">
+					</div>
+					<div class="card-content">
+						<p class="subFicha">
+							<b>Demons & wizards</b>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col s12 m6 l6">
+				<div class="card">
+					<div class="card-image">
+						<img src="{% static 'img/powermetal/helloween.jpg' %}" alt="Banda Helloween" id="tamanho2">
+					</div>
+					<div class="card-content">
+						<p class="subFicha">
+							<b>Helloween</b>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col s12 m6 l6">
+				<div class="card">
+					<div class="card-image">
+						<img src="{% static 'img/powermetal/Masterplan.jpg' %}" alt="Banda Masterplan" id="tamanho2">
+					</div>
+					<div class="card-content">
+						<p class="subFicha">
+							<b>Masterplan</b>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col s12 m4 l3">
+			<p class="relacionados">Destaque</p>
+			<a href="{% url 'son-house' %}"><img src="{% static 'img/son-house.png'%}" alt="Cantor Son House" class="image-relacionados">
+			</a>
+			<a href="{% url 'son-house' %}" style="color: black;">
+				<p class="texto-relacionados">
+					Son House
+				</p>
+			</a><br><br>
+			<a href="{% url 'Redacao_reportagem' %}"><img src="{% static 'img/bandas.jpg'%}" alt="Banda de Punk Rock Hardcore" class="image-relacionados">
+			</a>
+			<a href="{% url 'Redacao_reportagem' %}" style="color: black;">
+				<p class="texto-relacionados">
+					 Bandas que você tem que conhecer.
+				</p>
+			</a>
+		</div>
+	</div>
+</div>
+{%endblock%}

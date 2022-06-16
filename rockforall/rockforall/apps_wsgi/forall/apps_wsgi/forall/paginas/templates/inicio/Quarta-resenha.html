@@ -1,0 +1,76 @@
+{% extends "./Base/base.html" %}
+{% load static %}
+{% block content %}
+<!-- style para os H1 e H2 -->
+<style type="text/css">
+	.titulo{padding: 0;margin: 0;font-family: Times New Roman;}
+	.subtitulo{padding: 9px;margin: 0;font-family: Times New Roman;font-size: 30px;color: gray;}
+	.breadcrumb-item{font-family: Times New Roman;font-size: 15px;margin: 0px;padding: 10px;color: gray;list-style: none;}
+	.cores{color: black;font-weight: bold;}
+</style>
+<div id="index-banner" class="parallax-container">
+	<div class="section no-pad-bot">
+		<div class="container">
+			<div class="row center">
+				<br>
+				<a href="#" id="download-button" class="btn-large waves-effect" style="background-color: #03262C;">Alicerces do Blues
+				</a> 
+			</div>
+			<br><br>
+		</div>
+	</div>
+	<div class="parallax"><img src="{% static 'admin/img/logo.jpg' %}" alt="Logo Marca do ForAll"></div>
+</div>
+<div class="container"></div>
+</div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col s12"><br></div>
+		<div class="col s12 m4 l2"></div>
+		<div class="col s12 m4 l8">
+			<p class="breadcrumb-item">
+				<a href="/" class="cores"><i class="fa fa-reply"></i>&nbsp;Página Inicial</a>:
+				<i class="fas fa-angle-right"></i>
+				Willie Lee Brown
+			</p>
+			<img src="{% static 'admin/img/WillieBrown.jpg' %}" alt="Cantor Willie Brown" style="width: 100%;height: 400px;border-radius: 5px;">
+			Créditos / YouTube
+			<br><br>
+			<h1 class="titulo">Willie Lee Brown</h1> 
+			<p style="font-family: Times New Roman;font-size: 17px;text-align: justify;color: gray">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Willie Lee Brown</b>, nascido em 6 de agosto de 1900 também conhecido como Willie Brown foi um dos magos do blues do Delta do Mississipi, junto com Som House e Charlie Patton influenciou vários outros notáveis do blues como, Robert Johnson e Muddy Waters. Ele foi mais conhecido como side player, acompanhando Son House,  Charlie Patton e Robert Johnson. Em 1930 Willie Brown gravou seis lados para a gravadora Paramount Records, onde foram relançados posteriormente.  No ano de 1941 Brown gravou três faixas para a Biblioteca do Congresso, sempre na companhia do bluesman Son House. Apesar de ser um músico acompanhante Willie Brown ainda pode gravar três apresentações autorais, são elas: “M & Blues”,” Make Me a Pallet on the floor” e “Future Blues”, sendo que após este trabalho Willie Brown desapareceu do cenário em meados de 1940. <br>
+
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Curiosamente nas décadas seguintes aos anos 40, o blues esteve condicionado ao underground musical, mas através dos bluemans o estilo renasceu na década de 1960.  Infelizmente Brown morreu de doença cardíaca na cidade de Tunica, Mississípi no ano de 1952, com seus 52 anos de idade, mas deixou seu legado no blues, onde junto com músicos aqui mencionados ajudou a difundi o estilo.  
+				<br>
+				Por Redação <i class="material-icons">person_pin</i>
+			</p>
+			<iframe width="100%" height="315" src="https://www.youtube.com/embed/_WREOMLH2uI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+		<div class="col s12 m4 l2"></div>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<!-- RECOMENDAÇÕES -->
+		<div>
+			<p style="padding: 0px;margin: 0px;font-size: 25px;font-family: Times New Roman;">Recomendados
+				<hr>
+			</p>
+			<br>
+		</div>
+		<div class="col s12 m6 l3">
+			<a href="{% url 'son-house'%}"><img src="{% static 'admin/img/son-house.png'%}" alt="Cantor Son House" style="width: 100%;border-radius: 5px;height: 185px;"></a>
+		</div>
+		<div class="col s12 m6 l3">
+			<a href="{% url 'tutorial'%}"><img src="{% static 'admin/img/modd.jpg' %}" alt="Banda The Moody Blues" style="width: 100%;border-radius: 5px;height: 185px"></a>
+		</div>
+		<div class="col s12 m6 l3">
+			<a href="{% url 'dicas'%}"><img src="{% static 'admin/img/kingC.png' %}" alt="Banda King Crimson" style="width: 100%;border-radius: 5px;height: 185px"></a>
+		</div>
+		<div class="col s12 m6 l3">
+			<a href="{% url 'destaque'%}"><img src="{% static 'admin/img/jeff.png'%}" alt="Cantor Jeff Buckley" style="width: 100%;border-radius: 5px;height: 185px;"></a>
+		</div>
+		<!-- FIM -->
+	</div>
+</div>
+{%endblock%}
